@@ -49,13 +49,13 @@ herunder formentlig information om brugerne
 ## backend/
 
 `server.js`\
-Den kender I. Serveren definerer ét slutpunkt, `/api/party/:partyCode/currentTrack`, sådan at man kan få information om det track, der lige nu spilles til en given fest. Hver fest har en kode, som er en tekststreng af fire hex-cifre. Til festen `a3f7` spilles lige nu tracket `/api/party/a3f7/currentTrack`.
+Den kender I. Serveren definerer ét slutpunkt, `/api/party/:partyCode/currentTrack`, sådan at man kan få information om det track, der lige nu spilles til en given fest. Hver fest har en kode, som er en tekststreng med fire hex-cifre. Til festen `a3f7` spilles lige nu tracket `/api/party/a3f7/currentTrack`.
 
 Serveren vedligeholder en ordbog, `currentTracks`, hvor nøgler er party-koder og værdier er tracks (mere præcist: indices i en vektor af tracks, som serveren har hentet i databasen).
 
-Når frontenden beder serveren om at fortælle, hvad der bliver spillet til en bestemt fest, slår den op i `currentTracks`. Hvis den ikke finder noget, vælger den et track tilfældigt og opretter et nyt opslag i ordbogen. Så kalder den funktionen `play` i `player.js`. Den funktion simulerer afspilning.
+Når frontenden beder serveren om at fortælle, hvad der bliver spillet til en bestemt fest, slår serveren op i `currentTracks`. Hvis den ikke finder noget, vælger den et track tilfældigt og opretter et nyt opslag i ordbogen. Så kalder den funktionen `play` i `player.js`. Den funktion simulerer afspilning.
 
-Når serveren sætter et nyt track til at spille, giver den `play`-funktionen en callback-funktion med, som `play` kalder, når sangen er slut. Callback'en fjerner så det relevante opslag i `currentTracks`.
+Når serveren sætter et nyt track til at spille, giver den `play`-funktionen en callback-funktion med, som `play` sørger for bliver kaldt, når sangen er slut. Callback'en fjerner så det relevante opslag i `currentTracks`.
 
 Hvis festen fortsætter, spørger frontenden igen, og serveren vælger et nyt, tilfældigt track. On and on it goes.
 
