@@ -1,21 +1,201 @@
 track_id,title,artist,duration
-7399,Blinding Lights,The Weeknd,15523
-4733,Shape of You,Ed Sheeran,16697
-4256,Uptown Funk,Mark Ronson ft. Bruno Mars,26310
-8642,Closer,The Chainsmokers ft. Halsey,22826
-4714,Levitating,Dua Lipa,22575
-9927,Drivers License,Olivia Rodrigo,29948
-7777,Bad Guy,Billie Eilish,25582
-1080,Happier Than Ever,Billie Eilish,25866
-9901,Dance Monkey,Tones and I,17861
-9433,Old Town Road,Lil Nas X,19109
-5083,Watermelon Sugar,Harry Styles,29419
-7030,Sunflower,Post Malone & Swae Lee,24604
-7554,Peaches,Justin Bieber,21548
-6818,Save Your Tears,The Weeknd,17298
-6718,Stay,The Kid LAROI & Justin Bieber,24961
-4843,As It Was,Harry Styles,16963
-2577,Anti-Hero,Taylor Swift,17042
-9045,Good 4 U,Olivia Rodrigo,16917
-4836,Montero (Call Me By Your Name),Lil Nas X,22671
-9610,Shivers,Ed Sheeran,21722
+1,Wannabe,Spice Girls,172000
+2,Barbie Girl,Aqua,196000
+3,Blue (Da Ba Dee),Eiffel 65,284000
+4,Freed From Desire,Gala,213000
+5,Scatman,Scatman John,209000
+6,Cotton Eye Joe,Rednex,192000
+7,Everybody (Backstreet’s Back),Backstreet Boys,286000
+8,Mambo No. 5,Lou Bega,218000
+9,Believe,Cher,239000
+10,Livin’ La Vida Loca,Ricky Martin,243000
+11,Angels,Robbie Williams,265000
+12,Småt Brændbart,Suspekt,198000
+13,Kom Tilbage Nu,Danser Med Drenge,250000
+14,Gettin’ Jiggy Wit It,Will Smith,229000
+15,No Scrubs,TLC,214000
+16,Waterfalls,TLC,280000
+17,Say My Name,Destiny’s Child,240000
+18,Sandstorm,Darude,225000
+19,Around the World,Daft Punk,430000
+20,SexyBack,Justin Timberlake,242000
+21,Gasolina,Daddy Yankee,193000
+22,Yeah!,Usher ft. Lil Jon,250000
+23,Sk8er Boi,Avril Lavigne,203000
+24,Bring Me to Life,Evanescence,237000
+25,Blurred Lines,Robin Thicke,263000
+26,Uptown Funk,Bruno Mars,270000
+27,Get Lucky,Daft Punk,369000
+28,Happy,Pharrell Williams,233000
+29,Cheerleader,OMI,183000
+30,Lean On,Major Lazer,176000
+31,Taarbæk,Tobias Rahim,194000
+32,STOR MAND,Tobias Rahim,180000
+33,Havana,Camila Cabello,217000
+34,Shape of You,Ed Sheeran,233000
+35,Despacito,Luis Fonsi,229000
+36,Old Town Road,Lil Nas X,157000
+37,Bad Guy,Billie Eilish,194000
+38,Blinding Lights,The Weeknd,200000
+39,Flowers,Miley Cyrus,202000
+40,Stay,The Kid Laroi & Justin Bieber,142000
+41,Dynamite,BTS,199000
+42,I Wanna Dance with Somebody,Whitney Houston,292000
+43,Wonderwall,Oasis,258000
+44,Mr. Brightside,The Killers,223000
+45,Toxic,Britney Spears,198000
+46,Strong Enough,Cher,220000
+47,Jump,Kris Kross,197000
+48,Boom Boom Boom Boom!!,Vengaboys,202000
+49,We Like to Party,Vengaboys,222000
+50,Dragostea Din Tei,O-Zone,214000
+51,In da Club,50 Cent,193000
+52,Lose Yourself,Eminem,326000
+53,Without Me,Eminem,290000
+54,Toxicity,System of a Down,219000
+55,Feel Good Inc.,Gorillaz,221000
+56,Seven Nation Army,The White Stripes,232000
+57,Ignition (Remix),R. Kelly,188000
+58,Dancing Queen,ABBA,231000
+59,Gimme! Gimme! Gimme!,ABBA,292000
+60,Proud Mary,Tina Turner,327000
+61,Smells Like Teen Spirit,Nirvana,301000
+62,Basket Case,Green Day,181000
+63,My Own Worst Enemy,Lit,169000
+64,Tubthumping,Chumbawamba,212000
+65,Firework,Katy Perry,227000
+66,Teenage Dream,Katy Perry,228000
+67,Rolling in the Deep,Adele,228000
+68,Halo,Beyoncé,261000
+69,Single Ladies,Beyoncé,193000
+70,Crazy in Love,Beyoncé,236000
+71,Payphone,Maroon 5,232000
+72,Sugar,Maroon 5,235000
+73,I Gotta Feeling,Black Eyed Peas,289000
+74,Pump It,Black Eyed Peas,213000
+75,Boom Clap,Charli XCX,170000
+76,Titanium,David Guetta,245000
+77,Memories,David Guetta,211000
+78,Sexy and I Know It,LMFAO,199000
+79,Party Rock Anthem,LMFAO,263000
+80,Astronomia,Vicetone & Tony Igy,198000
+81,Summer,Calvin Harris,219000
+82,Feel So Close,Calvin Harris,206000
+83,Levels,Avicii,339000
+84,Wake Me Up,Avicii,250000
+85,Hey Brother,Avicii,255000
+86,Take On Me,a-ha,227000
+87,Call Me Maybe,Carly Rae Jepsen,194000
+88,Budapest,George Ezra,200000
+89,Love Me Again,John Newman,216000
+90,Bad Habits,Ed Sheeran,231000
+91,Perfect,Ed Sheeran,263000
+92,Galway Girl,Ed Sheeran,170000
+93,På Det Hele,Gilli,180000
+94,C’est La Vie,Joey Moe,228000
+95,Smuk Som Et Stjerneskud,Brdr. Olsen,183000
+96,Krøller eller ej,Nabiha,214000
+97,Maler byen rød,Birthe Kjær,188000
+98,Den jeg elsker,Søs Fenger,272000
+99,Karma,Christopher,205000
+100,Ghost,Christopher,220000
+101,Sweet Child O’ Mine,Guns N’ Roses,356000
+102,Eye of the Tiger,Survivor,245000
+103,Don’t Stop Believin’,Journey,251000
+104,Beat It,Michael Jackson,258000
+105,Billie Jean,Michael Jackson,294000
+106,Thriller,Michael Jackson,357000
+107,September,Earth Wind & Fire,215000
+108,Super Freak,Rick James,208000
+109,Let’s Dance,David Bowie,263000
+110,Take Me Out,Franz Ferdinand,237000
+111,Song 2,Blur,122000
+112,Wonder,Fingerspitzengefühl,185000
+113,Believer,Imagine Dragons,204000
+114,Radioactive,Imagine Dragons,187000
+115,Thunder,Imagine Dragons,187000
+116,Poker Face,Lady Gaga,239000
+117,Just Dance,Lady Gaga,241000
+118,Bad Romance,Lady Gaga,296000
+119,Born This Way,Lady Gaga,260000
+120,Applause,Lady Gaga,212000
+121,Die Young,Ke$ha,199000
+122,TiK ToK,Ke$ha,200000
+123,Timber,Pitbull ft. Ke$ha,204000
+124,On the Floor,Jennifer Lopez,263000
+125,Let’s Get Loud,Jennifer Lopez,239000
+126,Hips Don’t Lie,Shakira,218000
+127,Whenever Wherever,Shakira,193000
+128,Waka Waka (This Time for Africa),Shakira,212000
+129,Chandelier,Sia,216000
+130,Cheap Thrills,Sia,231000
+131,Elastic Heart,Sia,257000
+132,Roar,Katy Perry,221000
+133,Dark Horse,Katy Perry,215000
+134,California Gurls,Katy Perry,235000
+135,Last Friday Night,Katy Perry,239000
+136,Hot N Cold,Katy Perry,225000
+137,Fireball,Pitbull,204000
+138,Hotel Room Service,Pitbull,230000
+139,Temperature,Sean Paul,215000
+140,Get Busy,Sean Paul,213000
+141,No Lie,Sean Paul,212000
+142,Turn Down for What,DJ Snake & Lil Jon,213000
+143,Lean Back,Terror Squad,252000
+144,Low,Flo Rida,219000
+145,Good Feeling,Flo Rida,256000
+146,Rather Be,Clean Bandit,248000
+147,Rockabye,Clean Bandit,251000
+148,Symphony,Clean Bandit,223000
+149,Tusa,Karol G & Nicki Minaj,197000
+150,Super Bass,Nicki Minaj,201000
+151,Starships,Nicki Minaj,227000
+152,Anaconda,Nicki Minaj,260000
+153,Bottoms Up,Trey Songz ft. Nicki Minaj,224000
+154,Savage Love,Jason Derulo,171000
+155,Talk Dirty,Jason Derulo,217000
+156,Want to Want Me,Jason Derulo,208000
+157,Trumpets,Jason Derulo,220000
+158,Replay,Iyaz,195000
+159,Rude,Magic!,223000
+160,Cheerleader (Felix Jaehn Remix),OMI,183000
+161,Stolen Dance,Milky Chance,315000
+162,Paralyzer,Finger Eleven,220000
+163,In the End,Linkin Park,215000
+164,Numb,Linkin Park,185000
+165,What I’ve Done,Linkin Park,205000
+166,Bring Me to Life,Evanescence,237000
+167,Decode,Paramore,262000
+168,Misery Business,Paramore,208000
+169,Still Into You,Paramore,216000
+170,Crushcrushcrush,Paramore,210000
+171,Holiday,Green Day,232000
+172,American Idiot,Green Day,174000
+173,21 Guns,Green Day,322000
+174,The Middle,Zedd ft. Maren Morris,193000
+175,Stay the Night,Zedd ft. Hayley Williams,237000
+176,Clarity,Zedd ft. Foxes,247000
+177,Heroes (We Could Be),Alesso,203000
+178,If I Lose Myself,OneRepublic & Alesso,256000
+179,Counting Stars,OneRepublic,257000
+180,Love Runs Out,OneRepublic,214000
+181,Feel Again,OneRepublic,213000
+182,Stressed Out,Twenty One Pilots,202000
+183,Ride,Twenty One Pilots,214000
+184,Heathens,Twenty One Pilots,195000
+185,Demons,Imagine Dragons,177000
+186,Hall of Fame,The Script ft. will.i.am,203000
+187,Breakeven,The Script,258000
+188,Maniac,Conan Gray,179000
+189,Heather,Conan Gray,219000
+190,Shut Up and Dance,WALK THE MOON,200000
+191,Shattered,Trading Yesterday,240000
+192,Maps,Maroon 5,189000
+193,Animals,Maroon 5,231000
+194,Daylight,Maroon 5,227000
+195,Love Somebody,Maroon 5,251000
+196,Payphone,Maroon 5,232000
+197,Paris,The Chainsmokers,222000
+198,Don’t Let Me Down,The Chainsmokers,208000
+199,Roses,The Chainsmokers,187000
+200,All We Know,The Chainsmokers,195000
