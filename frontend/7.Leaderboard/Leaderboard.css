@@ -3,27 +3,35 @@
     gap: 20px;
     padding: 20px;
     background: #f0f0f0;
+    margin-bottom: 0;
 }
+
 
 .first, .second, .third {
     background-color: rgb(52, 52, 42);
-    padding: 20px;
+    padding: 30px 20px;
     border: 2px solid #333;
     border-radius: 10px;
     text-align: center;
-    flex: 1;
+    width: 200px;
 }
 .first {
     background-color: #FFD700; /* Guld */
+    order: 2;
 }
+
 
 .second {
     background-color: #C0C0C0; /* Sølv */
+    order: 1;
 }
+
 
 .third {
     background-color: #CD7F32; /* Bronze */
+    order: 3;
 }
+
 
 .profil-billede {
     width: 80px;
@@ -36,6 +44,7 @@
     justify-content: center;
 }
 
+
 .Podium {
     display: flex;
     justify-content: center;
@@ -43,28 +52,35 @@
     margin-top: 30px;
 }
 
+
 .trophy, .silver, .bronze {
     padding: 20px;
     font-size: 50px;
 }
 
+
 /* --- "Start nyt Jam" KNAPPEN KODE --- */
-.start-nyt-jam {
-    text-align: center; /* Centerer knappen*/
-    margin-top: 50px; /* Plads mellem knap og overstående elementer*/
-    display: flex; /* Bruges til at centrere*/
-    justify-content: center; /* Centrerer horisontalt*/
+.buttons-box {
+    background-color: #E8E8E8; /* Lys grå baggrund som på billedet */
+    border: 2px solid #999; /* Grå kant rundt om hele boksen */
+    border-radius: 15px; /* Runde hjørner på den store boks */
+    padding: 15px; /* Luft inde i den store boks */
+    margin: 50px auto; /* Plads over/under og centrerer boksen */
+    max-width: 600px; /* Maksimal bredde på boksen */
+    display: flex; /* Placerer knapperne ved siden af hinanden */
+    justify-content: space-between; /* Fordeler knapperne jævnt */
+    gap: 10px; /* Lille mellemrum mellem knapperne */
 }
 
-.start-nyt-jam button {
-    background-color: #0066CC;
-    border: none;
-    padding: 25px 60px; /* Mere luft = større knap*/
-    font-size: large;
-    border-radius: 15px;
-    cursor: pointer; /* Hånd ikonet når man hover med mussen*/
-    color: white; /* Hvid tekst*/
-    font-weight: bold; /* Fed skrift*/
-    width: 80%; /* Tager 80% af skærmens bredde*/
-    max-width: 1000px; /* Max bredde så den ikke bliver for stor*/
+/* Styling af de tre knapper inde i boksen */
+.buttons-box button {
+    background-color: white; /* Hvid baggrund */
+    border: 2px solid #666; /* Mørk grå kant */
+    padding: 15px 25px; /* Luft inde i knappen */
+    font-size: 1em; /* Normal tekststørrelse */
+    border-radius: 10px; /* Runde hjørner */
+    cursor: pointer; /* Hånd-ikon når man hover */
+    color: black; /* Sort tekst */
+    font-weight: 500; /* Lidt fed skrift */
+    flex: 1; /* Alle knapper får samme bredde */
 }
