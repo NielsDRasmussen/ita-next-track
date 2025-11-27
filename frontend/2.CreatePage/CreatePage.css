@@ -1,110 +1,93 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* RESET - Fjerner browserens standard styling */
+* {                              /* Vælger ALLE elementer på siden */
+    margin: 0;                   /* Fjerner al standard margin */
+    padding: 0;                  /* Fjerner al standard padding */
+    box-sizing: border-box;      /* Gør at padding/border inkluderes i bredde/højde */
 }
 
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;   /* centrerer horisontalt */
-    align-items: center;       /* centrerer vertikalt */
-    background: #f1f1f1;       /* bare midlertidig baggrund */
-    font-family: Arial, sans-serif;
-    padding: 20px;
+/* BODY - Hele sidens baggrund og layout */
+body {                           /* Selve body-elementet (hele siden) */
+    min-height: 100vh;           /* Minimum højde = 100% af skærmhøjden */
+    display: flex;               /* Bruger flexbox layout */
+    justify-content: center;     /* Centrerer indhold vandret */
+    align-items: center;         /* Centrerer indhold lodret */
+    background: #f1f1f1;         /* Lysegrå baggrundsfarve */
+    font-family: Arial, sans-serif;  /* Skrifttype for hele siden */
+    padding: 20px;               /* 20px luft omkring alt indhold */
 }
 
-/*Så elementerne står under hinanden i stedet for ved siden af hinanden*/
-.container {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 24px;
-    padding: 60px 40px 40px;
-    max-width: 500px;
-    width: 100%;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    position: relative;
+/* CONTAINER - Den blå boks */
+.center-box {                    /* Klassen til den blå boks */
+    position: relative;          /* Gør at absolute elementer positioneres i forhold til denne boks */
+    background: #284fd2;         /* Blå baggrundsfarve */
+    padding: 60px 40px 40px;     /* Luft indeni: 60px top, 40px sides, 40px bund */
+    width: 90%;                  /* Fylder 90% af skærmbredden */
+    max-width: 450px;            /* Maksimal bredde på 450px */
+    border-radius: 25px;         /* Runde hjørner med 25px radius */
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);  /* Skygge: 0px vandret, 4px ned, 18px blur, sort med 10% gennemsigtighed */
+    text-align: center;          /* Centrerer tekst */
 }
 
-.close-btn {
-  position: absolute;       /* gør det muligt at placere knappen inde i boksen */
-  top: 16;
-  right: 16;
-  width: 36;
-  height: 36;
-  background: transparent;
-  border: none;
-  border-radius:8px;
-  color: white;
-  cursor: pointer;
-  font-size: 1.5rem;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
+/* CLOSE BUTTON - Krydset i højre hjørne */
+.close-btn {                     /* Klassen til luk-knappen */
+    position: absolute;          /* Placeres frit i forhold til .center-box */
+    top: 0px;                    /* 0px fra toppen af boksen */
+    right: 16px;                 /* 16px fra højre side af boksen */
+    width: 36px;                 /* Bredde på 36px */
+    height: 36px;                /* Højde på 36px */
+    background: transparent;     /* Gennemsigtig baggrund (ingen farve) */
+    border: none;                /* Ingen kant/ramme */
+    border-radius: 8px;          /* Runde hjørner med 8px radius */
+    color: hwb(0 98% 1%);        /* Tekstfarve (næsten hvid) */
+    cursor: pointer;             /* Skifter til hånd-ikon ved hover */
+    font-size: 1.5rem;           /* Skriftstørrelse 1.5 gange større end normal */
+    font-weight: bold;           /* Fed skrift */
+    transition: all 0.2s;        /* Glat animation på alle ændringer over 0.2 sekunder */
 }
 
-.close-btn:hover {
-  background: #ff1c1c;
-  transform: scale(1.05);
+.close-btn:hover {               /* Når musen er over knappen */
+    color: #DC2626;              /* Skifter til rød tekstfarve */
+    transform: scale(1.1);       /* Gør knappen 10% større */
 }
 
-
-
-/* Selve boksen */
-.center-box {
-    position: relative;
-    background: #284fd2;        /* box baggrund – kan ændres */
-    padding: 40px;
-    width: 90%;
-    max-width: 450px;           /* hvor bred boksen må blive */
-    border-radius: 25px;        /* bløde runde hjørner */
-    box-shadow: 0 4px 18px rgba(226, 7, 7, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 25px;                  /* luft mellem elementerne */
-    text-align: center;
+/* OVERSKRIFT */
+h1 {                             /* Alle h1 overskrifter */
+    margin: 0 0 30px 0;          /* Margin: 0px top, 0px højre, 30px bund, 0px venstre */
+    font-size: 2rem;             /* Skriftstørrelse 2 gange større end normal */
+    color: black;                /* Sort tekstfarve */
 }
 
-h1 {
-    margin: 0;
-    font-size: 2rem;
-  }
-
-
-label {
-    display: block;
-    text-align: left;
-    font-weight: bold;
+/* LABEL */
+label {                          /* Alle label elementer */
+    display: block;              /* Vises som blok (fylder hele bredden) */
+    text-align: left;            /* Tekst venstrejusteret */
+    font-weight: bold;           /* Fed skrift */
+    margin-bottom: 10px;         /* 10px luft under label */
 }
 
-
-input,
-  button {
-    width: 100%;
-    padding: 15px;
-    font-size: 1rem;
-    border-radius: 15px;
-    box-sizing: border-box;
-  }
-
-  input {
-    border: 1px solid #ccc;
-  }
-
-  button {
-    border: none;
-    background: #9eadc4; /* Blå Facebook-lignende farve */
-    color: white;
-    font-size: 1.1rem;
-    cursor: pointer;
-  }
-
-button:hover {
-    opacity: 0.9;
+/* INPUT OG BUTTON */
+input,                           /* Alle input felter */
+button {                         /* Alle knapper */
+    width: 100%;                 /* Fylder 100% af forælderens bredde */
+    padding: 15px;               /* 15px luft indeni på alle sider */
+    font-size: 1rem;             /* Normal skriftstørrelse */
+    border-radius: 15px;         /* Runde hjørner med 15px radius */
+    box-sizing: border-box;      /* Inkluderer padding i total bredde */
 }
 
-label {
-    display: block;
-    text-align: left;
-    font-weight: bold;
+input {                          /* Kun input felter */
+    border: 1px solid #ccc;      /* 1px lysegrå kant */
+    margin-bottom: 25px;         /* 25px luft under input */
+}
+
+button {                         /* Kun knapper */
+    border: none;                /* Ingen kant */
+    background: #9eadc4;         /* Blågrå baggrundsfarve */
+    color: white;                /* Hvid tekstfarve */
+    font-size: 1.1rem;           /* Skriftstørrelse lidt større end normal */
+    cursor: pointer;             /* Hånd-ikon ved hover */
+}
+
+button:hover {                   /* Når musen er over knappen */
+    opacity: 0.9;                /* 90% synlighed (10% gennemsigtig) */
 }
