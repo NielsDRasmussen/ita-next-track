@@ -51,3 +51,7 @@
 .player-right input {
     width: 80px;
 }
+
+.QueueTable {         
+    border: 1px solid black;
+}
