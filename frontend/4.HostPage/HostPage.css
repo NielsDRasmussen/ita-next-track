@@ -12,8 +12,9 @@ body {
     color: rgb(0, 0, 0);
     position: absolute;
     top: 100px;
-    right: 150px;
+    right: 120px;
     font-size: 15px;
+    font-weight: bold;
 }
 
 .participantsButton button {
@@ -22,12 +23,13 @@ body {
     border-radius: 10%;
     border: solid;
     cursor: pointer;
-    background-color: rgb(51, 155, 79); /* Blå farve */
-    color: rgb(0, 0, 0);
+    background-color: #4CAF50;
+    color: rgb(255, 255, 255);
     position: absolute;
     top: 100px;
-    right: 260px; 
+    right: 240px; 
     font-size: 15px;
+    font-weight: bold;
 }
 
 .participantsButton button::before {
@@ -78,7 +80,7 @@ body {
 .timeline {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 220px;
     margin-top: 8px;
 }
 
@@ -87,8 +89,9 @@ body {
     text-align: center;
 }
 
-.player-right input {
+.volume input {
     width: 80px;
+
 }
 
 .QueueTable {         
