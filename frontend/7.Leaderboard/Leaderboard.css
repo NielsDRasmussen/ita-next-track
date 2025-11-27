@@ -1,8 +1,12 @@
+h1 {
+    text-align: center;
+}
+
 .winners {
     display: flex;
     gap: 20px;
     padding: 20px;
-    background: #f0f0f0;
+    background: #ffffff;
     margin-bottom: 0;
 }
 
@@ -18,18 +22,22 @@
 .first {
     background-color: #FFD700; /* Guld */
     order: 2;
+    margin-bottom: 0;
 }
 
 
 .second {
     background-color: #C0C0C0; /* Sølv */
     order: 1;
+    margin-left: 20%;
+    margin-top: 50px;
 }
 
 
 .third {
     background-color: #CD7F32; /* Bronze */
     order: 3;
+    margin-top: 100px;
 }
 
 
