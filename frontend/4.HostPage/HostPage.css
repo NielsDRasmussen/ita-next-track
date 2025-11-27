@@ -55,3 +55,24 @@
 .QueueTable {         
     border: 1px solid black;
 }
+
+.request-song-btn {
+    position: fixed;
+    bottom: 20px;      /* afstand fra bund */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    background-color: #4CAF50; /* grøn – kan ændres */
+    color: white;
+    border: none;
+    border-radius: 30px; /* afrundet rektangel */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 9999;      /* ligger OVER alt andet */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.request-song-btn:hover {
+    background-color: #45a049;
+}
