@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(119, 37, 127);
+    background-color: #be63c7;
 }
 
 .leaveJamButton button {
@@ -8,4 +8,83 @@ body {
     border-radius: 50%;  /* Gør den rund */
     border: none;        /* Fjern kant (valgfrit) */
     cursor: pointer;     /* Vis klik-hånd */
+}
+
+.player {
+    margin-top: 30px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: #f7f7f7;
+}
+
+.player-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.album-cover {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.controls button {
+    font-size: 22px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    background: #e0e0e0;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background: #d5d5d5;
+}
+
+.timeline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.player-center {
+    flex: 1;
+    text-align: center;
+}
+
+.player-right input {
+    width: 80px;
+}
+
+.QueueTable {         
+    border: 1px solid black;
+}
+
+.request-song-btn {
+    position: fixed;
+    bottom: 20px;      /* afstand fra bund */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    background-color: #4CAF50; /* grøn – kan ændres */
+    color: white;
+    border: none;
+    border-radius: 30px; /* afrundet rektangel */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 9999;      /* ligger OVER alt andet */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.request-song-btn:hover {
+    background-color: #45a049;
 }

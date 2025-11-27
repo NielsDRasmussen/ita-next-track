@@ -1,3 +1,15 @@
+body {
+    background-color: #be63c7;
+}
+
+.leaveJamButton button {
+    width: 1200px;         /* Gør knappen lige høj og bred */
+    height: 60px;
+    border-radius: 50%;  /* Gør den rund */
+    border: none;        /* Fjern kant (valgfrit) */
+    cursor: pointer;     /* Vis klik-hånd */
+}
+
 .player {
     margin-top: 30px;
     padding: 15px;
