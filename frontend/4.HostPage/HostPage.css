@@ -2,30 +2,57 @@ body {
     background-color: #be63c7;
 }
 
-.leaveJamButton button {
-    width: 1200px;         /* Gør knappen lige høj og bred */
-    height: 60px;
-    border-radius: 50%;  /* Gør den rund */
-    border: none;        /* Fjern kant (valgfrit) */
+.endJamButton button {
+    width: 100px;         /* Gør knappen lige høj og bred */
+    height: 50px;
+    border-radius: 10%;  /* Gør den rund */
+    border: solid;        /* Fjern kant (valgfrit) */
     cursor: pointer;     /* Vis klik-hånd */
+    background-color: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 100px;
+    right: 150px;
+    font-size: 15px;
+}
+
+.participantsButton button {
+    width: 100px;
+    height: 50px;
+    border-radius: 10%;
+    border: solid;
+    cursor: pointer;
+    background-color: rgb(51, 155, 79); /* Blå farve */
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 100px;
+    right: 260px; 
+    font-size: 15px;
+}
+
+.participantsButton button::before {
+    content: "👥";    /* Brug Unicode-ikon */
+    font-size: 20px; /* Gør ikonet passende */
 }
 
 .player {
-    margin-top: 30px;
-    padding: 15px;
+    margin-top: 40px;
+    padding: 70px;
     border: 1px solid #ccc;
     border-radius: 12px;
+    width: 75%;
+    margin: 40px auto; /* Sikre at den altid er centreret */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    background: #f7f7f7;
+    gap: 50px;
+    background: #f99c07;
 }
 
 .player-left {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 .album-cover {
@@ -36,8 +63,8 @@ body {
 }
 
 .controls button {
-    font-size: 22px;
-    padding: 8px 14px;
+    font-size: 40px;
+    padding: 8px 24px;
     border-radius: 8px;
     border: none;
     background: #e0e0e0;
