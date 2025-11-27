@@ -1,0 +1,11 @@
+body {
+    background-color: rgb(119, 37, 127);
+}
+
+.leaveJamButton button {
+    width: 60px;         /* Gør knappen lige høj og bred */
+    height: 60px;
+    border-radius: 50%;  /* Gør den rund */
+    border: none;        /* Fjern kant (valgfrit) */
+    cursor: pointer;     /* Vis klik-hånd */
+}
