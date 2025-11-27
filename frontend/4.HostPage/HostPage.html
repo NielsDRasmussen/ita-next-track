@@ -1,41 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>JamJam</title>
+    <link rel="stylesheet" href="HostPage.css">
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
 <body>
 
-<h>JamJam</h>
-<p>My first paragraph.</p>
+    <h1>JamJam</h1>
+    <p>My first paragraph.</p>
 
-<div class="participantCode">
-    <p>(placholder) Code: YH82C0</p>
-</div>
-
- <div class="participantsButton">
-    <button onclick="myFunction()" class="dropbtn">Participants</button>
+    <div class="participantCode">
+        <p>(placeholder) Code: YH82C0</p>
     </div>
 
+    <div class="participantsButton">
+        <button class="dropbtn">Participants</button>
+    </div>
 
+    <div class="HostPage-buttons">
+        <button>End Jam</button>
+    </div>
 
-        <div class="HostPage-buttons">
-            <button>End Jam</button>
+    <!-- Music Player -->
+    <div class="player">
+        <div class="player-left">
+            <img src="https://via.placeholder.com/80" alt="Album cover" class="album-cover">
+            <div class="track-info">
+                <h3>Song Title</h3>
+                <p>Artist Name</p>
+            </div>
         </div>
 
-<style>
-    table, th, td {
-  border: 1px solid black;
-  }
-</style>
-<div id="QueueTable">
-<table>
-  <tr>
-    <th>Artist</th>
-    <th>Song</th>
-    <th>Time</th>
-  </tr>
-  <tr>
-    <td>Justin Bieber</td>
-    <td>Peaches</td>
-    <td>3:18</td>
-  </tr>
-</div>
+        <div class="player-center">
+            <div class="controls">
+                <button class="play-btn">&#9654;</button>
+            </div>
+
+            <div class="timeline">
+                <span>0:00</span>
+                <input type="range" min="0" max="100" value="40">
+                <span>3:18</span>
+            </div>
+        </div>
+
+        <div class="player-right">
+            <input type="range" min="0" max="100" value="70">
+        </div>
+    </div>
+
+    <div id="QueueTable">
+        <table>
+            <tr>
+                <th>Artist</th>
+                <th>Song</th>
+                <th>Time</th>
+            </tr>
+            <tr>
+                <td>Justin Bieber</td>
+                <td>Peaches</td>
+                <td>3:18</td>
+            </tr>
+        </table>
+    </div>
+
 </body>
 </html>

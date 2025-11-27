@@ -1,0 +1,53 @@
+.player {
+    margin-top: 30px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: #f7f7f7;
+}
+
+.player-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.album-cover {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.controls button {
+    font-size: 22px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    background: #e0e0e0;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background: #d5d5d5;
+}
+
+.timeline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.player-center {
+    flex: 1;
+    text-align: center;
+}
+
+.player-right input {
+    width: 80px;
+}
