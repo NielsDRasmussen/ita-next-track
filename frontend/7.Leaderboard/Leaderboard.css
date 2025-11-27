@@ -48,10 +48,23 @@
     font-size: 50px;
 }
 
+/* --- "Start nyt Jam" KNAPPEN KODE --- */
 .start-nyt-jam {
-    width: 80px;
-    height:50px;
-    justify-content: center;
-    padding: 80px
+    text-align: center; /* Centerer knappen*/
+    margin-top: 50px; /* Plads mellem knap og overstående elementer*/
+    display: flex; /* Bruges til at centrere*/
+    justify-content: center; /* Centrerer horisontalt*/
+}
 
+.start-nyt-jam button {
+    background-color: #0066CC;
+    border: none;
+    padding: 25px 60px; /* Mere luft = større knap*/
+    font-size: large;
+    border-radius: 15px;
+    cursor: pointer; /* Hånd ikonet når man hover med mussen*/
+    color: white; /* Hvid tekst*/
+    font-weight: bold; /* Fed skrift*/
+    width: 80%; /* Tager 80% af skærmens bredde*/
+    max-width: 1000px; /* Max bredde så den ikke bliver for stor*/
 }
