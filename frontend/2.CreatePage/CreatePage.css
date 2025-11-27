@@ -1,0 +1,101 @@
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;   /* centrerer horisontalt */
+    align-items: center;       /* centrerer vertikalt */
+    background: #f1f1f1;       /* bare midlertidig baggrund */
+    font-family: Arial, sans-serif;
+}
+
+.close-btn {
+  position: absolute;       /* gør det muligt at placere knappen inde i boksen */
+  top: 15px;
+  right: 15px;
+  background: #ff5c5c;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 30px;
+  text-align: center;
+}
+
+.close-btn:hover {
+  background: #ff1c1c;
+}
+
+
+/*Så elementerne står under hinanden i stedet for ved siden af hinanden*/
+.container {
+    width: 250px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* Selve boksen */
+.center-box {
+    position: relative;
+    background: #284fd2;        /* box baggrund – kan ændres */
+    padding: 40px;
+    width: 90%;
+    max-width: 450px;           /* hvor bred boksen må blive */
+    border-radius: 25px;        /* bløde runde hjørner */
+    box-shadow: 0 4px 18px rgba(226, 7, 7, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;                  /* luft mellem elementerne */
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+
+
+label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+}
+
+
+input,
+  button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 15px;
+    box-sizing: border-box;
+  }
+
+  input {
+    border: 1px solid #ccc;
+  }
+
+  button {
+    border: none;
+    background: #9eadc4; /* Blå Facebook-lignende farve */
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+
+button:hover {
+    opacity: 0.9;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+}
