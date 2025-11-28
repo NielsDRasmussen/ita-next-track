@@ -25,12 +25,30 @@ p {
     margin-top: 50px;
 }
 
-.frontpage-buttons button {
+.frontpage-buttons a {
     text-align: center;
     border-radius: 10px;
     cursor: pointer;
     padding: 15px 25px;
-    background-color: aqua;
     width: 300px;
     font-size: 25px;
+    text-decoration: none;
+    color:black;
+    display: block;
+}
+
+#create-btn {
+    background-color: #E86100;
+}
+
+#join-btn {
+    background-color: #FFE5B4;
+}
+
+#create-btn:hover {
+    box-shadow: 0px 0px 20px #FFE5B4;  /* x y blur farve / Box shadow kræver flere værdier, ikke kun en farve */
+}
+
+#join-btn:hover {  
+    box-shadow: 0px 0px 20px #E86100;
 }

@@ -1,3 +1,9 @@
+
+
+
+
+
+// --- MIKKELS KODE ---
 addEventListener("DOMContentLoaded", () => {
     let partyCode = establishPartyCode();
     history.replaceState(null, '', partyCode);
