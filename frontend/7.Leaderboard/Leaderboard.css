@@ -15,13 +15,11 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 1;  /* Bag alt andet */
     pointer-events: none;  /* Gør confetti "gennemklikbar" */
 }
 
 h1, .winner-cards, .frontpage-buttons {
     position: relative;
-    z-index: 2;  /* Foran confetti */
 }
 
 h1 {
