@@ -1,11 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Song Request</title>
+    <link rel="stylesheet" href="Requests.css">
 </head>
+
 <body>
-    
+
+    <!-- Selve popuppen -->
+    <div class="request-popup" id="requestPopup">
+        <h2>Ny sang-anmodning</h2>
+        <p id="requestedSong">(placeholder sang)</p>
+
+        <!-- Timer -->
+        <div class="timer">
+            <span id="countdown">30</span>s tilbage
+        </div>
+
+        <!-- Like / Trash -->
+        <div class="vote-buttons">
+            <button id="likeBtn" class="like">❤️ Like</button>
+            <button id="trashBtn" class="trash">🗑️ Trash</button>
+        </div>
+    </div>
+
+    <script src="Requests.js" defer></script>
 </body>
 </html>

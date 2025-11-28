@@ -118,3 +118,41 @@ body {
 .request-song-btn:hover {
     background-color: #45a049;
 }
+
+/* Runde knapper øverst til højre */
+.round-btn {
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: none;
+    background: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.round-btn:hover {
+    background: #555;
+}
+
+.end {
+    background: #b80000;
+}
+
+/* Request Song knap */
+.request-song-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    padding: 15px 22px;
+    background: #4a86ff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.request-song-btn:hover {
+    background: #2f64d6;
+}

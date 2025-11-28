@@ -88,3 +88,20 @@ body {
 .request-song-btn:hover {
     background-color: #45a049;
 }
+/* Runde knapper øverst til højre */
+.round-btn {
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: none;
+    background: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.round-btn:hover {
+    background: #555;
+}
+
+.leave {
+    background: #b80000;
+}

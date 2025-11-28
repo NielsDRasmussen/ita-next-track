@@ -5,7 +5,8 @@
     <title>JamJam</title>
     <link rel="stylesheet" href="HostPage.css">
 
-
+    <!-- Request popup CSS -->
+    <link rel="stylesheet" href="../6.Requests/Requests.css">
 </head>
 
 <body>
@@ -18,11 +19,11 @@
     </div>
 
     <div class="participantsButton">
-        <button class="dropbtn">Participants</button>
+        <button class="round-btn">Participants</button>
     </div>
 
     <div class="endJamButton">
-        <button>End Jam</button>
+        <button class="round-btn end">End Jam</button>
     </div>
 
     <!-- Music Player -->
@@ -52,6 +53,7 @@
         </div>
     </div>
 
+    <!-- Queue -->
     <div id="QueueTable">
         <table>
             <tr>
@@ -66,7 +68,16 @@
             </tr>
         </table>
     </div>
-<button class="request-song-btn">Request Song</button>
 
+                
+    <button class="request-song-btn" id="requestSongBtn">Request Song</button><!-- Request Song Button -->
+
+   
+    <div id="requestPopupContainer"> <!-- Request popup HTML -->
+       
+    </div>
+
+    <script src="HostPage.js"></script> <!-- INDSÆTTER RequestPopup.html via JS -->
+    <script src="../6.Requests/Requests.js"></script>
 </body>
 </html>

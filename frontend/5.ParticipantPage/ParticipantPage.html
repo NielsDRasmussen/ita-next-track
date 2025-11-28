@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JamJam</title>
 
     <link rel="stylesheet" href="ParticipantPage.css">
-    
+
+    <!-- Popup CSS -->
+    <link rel="stylesheet" href="../6.Requests/Requests.css">
 </head>
+
 <body>
-     <div class="participantCode">
+
+    <div class="participantCode">
         <p>(placeholder) Code: YH82C0</p>
     </div>
 
     <div class="participantsButton">
-        <button class="dropbtn">Participants</button>
+        <button class="round-btn">Participants</button>
     </div>
 
     <div class="leaveJamButton">
-        <button>Leave Jam</button>
+        <button class="round-btn leave">Leave Jam</button>
     </div>
 
-     <div id="QueueTable">
+    <div id="QueueTable">
         <table>
             <tr>
                 <th>Artist</th>
@@ -62,6 +66,12 @@
             <input type="range" min="0" max="100" value="70">
         </div>
     </div>
+
+    <!-- Container der popup’en indlæses ind i -->
+    <div id="requestPopupContainer"></div>
+
+    <script src="ParticipantPage.js"></script>
+    <script src="../6.Requests/Requests.js"></script>
 
 </body>
 </html>
