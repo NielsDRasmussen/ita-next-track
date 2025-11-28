@@ -2,6 +2,10 @@ body {
     background-color: #be63c7;
 }
 
+.title {
+    right: 130px;
+}
+
 .endJamButton button {
     width: 100px;         /* Gør knappen lige høj og bred */
     height: 50px;
