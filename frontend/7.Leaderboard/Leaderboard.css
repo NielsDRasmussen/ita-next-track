@@ -5,6 +5,25 @@ body {
         linear-gradient(135deg, #0f0f0f, #1a1a1a);
 }
 
+.confetti-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("confetti-holiday-cheer.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;  /* Bag alt andet */
+    pointer-events: none;  /* Gør confetti "gennemklikbar" */
+}
+
+h1, .winner-cards, .frontpage-buttons {
+    position: relative;
+    z-index: 2;  /* Foran confetti */
+}
+
 h1 {
     text-align: center;
     color: rgb(214, 210, 210);
