@@ -67,16 +67,16 @@ h1 {
 }
 
 
-/* --- "Start nyt Jam" KNAPPEN KODE --- */
+/* --- "Start nyt Jam" KNAPPER KODE --- */
 .buttons-box {
-    background-color: #E8E8E8; /* Lys grå baggrund som på billedet */
+    background-color: #E8E8E8; /* Lys grå baggrund */
     border: 2px solid #999; /* Grå kant rundt om hele boksen */
     border-radius: 15px; /* Runde hjørner på den store boks */
     padding: 15px; /* Luft inde i den store boks */
     margin: 50px auto; /* Plads over/under og centrerer boksen */
     max-width: 600px; /* Maksimal bredde på boksen */
     display: flex; /* Placerer knapperne ved siden af hinanden */
-    justify-content: space-between; /* Fordeler knapperne jævnt */
+    justify-content: space-between; /* Fordeler knapperne med space imellem*/
     gap: 10px; /* Lille mellemrum mellem knapperne */
 }
 

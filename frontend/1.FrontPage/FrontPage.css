@@ -1,6 +1,36 @@
 body {
-    background-color: #333;
-    color: #ccc;
-    font-family: monospace;
-    font-size: 16px;
+    background-image: url("background.gif");
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    margin-top: 10%;
+    font-family: 'Lobster Two', cursive;
+}
+
+p {
+    text-align: center;
+    font-size: 24px;
+}
+
+/* --- Frontpage buttons --- */
+.frontpage-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.frontpage-buttons button {
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 15px 25px;
+    background-color: aqua;
+    width: 300px;
+    font-size: 25px;
 }
