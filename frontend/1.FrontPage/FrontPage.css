@@ -8,6 +8,11 @@ h1 {
     font-size: 60px;
     margin-top: 10%;
     font-family: 'Lobster Two', cursive;
+    color: black;
+    text-shadow: 
+        3px 3px 0px white,
+        6px 6px 0px #FFE5B4,
+        8px 8px 0px #E86100; /* offsetX, offsetY, blur-radius color*/
 }
 
 p {
@@ -50,5 +55,6 @@ p {
 }
 
 #join-btn:hover {  
-    box-shadow: 0px 0px 20px #E86100;
+    box-shadow: 
+        2px 2px 0px #E86100; /* offsetX, offsetY, blur-radius color*/
 }
