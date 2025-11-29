@@ -56,5 +56,5 @@ p {
 
 #join-btn:hover {  
     box-shadow: 
-        2px 2px 0px #E86100; /* offsetX, offsetY, blur-radius color*/
+        0px 0px 20px #E86100; /* offsetX, offsetY, blur-radius color*/
 }
