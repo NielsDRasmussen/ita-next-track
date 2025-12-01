@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreateJam</title>
+    <title>JoinJam</title>
 
-    <link rel="stylesheet" href="CreatePage.css">
+    <link rel="stylesheet" href="JoinPage.css">
 
-    <link rel="preconnect" href="⁦https://fonts.googleapis.com⁩">
-    <link rel="preconnect" href="⁦https://fonts.gstatic.com⁩" crossorigin>
-    <link href="⁦https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap⁩" rel="lobsterTwo">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swa" rel="lobsterTwo">
 </head>
 
 <body>
@@ -17,13 +17,15 @@
         <h1 class="app-name">JamJam</h1>
         <div class="blue-box">
             <button class="close-btn" onclick="closeBox()">×</button> <!-- class gør det muligt at style knappen i CSS og når man klikker på knappen, kaldes JavaScript-funktionen closeBox()-->
-            <h2 class="head-inBox">Start a Jam</h2>
+            <h2 class="head-inBox">Join Jam</h2>
             <label for="name">Your Name</label> <!--for="name" betyder, at labelen hører sammen med input-feltet med id="name"-->
             <input id="name" type="text" placeholder="Type Name"> <!--klikker man på teksten Your Name, aktiverer det tekstfeltet-->
+            <label for="code">Your Code</label> <!--for="code" betyder, at labelen hører sammen med input-feltet med id="code"-->
+            <input id="code" type="text" placeholder="Type Code"> <!--klikker man på teksten Your Code, aktiverer det tekstfeltet-->
             <button id="startBtn">Start Jam</button>
         </div>
     </div>
 
-  <script src="CreatePage.js"></script>
+  <script src="JoinPage.js"></script>
 </body>
 </html>
