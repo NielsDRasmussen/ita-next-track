@@ -1,13 +1,13 @@
 // Get the modal
-var RequestModal = document.getElementById("Confirm");
+let RequestModal = document.getElementById("Confirm");
 
 // Get the button that opens the modal
-var Confirm = document.getElementById("Confirm");
+let btn = document.getElementById("Confirm");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+let span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
+// When the user clicks on the confirm button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
 }
@@ -24,8 +24,8 @@ window.onclick = function(event) {
   }
 }
 
-var slider = document.getElementById("myRange");
-var output = document.getElementById("Volume");
+let slider = document.getElementById("myRange");
+let output = document.getElementById("Volume");
 output.innerHTML = slider.value;
 
 slider.oninput = function() {
