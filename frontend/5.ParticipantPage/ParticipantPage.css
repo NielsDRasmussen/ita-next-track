@@ -2,17 +2,66 @@ body {
     background-color: #be63c7;
 }
 
+
+.JamJam {
+    font-size: 60px;
+    text-align: center;
+    font-family: 'Lobster Two', cursive;
+}
+
 .leaveJamButton button {
-    width: 60px;         /* Gør knappen lige høj og bred */
-    height: 60px;
-    border-radius: 50%;  /* Gør den rund */
-    border: none;        /* Fjern kant (valgfrit) */
+    width: 100px;         /* Gør knappen lige høj og bred */
+    height: 50px;
+    border-radius: 10%;  /* Gør den rund */
+    border: solid;        /* Fjern kant (valgfrit) */
     cursor: pointer;     /* Vis klik-hånd */
+    background-color: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 100px;
+    right: 120px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.participantsButton button {
+    width: 100px;
+    height: 50px;
+    border-radius: 10%;
+    border: solid;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 100px;
+    right: 240px; 
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.participantsButton button::before {
+    content: "👥";    /* Brug Unicode-ikon */
+    font-size: 20px; /* Gør ikonet passende */
 }
 
 .QueueTable {         
     border: 1px solid black;
 }
+
+.SongProgress {
+    width: 50%;
+    background-color: #ddd;
+    border-radius: 35px;
+    margin: 5px;
+}
+
+.SongProgressBar {
+    width: 1%;
+    height: 10px;
+    background-color: #000000;
+    border-radius: 35px;
+}
+
 
 .request-song-btn {
     position: fixed;
