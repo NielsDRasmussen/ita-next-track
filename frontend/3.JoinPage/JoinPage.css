@@ -1,0 +1,102 @@
+/* RESET - Fjerner browserens standard styling */
+* {                              /* Vælger ALLE elementer på siden */
+    margin: 0;                   /* Fjerner al standard margin */
+    padding: 0;                  /* Fjerner al standard padding */
+    box-sizing: border-box;      /* Gør at padding/border inkluderes i bredde/højde */
+}
+
+/* BODY - Hele sidens baggrund og layout */
+body {                           /* Selve body-elementet (hele siden) */
+    min-height: 90vh;           /* Minimum højde = 100% af skærmhøjden */
+    display: flex;               /* Bruger flexbox layout */
+    justify-content: center;     /* Centrerer indhold vandret */
+    align-items: center;         /* Centrerer indhold lodret */
+    background: #f1f1f1;         /* Lysegrå baggrundsfarve */
+    font-family: Arial, sans-serif;  /* Skrifttype for hele siden */
+    padding: 20px;               /* 20px luft omkring alt indhold */
+}
+
+/*App navn (JamJam)*/
+.app-name {
+    font-size: 100px;
+    font-weight: bold;
+    font-family: 'Lobster Two', cursive;  
+    margin-bottom: 60px;
+    text-align: center
+ 
+}
+
+/* CONTAINER - Den blå boks */
+.blue-box {                    /* Klassen til den blå boks */
+    position: relative;          /* Gør at absolute elementer positioneres i forhold til denne boks */
+    background: #284fd2;         /* Blå baggrundsfarve */
+    padding: 60px 40px 40px;     /* Luft indeni: 60px top, 40px sides, 40px bund */
+    width: 90%;                  /* Fylder 90% af skærmbredden */
+    max-width: 450px;            /* Maksimal bredde på 450px */
+    border-radius: 25px;         /* Runde hjørner med 25px radius */
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);  /* Skygge: 0px vandret, 4px ned, 18px blur, sort med 10% gennemsigtighed */
+    text-align: center;          /* Centrerer tekst */
+}
+
+/* CLOSE BUTTON - Krydset i højre hjørne */
+.close-btn {                     /* Klassen til luk-knappen */
+    position: absolute;          /* Placeres frit i forhold til .center-box */
+    top: 0px;                    /* 0px fra toppen af boksen */
+    right: 16px;                 /* 16px fra højre side af boksen */
+    width: 36px;                 /* Bredde på 36px */
+    height: 36px;                /* Højde på 36px */
+    background: transparent;     /* Gennemsigtig baggrund (ingen farve) */
+    border: none;                /* Ingen kant/ramme */
+    border-radius: 8px;          /* Runde hjørner med 8px radius */
+    color: color white;        
+    cursor: pointer;             /* Skifter til hånd-ikon ved hover */
+    font-size: 24px;           
+    font-weight: bold;           /* Fed skrift */
+}
+
+.close-btn:hover {               /* Når musen er over knappen */
+    color: #DC2626;              /* Skifter til rød tekstfarve */
+    transform: scale(1.1);       /* Gør knappen 10% større */
+}
+
+/* OVERSKRIFT */
+h2 {                             /* Alle h2 overskrifter */
+    margin: 0 0 30px 0;          /* Margin: 0px top, 0px højre, 30px bund, 0px venstre */
+    font-size: 34px;           
+    color: black;                /* Sort tekstfarve */
+}
+
+/* LABEL */
+label {                          /* Alle label elementer */
+    display: block;              /* Vises som blok (fylder hele bredden) */
+    text-align: left;            /* Tekst venstrejusteret */
+    font-weight: bold;           /* Fed skrift */
+    margin-bottom: 10px;         /* 10px luft under label */
+}
+
+/* INPUT OG BUTTON */
+input,                           /* Alle input felter */
+button {                         /* Alle knapper */
+    width: 100%;                 /* Fylder 100% af forælderens bredde */
+    padding: 15px;               /* 15px luft indeni på alle sider */
+    font-size: 1rem;             /* Normal skriftstørrelse */
+    border-radius: 15px;         /* Runde hjørner med 15px radius */
+    box-sizing: border-box;      /* Inkluderer padding i total bredde */
+}
+
+input {                          /* Kun input felter */
+    border: 1px solid #ccc;      /* 1px lysegrå kant */
+    margin-bottom: 25px;         /* 25px luft under input */
+}
+
+button {                         /* Kun knapper */
+    border: none;                /* Ingen kant */
+    background: #9eadc4;         /* Blågrå baggrundsfarve */
+    color: white;                /* Hvid tekstfarve */
+    font-size: 16px;           
+    cursor: pointer;             /* Hånd-ikon ved hover */
+}
+
+button:hover {                   /* Når musen er over knappen */
+    opacity: 0.9;                /* 90% synlighed (10% gennemsigtig) */
+}
