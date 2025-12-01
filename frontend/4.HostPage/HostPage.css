@@ -149,3 +149,23 @@ body {
   font-size: 16px; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
 }
+
+
+.NewSongModal {
+    display: none; 
+    position: fixed;
+    z-index: 1000; /* højt så den ligger over alt */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* ← MANGLEDE */
+}
+
+.SongModal {
+    background-color: white; /* sikrer synlighed */
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+}
