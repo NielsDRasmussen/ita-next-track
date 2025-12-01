@@ -2,8 +2,10 @@ body {
     background-color: #be63c7;
 }
 
-.title {
-    right: 130px;
+.JamJam {
+    font-size: 60px;
+    text-align: center;
+    font-family: 'Lobster Two', cursive;
 }
 
 .endJamButton button {
@@ -41,66 +43,14 @@ body {
     font-size: 20px; /* Gør ikonet passende */
 }
 
-.player {
-    margin-top: 40px;
-    padding: 70px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    width: 75%;
-    margin: 40px auto; /* Sikre at den altid er centreret */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
-    background: #f99c07;
-}
-
-.player-left {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.album-cover {
-    width: 80px;
-    height: 80px;
+.QueueTable td, .QueueTable th {
+    background-color: #fff;
+    border: 2px solid #444;
     border-radius: 10px;
-    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 8px;
 }
 
-.controls button {
-    font-size: 40px;
-    padding: 8px 24px;
-    border-radius: 8px;
-    border: none;
-    background: #e0e0e0;
-    cursor: pointer;
-}
-
-.controls button:hover {
-    background: #d5d5d5;
-}
-
-.timeline {
-    display: flex;
-    align-items: center;
-    gap: 220px;
-    margin-top: 8px;
-}
-
-.player-center {
-    flex: 1;
-    text-align: center;
-}
-
-.volume input {
-    width: 80px;
-
-}
-
-.QueueTable {         
-    border: 1px solid black;
-}
 
 .request-song-btn {
     position: fixed;
@@ -109,7 +59,7 @@ body {
     transform: translateX(-50%);
     padding: 15px 30px;
     background-color: #4CAF50; /* grøn – kan ændres */
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 30px; /* afrundet rektangel */
     font-size: 18px;
@@ -139,24 +89,4 @@ body {
 
 .end {
     background: #b80000;
-}
-
-/* Request Song knap */
-.request-song-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-
-    padding: 15px 22px;
-    background: #4a86ff;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    font-size: 18px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.request-song-btn:hover {
-    background: #2f64d6;
 }
