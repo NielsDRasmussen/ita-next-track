@@ -25,6 +25,23 @@
         <button class="round-btn leave">Leave Jam</button>
     </div>
 
+    <!-- Music Player -->
+    <div class="MusicPlayer">
+    <!-- SongTracker -->
+        <div class="SongProgress">
+            <div class="SongProgressBar"></div>
+        </div>
+    
+     <!-- Playbutton -->
+        <button class="playPauseBtn" onclick="move()">▶</button>
+
+    <!-- Volume -->
+        <div class="VolumeSlider">
+            <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
+            <p>Volume: <span id="Volume"></span></p>
+        </div>
+    </div>
+
     <div id="QueueTable">
         <table>
             <tr>
@@ -38,24 +55,6 @@
                 <td>3:18</td>
             </tr>
         </table>
-    </div>
-
-    <!-- Music Player -->
-
-    <!-- SongTracker -->
-     <div class="SongProgress">
-        <div class="SongProgressBar"></div>
-     </div>
-    
-     <!-- Playbutton -->
-        <button class="playPauseBtn" onclick="move()">▶</button>
-    </div>
-
-
-    <!-- Volume -->
-    <div class="VolumeSlider">
-        <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
-        <p>Volume: <span id="Volume"></span></p>
     </div>
 
     <!-- Container der popupen indlæses ind i -->

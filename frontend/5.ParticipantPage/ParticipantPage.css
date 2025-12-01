@@ -1,5 +1,5 @@
 body {
-    background-color: #be63c7;
+    background-color: #ffffff;
 }
 
 
@@ -46,6 +46,20 @@ body {
 
 .QueueTable {         
     border: 1px solid black;
+}
+
+.MusicPlayer {
+    width: 75%;
+    height: 100px;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 15px;
+    margin: 40px auto;
+    background: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;        /* Vertikal centrering */
+    justify-content: space-between;    /* Vandret centrering */
 }
 
 .SongProgress {
