@@ -1,3 +1,4 @@
+/* --- BACKGROUND AND CONFETTI LAYERS --- */
 body {
     background-image: url(logo2.webp);
     background-size: cover;
@@ -46,7 +47,7 @@ h1 {
     box-shadow: 0px 0px 20px #0f0f0f;
 }
 .first {
-    background-color: #FFD700; /* Guld */
+    background-color: #ffcf3d; /* Guld */
     order: 2;
 }
 
