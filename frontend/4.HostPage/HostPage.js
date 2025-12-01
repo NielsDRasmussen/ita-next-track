@@ -1,8 +1,8 @@
 // Get the modal
-let RequestModal = document.getElementById("Confirm");
+let modal = document.getElementById("RequestPopup");
 
 // Get the button that opens the modal
-let btn = document.getElementById("Confirm");
+let btn = document.getElementById("Confirm-Btn");
 
 // Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];
@@ -19,15 +19,16 @@ span.onclick = function() {
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
+  if (event.target === modal) {
     modal.style.display = "none";
   }
 }
 
+// Volume slider
 let slider = document.getElementById("myRange");
 let output = document.getElementById("Volume");
-output.innerHTML = slider.value;
+output.textContent = slider.value;
 
 slider.oninput = function() {
-  output.innerHTML = this.value;
+  output.textContent = this.value;
 }
