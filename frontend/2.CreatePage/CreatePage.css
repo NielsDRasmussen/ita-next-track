@@ -7,7 +7,7 @@
 
 /* BODY - Hele sidens baggrund og layout */
 body {                           /* Selve body-elementet (hele siden) */
-    min-height: 100vh;           /* Minimum højde = 100% af skærmhøjden */
+    min-height: 90vh;           /* Minimum højde = 100% af skærmhøjden */
     display: flex;               /* Bruger flexbox layout */
     justify-content: center;     /* Centrerer indhold vandret */
     align-items: center;         /* Centrerer indhold lodret */
@@ -16,8 +16,18 @@ body {                           /* Selve body-elementet (hele siden) */
     padding: 20px;               /* 20px luft omkring alt indhold */
 }
 
+/*App navn (JamJam)*/
+.app-name {
+    font-size: 100px;
+    font-weight: bold;
+    font-family: 'Lobster Two', cursive;  
+    margin-bottom: 60px;
+    text-align: center
+ 
+}
+
 /* CONTAINER - Den blå boks */
-.center-box {                    /* Klassen til den blå boks */
+.blue-box {                    /* Klassen til den blå boks */
     position: relative;          /* Gør at absolute elementer positioneres i forhold til denne boks */
     background: #284fd2;         /* Blå baggrundsfarve */
     padding: 60px 40px 40px;     /* Luft indeni: 60px top, 40px sides, 40px bund */
@@ -38,11 +48,10 @@ body {                           /* Selve body-elementet (hele siden) */
     background: transparent;     /* Gennemsigtig baggrund (ingen farve) */
     border: none;                /* Ingen kant/ramme */
     border-radius: 8px;          /* Runde hjørner med 8px radius */
-    color: hwb(0 98% 1%);        /* Tekstfarve (næsten hvid) */
+    color: color white;        
     cursor: pointer;             /* Skifter til hånd-ikon ved hover */
-    font-size: 1.5rem;           /* Skriftstørrelse 1.5 gange større end normal */
+    font-size: 24px;           
     font-weight: bold;           /* Fed skrift */
-    transition: all 0.2s;        /* Glat animation på alle ændringer over 0.2 sekunder */
 }
 
 .close-btn:hover {               /* Når musen er over knappen */
@@ -51,9 +60,9 @@ body {                           /* Selve body-elementet (hele siden) */
 }
 
 /* OVERSKRIFT */
-h1 {                             /* Alle h1 overskrifter */
+h2 {                             /* Alle h2 overskrifter */
     margin: 0 0 30px 0;          /* Margin: 0px top, 0px højre, 30px bund, 0px venstre */
-    font-size: 2rem;             /* Skriftstørrelse 2 gange større end normal */
+    font-size: 34px;           
     color: black;                /* Sort tekstfarve */
 }
 
@@ -84,7 +93,7 @@ button {                         /* Kun knapper */
     border: none;                /* Ingen kant */
     background: #9eadc4;         /* Blågrå baggrundsfarve */
     color: white;                /* Hvid tekstfarve */
-    font-size: 1.1rem;           /* Skriftstørrelse lidt større end normal */
+    font-size: 16px;           
     cursor: pointer;             /* Hånd-ikon ved hover */
 }
 

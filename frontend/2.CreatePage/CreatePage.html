@@ -6,17 +6,22 @@
     <title>CreateJam</title>
 
     <link rel="stylesheet" href="CreatePage.css">
+
+    <link rel="preconnect" href="⁦https://fonts.googleapis.com⁩">
+    <link rel="preconnect" href="⁦https://fonts.gstatic.com⁩" crossorigin>
+    <link href="⁦https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap⁩" rel="lobsterTwo">
 </head>
 
 <body>
-
-    <div class="center-box">
-    <button class="close-btn" onclick="closeBox()">×</button>
-    <h1>Start a Jam</h1>
-    <label for="name">Your Name</label>
-    <input id="name" type="text" placeholder="Type Name">
-    <button id="startBtn">Start Jam</button>
-
+    <div>
+        <h1 class="app-name">JamJam</h1>
+        <div class="blue-box">
+            <button class="close-btn" onclick="closeBox()">×</button> <!-- class gør det muligt at style knappen i CSS og når man klikker på knappen, kaldes JavaScript-funktionen closeBox()-->
+            <h2 class="head-inBox">Start a Jam</h2>
+            <label for="name">Your Name</label> <!--for="name" betyder, at labelen hører sammen med input-feltet med id="name"-->
+            <input id="name" type="text" placeholder="Type Name"> <!--klikker man på teksten Your Name, aktiverer det tekstfeltet-->
+            <button id="startBtn">Start Jam</button>
+        </div>
     </div>
 
   <script src="CreatePage.js"></script>
