@@ -29,7 +29,7 @@ body {                           /* Selve body-elementet (hele siden) */
 /* CONTAINER - Den blå boks */
 .blue-box {                    /* Klassen til den blå boks */
     position: relative;          /* Gør at absolute elementer positioneres i forhold til denne boks */
-    background: #284fd2;         /* Blå baggrundsfarve */
+    background: #6786eb;         /* Blå baggrundsfarve */
     padding: 60px 40px 40px;     /* Luft indeni: 60px top, 40px sides, 40px bund */
     width: 90%;                  /* Fylder 90% af skærmbredden */
     max-width: 450px;            /* Maksimal bredde på 450px */
