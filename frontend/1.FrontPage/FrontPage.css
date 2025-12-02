@@ -1,6 +1,6 @@
 body {
-    background-image: url("background.gif");
-    background-size: cover;
+    background: #0C0C16;
+    background: linear-gradient(90deg, rgba(12, 12, 22, 1) 0%, rgba(44, 44, 79, 1) 46%, rgba(184, 186, 255, 1) 100%);
 }
 
 h1 {
@@ -8,16 +8,17 @@ h1 {
     font-size: 60px;
     margin-top: 10%;
     font-family: 'Lobster Two', cursive;
-    color: black;
+    color: #0c0c16;
     text-shadow: 
-        3px 3px 0px white,
-        6px 6px 0px #FFE5B4,
-        8px 8px 0px #E86100; /* offsetX, offsetY, blur-radius color*/
+        3px 3px 0px #c9e8ff,
+        6px 6px 0px #b8baff,
+        8px 8px 0px #6666ff; /* offsetX, offsetY, blur-radius color*/
 }
 
 p {
     text-align: center;
     font-size: 24px;
+    color: #0c0c16;
 }
 
 /* --- Frontpage buttons --- */
@@ -43,18 +44,18 @@ p {
 }
 
 #create-btn {
-    background-color: #E86100;
+    background-color: #6666ff;
 }
 
 #join-btn {
-    background-color: #FFE5B4;
+    background-color: #b8baff;
 }
 
 #create-btn:hover {
-    box-shadow: 0px 0px 20px #FFE5B4;  /* x y blur farve / Box shadow kræver flere værdier, ikke kun en farve */
+    box-shadow: 0px 0px 20px #c9e8ff;  /* x y blur farve / Box shadow kræver flere værdier, ikke kun en farve */
 }
 
 #join-btn:hover {  
     box-shadow: 
-        0px 0px 20px #E86100; /* offsetX, offsetY, blur-radius color*/
+        0px 0px 20px #c9e8ff; /* offsetX, offsetY, blur-radius color*/
 }

@@ -29,7 +29,7 @@ body {                           /* Selve body-elementet (hele siden) */
 /* CONTAINER - Den blå boks */
 .blue-box {                    /* Klassen til den blå boks */
     position: relative;          /* Gør at absolute elementer positioneres i forhold til denne boks */
-    background: #284fd2;         /* Blå baggrundsfarve */
+    background: #6786eb;         /* Blå baggrundsfarve */
     padding: 60px 40px 40px;     /* Luft indeni: 60px top, 40px sides, 40px bund */
     width: 90%;                  /* Fylder 90% af skærmbredden */
     max-width: 450px;            /* Maksimal bredde på 450px */
@@ -41,21 +41,22 @@ body {                           /* Selve body-elementet (hele siden) */
 /* CLOSE BUTTON - Krydset i højre hjørne */
 .close-btn {                     /* Klassen til luk-knappen */
     position: absolute;          /* Placeres frit i forhold til .center-box */
-    top: 0px;                    /* 0px fra toppen af boksen */
-    right: 16px;                 /* 16px fra højre side af boksen */
+    top: 11px;                    /* 0px fra toppen af boksen */
+    right: 10px;                 /* 16px fra højre side af boksen */
     width: 36px;                 /* Bredde på 36px */
     height: 36px;                /* Højde på 36px */
     background: transparent;     /* Gennemsigtig baggrund (ingen farve) */
     border: none;                /* Ingen kant/ramme */
     border-radius: 8px;          /* Runde hjørner med 8px radius */
-    color: color white;        
+    color: color rgb(2, 2, 2);        
     cursor: pointer;             /* Skifter til hånd-ikon ved hover */
     font-size: 24px;           
     font-weight: bold;           /* Fed skrift */
+    text-decoration: none;       /*fjerner linjen under tilbageknappen*/
 }
 
 .close-btn:hover {               /* Når musen er over knappen */
-    color: #DC2626;              /* Skifter til rød tekstfarve */
+    color: #f2f3f5;              /* Skifter til rød tekstfarve */
     transform: scale(1.1);       /* Gør knappen 10% større */
 }
 
