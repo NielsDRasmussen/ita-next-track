@@ -12,3 +12,8 @@ async function takeScreenshot() {
     link.href = canvas.toDataURL();
     link.click();
 }
+
+//Tilbage til forsiden
+document.getElementById('home-btn').addEventListener('click', () => {
+    window.location.href = '/1.FrontPage/FrontPage.html';
+});
