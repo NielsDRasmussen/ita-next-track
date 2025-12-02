@@ -1,8 +1,3 @@
-// End Jam knap - gå til Leaderboard
-document.querySelector('.round-btn.end').addEventListener('click', () => {
-    window.location.href = '/7.Leaderboard/Leaderboard.html';
-});
-
 // Get the modal
 let SongModal = document.getElementById("NewSong");
 
@@ -11,13 +6,6 @@ let AddBtn = document.getElementById("AddBtn");
 
 // Get the <span> element that closes the modal
 let NewSpan = document.getElementsByClassName("Exit")[0];
-
-
-let ConfirmBtn = document.getElementById("Confirm-Btn");
-
-ConfirmBtn.onclick = function() {
-  SongModal.style.display = "none";
-}
 
 // When the user clicks on the confirm button, open the modal
 AddBtn.onclick = function() {
@@ -49,6 +37,7 @@ let span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the confirm button, open the modal
 btn.onclick = function() {
+  SongModal.style.display = "none";
   modal.style.display = "block";
 }
 
