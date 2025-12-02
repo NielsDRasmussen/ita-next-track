@@ -7,6 +7,13 @@ let AddBtn = document.getElementById("AddBtn");
 // Get the <span> element that closes the modal
 let NewSpan = document.getElementsByClassName("Exit")[0];
 
+
+let ConfirmBtn = document.getElementById("Confirm-Btn");
+
+ConfirmBtn.onclick = function() {
+  SongModal.style.display = "none";
+}
+
 // When the user clicks on the confirm button, open the modal
 AddBtn.onclick = function() {
   SongModal.style.display = "block";
