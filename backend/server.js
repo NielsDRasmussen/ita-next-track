@@ -11,11 +11,10 @@ const currentTracks = new Map(); // maps partyCode to index in tracks
 const port = process.env.PORT || 3003;
 const server = express();
 
-server.use(express.static('frontend'));
+server.use(express.static('frontend', {index: '/1.FrontPage/FrontPage.html'}));
 server.use(express.json());
 server.use(onEachRequest);
 server.get('/api/party/:partyCode/currentTrack', onGetCurrentTrackAtParty);
-server.get('/', onFallback); // serve index.html on any other simple path
 server.listen(port, onServerReady);
 
 async function onGetCurrentTrackAtParty(request, response) {
@@ -31,10 +30,6 @@ async function onGetCurrentTrackAtParty(request, response) {
 function onEachRequest(request, response, next) {
     console.log(new Date(), request.method, request.url);
     next();
-}
-
-async function onFallback(request, response) {
-    response.sendFile(path.join(import.meta.dirname, '..', 'frontend', '1.FrontPage', 'FrontPage.html'));
 }
 
 function onServerReady() {
