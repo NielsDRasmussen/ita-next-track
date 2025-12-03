@@ -1,3 +1,8 @@
+//Til leaderboard siden
+document.querySelector('.round-btn.end').addEventListener('click', () => {
+    window.location.href = '/7.Leaderboard/Leaderboard.html';
+});
+
 // Get the modal
 let SongModal = document.getElementById("NewSong");
 
