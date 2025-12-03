@@ -41,22 +41,50 @@ let btn = document.getElementById("Confirm-Btn");
 // Get the like button
 let LikeBtn = document.getElementsByClassName("like")[0];
 
-// Get the like button
+// Get the trash button
 let TrashBtn = document.getElementsByClassName("trash")[0];
 
-// When the user clicks on the confirm button, open the modal and close the song modal
-  btn.onclick = function() {
-  SongModal.style.display = "none";
-  modal.style.display = "block";
-}
-// When the user clicks on the like button, close the modal
-  LikeBtn.onclick = function() {
-  modal.style.display = "none";
+// Timer-setup
+let timeLeft = 30;
+let countdownInterval;
+const timerDisplay = document.getElementById("timer");
+
+// Åbn modal + start timer
+btn.onclick = function() {
+    SongModal.style.display = "none";
+    modal.style.display = "block";
+
+    // Reset timer
+    timeLeft = 30;
+    timerDisplay.innerText = timeLeft;
+    timerDisplay.style.display = "block";
+
+    // Start countdown
+    countdownInterval = setInterval(() => {
+        timeLeft--;
+        timerDisplay.innerText = timeLeft;
+
+        if (timeLeft <= 0) {
+            // luk modal automatisk når timer er færdig
+            modal.style.display = "none";
+            timerDisplay.style.display = "none";
+            clearInterval(countdownInterval);
+        }
+    }, 1000);
 }
 
-// When the user clicks on the trash button, close the modal
-  TrashBtn.onclick = function() {
-  modal.style.display = "none";
+// Like button lukker modal Og stopper/resetter timer
+LikeBtn.onclick = function() {
+    modal.style.display = "none";
+    timerDisplay.style.display = "none";
+    clearInterval(countdownInterval);
+}
+
+// Trash button lukker modal Og stopper/resetter timer
+TrashBtn.onclick = function() {
+    modal.style.display = "none";
+    timerDisplay.style.display = "none";
+    clearInterval(countdownInterval);
 }
 
 // Volume slider
