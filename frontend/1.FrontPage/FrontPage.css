@@ -6,21 +6,22 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 60px;
-    margin-top: 10%;
+    font-size: 100px;
     font-family: 'Lobster Two', cursive;
     color: #0c0c16;
     text-shadow: 
         3px 3px 0px #c9e8ff,
         6px 6px 0px #b8baff,
-        8px 8px 0px #6666ff; /* offsetX, offsetY, blur-radius color*/
+        8px 8px 0px #6666ff, /* offsetX, offsetY, blur-radius color*/
+        0px 0px 50px #c9e8ff;
 }
 
 p {
     text-align: center;
     font-size: 24px;
-    color: #0c0c16;
-    text-shadow: 0px 0px 8px #c9e8ff;
+    color: #6666ff;
+    text-shadow: 
+        0px 0px 12px #c9e8ff;
 }
 
 /* --- Frontpage buttons --- */
@@ -30,7 +31,7 @@ p {
     gap: 15px;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 75px;
 }
 
 .frontpage-buttons a {
