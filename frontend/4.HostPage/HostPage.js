@@ -80,7 +80,7 @@ LikeBtn.onclick = function() {
     clearInterval(countdownInterval);
 }
 
-// Trash button lukker modal Og stopper/resetter timer
+// Trash button lukker modal Og stopper/resetter timer)
 TrashBtn.onclick = function() {
     modal.style.display = "none";
     timerDisplay.style.display = "none";
