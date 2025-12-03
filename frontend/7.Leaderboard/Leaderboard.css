@@ -23,8 +23,8 @@ h1, .winner-cards, .frontpage-buttons {
 
 h1 {
     text-align: center;
-    color: rgb(0, 0, 0);
-    text-shadow: 2px 2px 0px #ffffff;
+    color: #0c0c16;
+    text-shadow: 2px 2px 0px #b8baff;
 }
 
 /* --- PODIUM DISPLAY --- */
@@ -51,7 +51,6 @@ h1 {
     order: 2;
 }
 
-
 .second {
     background-color: #C0C0C0; /* Sølv */
     order: 1;
@@ -72,11 +71,10 @@ h1 {
     font-size: 50px;
 }
 
-
 /* --- "Start nyt Jam" KNAPPER KODE --- */
 .buttons-box {
-    background-color: #E86100; /* Lys grå baggrund */
-    border: 2px solid #FFE5B4; /* Grå kant rundt om hele boksen */
+    background-color:#6666ff; /* Lys grå baggrund */
+    border: 2px solid #b8baff; /* Grå kant rundt om hele boksen */
     border-radius: 15px; /* Runde hjørner på den store boks */
     padding: 15px; /* Luft inde i den store boks */
     margin: 50px auto; /* Plads over/under og centrerer boksen */
@@ -89,8 +87,8 @@ h1 {
 
 /* Styling af de tre knapper inde i boksen */
 .buttons-box button {
-    background-color: #FFE5B4; /* Hvid baggrund */
-    border: 2px solid #cf5700; /* Mørk grå kant */
+    background-color: #c9e8ff; /* Hvid baggrund */
+    border: 2px solid #b8baff; /* Mørk grå kant */
     padding: 15px 25px; /* Luft inde i knappen */
     font-size: 1em; /* Normal tekststørrelse */
     border-radius: 10px; /* Runde hjørner */
