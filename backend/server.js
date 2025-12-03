@@ -15,7 +15,7 @@ server.use(express.static('frontend'));
 server.use(express.json());
 server.use(onEachRequest);
 server.get('/api/party/:partyCode/currentTrack', onGetCurrentTrackAtParty);
-server.get(/\/[a-zA-Z0-9-_/]+/, onFallback); // serve index.html on any other simple path
+server.get('/', onFallback); // serve index.html on any other simple path
 server.listen(port, onServerReady);
 
 async function onGetCurrentTrackAtParty(request, response) {
@@ -34,7 +34,7 @@ function onEachRequest(request, response, next) {
 }
 
 async function onFallback(request, response) {
-    response.sendFile(path.join(import.meta.dirname, '..', 'frontend', 'index.html'));
+    response.sendFile(path.join(import.meta.dirname, '..', 'frontend', '1.FrontPage', 'FrontPage.html'));
 }
 
 function onServerReady() {
