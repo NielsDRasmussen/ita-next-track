@@ -17,3 +17,20 @@ async function takeScreenshot() {
 document.getElementById('home-btn').addEventListener('click', () => {
     window.location.href = '/1.FrontPage/FrontPage.html';
 });
+
+//Confetti stopper efter første afspilning
+// I din Leaderboard.js fil
+window.addEventListener('load', function() {
+    const confettiLayer = document.querySelector('.confetti-layer');
+    
+    // Fjern confetti efter 3 sekunder (juster til din GIF's længde)
+    setTimeout(function() {
+        confettiLayer.style.opacity = '0';
+        confettiLayer.style.transition = 'opacity 1s';
+        
+        // Fjern elementet helt efter fade-out
+        setTimeout(function() {
+            confettiLayer.style.display = 'none';
+        }, 1000);
+    }, 3000); // 3000ms = 3 sekunder
+});
