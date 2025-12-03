@@ -19,7 +19,7 @@ h1 {
 p {
     text-align: center;
     font-size: 24px;
-    color: #6666ff;
+    color: #b8baff;
     text-shadow: 
         0px 0px 12px #c9e8ff;
 }
@@ -61,4 +61,14 @@ p {
 #join-btn:hover {  
     box-shadow: 
         0px 0px 20px #c9e8ff; /* offsetX, offsetY, blur-radius color*/
+}
+
+/* --- CREATORS --- */
+.owners p:first-child {
+    margin-top: 70px;
+}
+
+.owners p {
+    color: rgb(192, 184, 184);
+    font-size: 15px;
 }
