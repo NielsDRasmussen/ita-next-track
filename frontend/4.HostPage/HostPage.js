@@ -12,6 +12,7 @@ let AddBtn = document.getElementById("AddBtn");
 // Get the <span> element that closes the modal
 let NewSpan = document.getElementsByClassName("Exit")[0];
 
+
 // When the user clicks on the confirm button, open the modal
 AddBtn.onclick = function() {
   SongModal.style.display = "block";
@@ -30,7 +31,7 @@ window.onclick = function(event) {
 }
 
 
-// Her starter koden for popu for de andre deltagere
+// Her starter koden for popup for de andre deltagere
 // Get the modal
 let modal = document.getElementById("RequestPopup");
 
@@ -40,11 +41,27 @@ let btn = document.getElementById("Confirm-Btn");
 // Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the confirm button, open the modal
-btn.onclick = function() {
+// Get the like button
+let LikeBtn = document.getElementsByClassName("like")[0];
+
+// Get the like button
+let TrashBtn = document.getElementsByClassName("trash")[0];
+
+// When the user clicks on the confirm button, open the modal and close the song modal
+  btn.onclick = function() {
   SongModal.style.display = "none";
   modal.style.display = "block";
 }
+// When the user clicks on the like button, close the modal
+  LikeBtn.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks on the trash button, close the modal
+  TrashBtn.onclick = function() {
+  modal.style.display = "none";
+}
+
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
