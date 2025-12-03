@@ -1,6 +1,6 @@
 //Start jam knap 
 document.getElementById('startBtn').addEventListener('click', () => {
-    window.location.href = '/4.HostPage/HostPage.html';
+    window.location.href = '/5.ParticipantPage/Participant.html';
 });
 
 //Tilbage til forsiden
