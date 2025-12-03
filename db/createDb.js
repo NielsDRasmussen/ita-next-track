@@ -6,6 +6,7 @@ console.log('Recreating database...');
 const db = await connect();
 
 console.log('Dropping tables...');
+
 await db.query('drop table if exists tracks');
 console.log('All tables dropped.');
 
@@ -18,6 +19,11 @@ await db.query(`
 	    duration int not null
     )
 `);
+
+
+
+
+
 console.log('Tables recreated.');
 
 console.log('Importing data from CSV files...');
@@ -30,3 +36,5 @@ console.log('Data imported.');
 await db.end();
 
 console.log('Database recreated.');
+
+
