@@ -1,6 +1,7 @@
 body {
-    background: #0C0C16;
-    background: linear-gradient(90deg, rgba(12, 12, 22, 1) 0%, rgba(44, 44, 79, 1) 46%, rgba(184, 186, 255, 1) 100%);
+    background-image: url(Background-modern.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 h1 {
@@ -19,6 +20,7 @@ p {
     text-align: center;
     font-size: 24px;
     color: #0c0c16;
+    text-shadow: 0px 0px 8px #c9e8ff;
 }
 
 /* --- Frontpage buttons --- */
@@ -28,7 +30,7 @@ p {
     gap: 15px;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .frontpage-buttons a {
