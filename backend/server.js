@@ -15,6 +15,7 @@ server.use(express.static('frontend', {index: '/1.FrontPage/FrontPage.html'}));
 server.use(express.json());
 server.use(onEachRequest);
 server.get('/api/party/:partyCode/currentTrack', onGetCurrentTrackAtParty);
+
 server.listen(port, onServerReady);
 
 async function onGetCurrentTrackAtParty(request, response) {
