@@ -1,6 +1,6 @@
 /* --- BACKGROUND AND CONFETTI LAYERS --- */
 body {
-    background-image: url(logo2.webp);
+    background-image: url("blue.png");
     background-size: cover;
 }
 
@@ -10,7 +10,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("confetti-holiday-cheer.gif");
+    background-image: url("");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -35,16 +35,28 @@ h1 {
     gap: 20px;
     margin-top: 50px;
 }
+.first p:first-child,
+.second p:first-child,
+.third p:first-child {
+    position:absolute;
+    top: -40px; /*Juster denne værdi for at flytte teksetn op/ned*/
+    left: 0;
+    right: 0;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
 
 
 .first, .second, .third {
     background-color: rgb(52, 52, 42);
-    padding: 30px 20px;
+    padding: 40px 20px;
     border-radius: 10px;
     text-align: center;
     width: 200px;
     padding-bottom: 90px;
     box-shadow: 0px 0px 20px #0f0f0f;
+    position: relative;
 }
 .first {
     background-color: #ffcf3d; /* Guld */
@@ -82,7 +94,7 @@ h1 {
     display: flex; /* Placerer knapperne ved siden af hinanden */
     justify-content: space-between; /* Fordeler knapperne med space imellem*/
     gap: 10px; /* Lille mellemrum mellem knapperne */
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 /* Styling af de tre knapper inde i boksen */
