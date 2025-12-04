@@ -11,7 +11,7 @@ body {                           /* Selve body-elementet (hele siden) */
     display: flex;               /* Bruger flexbox layout */
     justify-content: center;     /* Centrerer indhold vandret */
     align-items: center;         /* Centrerer indhold lodret */
-
+    font-family: Arial, sans-serif;  /* Skrifttype for hele siden */
     padding: 20px;               /* 20px luft omkring alt indhold */
     background-image: url("blue.png");
 }

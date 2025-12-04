@@ -1,4 +1,4 @@
-/* --- BACKGROUND AND CONFETTI LAYERS --- */
+/* --- BACKGROUND, TEXT AND CONFETTI LAYERS --- */
 body {
     background-image: url("blue.png");
     background-size: cover;
@@ -26,6 +26,12 @@ h1 {
     color: #f8f8fc;
     text-shadow: 2px 2px 0px #b8baff;
 }
+
+.song-count {
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
 
 /* --- PODIUM DISPLAY --- */
 .winners {
@@ -91,6 +97,18 @@ h1 {
 .trophy, .silver, .bronze {
     padding: 20px;
     font-size: 50px;
+}
+
+/* --- MEDAL BILLEDER OVER BOKSEN --- */
+.podium-image {
+    position: absolute;
+    top: -61.5px; /* Større negativ værdi = højere op*/
+    left: 50%;
+    transform: translateX(-50%); /* Flyt 50 pixels til venstre*/
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 
