@@ -109,6 +109,7 @@ searchInput.addEventListener("input", async () => {
         };
 
         dropdown.appendChild(div);
+        
     });
 });
 
