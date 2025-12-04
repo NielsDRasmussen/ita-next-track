@@ -7,8 +7,8 @@ const db = await connect();
 
 console.log('Dropping tables...');
 await db.query('drop table if exists tracks');
-await db.query('drop table if exists jams');
 await db.query('drop table if exists participants');
+await db.query('drop table if exists jams');
 console.log('All tables dropped.');
 
 console.log('Recreating tables...');
@@ -25,7 +25,7 @@ await db.query(`
 await db.query(`
     create table jams (
         id serial primary key,
-        jam_code text unique not null,
+        jam_code text not null,
         created_by text not null
     )
 `);

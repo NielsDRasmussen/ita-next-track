@@ -19,7 +19,7 @@ server.post('/api/jams', onCreateJam);
 server.get('/api/jams/:code', onGetJam);
 server.get('/api/jams/:code/participants', onGetParticipants);
 server.post('/api/jams/:code/participants', onAddParticipant);
-server.use('/api/songs', OnSearchSongs);
+server.get('/api/songs', OnSearchSongs);
 server.listen(port, onServerReady);
 
 
