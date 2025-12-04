@@ -11,9 +11,9 @@ body {                           /* Selve body-elementet (hele siden) */
     display: flex;               /* Bruger flexbox layout */
     justify-content: center;     /* Centrerer indhold vandret */
     align-items: center;         /* Centrerer indhold lodret */
-    background: #f1f1f1;         /* Lysegrå baggrundsfarve */
-    font-family: Arial, sans-serif;  /* Skrifttype for hele siden */
+
     padding: 20px;               /* 20px luft omkring alt indhold */
+    background-image: url("blue.png");
 }
 
 /*App navn (JamJam)*/
@@ -38,6 +38,7 @@ body {                           /* Selve body-elementet (hele siden) */
     border-radius: 25px;         /* Runde hjørner med 25px radius */
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);  /* Skygge: 0px vandret, 4px ned, 18px blur, sort med 10% gennemsigtighed */
     text-align: center;          /* Centrerer tekst */
+    margin-left: 20px;
 }
 
 /* CLOSE BUTTON - Krydset i højre hjørne */
@@ -64,7 +65,7 @@ body {                           /* Selve body-elementet (hele siden) */
 
 /* OVERSKRIFT */
 h2 {                             /* Alle h2 overskrifter */
-    margin: 0 0 30px 0;          /* Margin: 0px top, 0px højre, 30px bund, 0px venstre */
+    margin: 0 0 10px 0;          /* Margin: 0px top, 0px højre, 30px bund, 0px venstre */
     font-size: 34px;           
     color: black;                /* Sort tekstfarve */
 }
