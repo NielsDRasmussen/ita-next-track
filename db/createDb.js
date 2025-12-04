@@ -21,7 +21,7 @@ await db.query(`
 	    duration int not null
     )
 `);
-/*
+
 await db.query(`
     create table jams (
         id serial primary key,
@@ -37,7 +37,7 @@ await db.query(`
         name text not null
     )
 `);
-*/
+
 
 console.log('Tables recreated.');
 

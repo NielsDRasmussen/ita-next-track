@@ -21,6 +21,11 @@ server.get('/api/jams/:code/participants', onGetParticipants);
 server.post('/api/jams/:code/participants', onAddParticipant);
 server.listen(port, onServerReady);
 
+function onEachRequest(request, response, next) {
+    console.log(new Date(), request.method, request.url);
+    next();
+}
+
 async function onGetCurrentTrackAtParty(request, response) {
     const partyCode = request.params.partyCode;
     let trackIndex = currentTracks.get(partyCode);
@@ -31,9 +36,88 @@ async function onGetCurrentTrackAtParty(request, response) {
     response.json(track);
 }
 
-function onEachRequest(request, response, next) {
-    console.log(new Date(), request.method, request.url);
-    next();
+async function onCreateJam(request, response) {
+    const body = request.body;
+    const createdBy = body.name;  // ← ÆNDRET: dit felt hedder created_by
+    const code = body.code;
+    
+    const result = await db.query(`
+        INSERT INTO jams (jam_code, created_by)
+        VALUES ($1, $2)
+        RETURNING id, jam_code
+    `, [code, createdBy]);  // ← ÆNDRET: jam_code i stedet for code
+    
+    const jamId = result.rows[0].id;
+    const jamCode = result.rows[0].jam_code;
+    response.json({ success: true, jamId: jamId, code: jamCode });
+}
+
+async function onGetJam(request, response) {
+    const code = request.params.code;
+    
+    const result = await db.query(`
+        SELECT id, jam_code, created_by
+        FROM jams
+        WHERE jam_code = $1
+    `, [code]);  // ← ÆNDRET: jam_code
+    
+    if (result.rows.length === 0) {
+        response.status(404).json({ error: 'Jam not found' });
+        return;
+    }
+    
+    response.json(result.rows[0]);
+}
+
+async function onGetParticipants(request, response) {
+    const code = request.params.code;
+    
+    // Først find jam_id fra code
+    const jamResult = await db.query(`
+        SELECT id FROM jams WHERE jam_code = $1
+    `, [code]);  // ← ÆNDRET: jam_code
+    
+    if (jamResult.rows.length === 0) {
+        response.json([]);
+        return;
+    }
+    
+    const jamId = jamResult.rows[0].id;
+    
+    // Hent deltagere
+    const result = await db.query(`
+        SELECT id, name
+        FROM participants
+        WHERE jam_id = $1
+        ORDER BY name
+    `, [jamId]);
+    
+    response.json(result.rows);
+}
+
+async function onAddParticipant(request, response) {
+    const code = request.params.code;
+    const participantName = request.body.name;
+    
+    // Find jam_id fra code
+    const jamResult = await db.query(`
+        SELECT id FROM jams WHERE jam_code = $1
+    `, [code]);  // ← ÆNDRET: jam_code
+    
+    if (jamResult.rows.length === 0) {
+        response.status(404).json({ error: 'Jam not found' });
+        return;
+    }
+    
+    const jamId = jamResult.rows[0].id;
+    
+    // Tilføj deltager
+    await db.query(`
+        INSERT INTO participants (jam_id, name)
+        VALUES ($1, $2)
+    `, [jamId, participantName]);
+    
+    response.json({ success: true });
 }
 
 function onServerReady() {

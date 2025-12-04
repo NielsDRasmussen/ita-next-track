@@ -1,3 +1,53 @@
+
+
+// Når siden loader, vis code og load deltagere
+window.addEventListener('load', async () => {
+    const jamCode = localStorage.getItem('jamCode');
+    
+    // Vis code
+    document.getElementById('codeDisplay').textContent = `Code: ${jamCode}`;
+    
+    // Load deltagere første gang
+    await loadParticipants();
+});
+
+// Participants knap - toggle dropdown
+document.getElementById('participantsBtn').addEventListener('click', async () => {
+    const dropdown = document.getElementById('participantsList');
+    
+    if (dropdown.style.display === 'none') {
+        await loadParticipants(); // Refresh data
+        dropdown.style.display = 'block';
+    } else {
+        dropdown.style.display = 'none';
+    }
+});
+
+// Hent deltagere fra server
+async function loadParticipants() {
+    const jamCode = localStorage.getItem('jamCode');
+    const response = await fetch(`/api/jams/${jamCode}/participants`);
+    const participants = await response.json();
+    
+    const dropdown = document.getElementById('participantsList');
+    dropdown.innerHTML = ''; // Ryd dropdown
+    
+    if (participants.length === 0) {
+        dropdown.innerHTML = '<option>Ingen deltagere endnu</option>';
+    } else {
+        participants.forEach(p => {
+            const option = document.createElement('option');
+            option.textContent = p.name;
+            dropdown.appendChild(option);
+        });
+    }
+}
+
+
+// ← HER FORTSÆTTER DIN EKSISTERENDE KODE
+
+//-----------------------------------------------------
+
 //Til leaderboard siden
 document.querySelector('.round-btn.end').addEventListener('click', () => {
     window.location.href = '/7.Leaderboard/Leaderboard.html';
