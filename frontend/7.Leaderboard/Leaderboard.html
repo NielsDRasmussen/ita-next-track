@@ -37,8 +37,17 @@
 
     <div class="buttons-box">
         <button onclick="takeScreenshot()">Screenshot</button>
-        <button>Share</button>
+        <button onclick="openPopup()">Share</button>
         <button id="home-btn">🏠︎ Home</button>
+    </div>
+
+    <div class="popup" id="popupShare">
+        <div class="popup-box">
+            <button class="close-popup" id="closePopup">x</button>
+            <h2>Share your results with friends!</h2>
+            <p>Billeder</p>
+            <p>Ekstra</p>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>

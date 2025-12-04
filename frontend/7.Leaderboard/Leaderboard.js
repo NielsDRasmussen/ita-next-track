@@ -34,3 +34,26 @@ window.addEventListener('load', function() {
         }, 1000);
     }, 3000); // 3000ms = 3 sekunder
 });
+
+// --- POPUP MENU LUKKE OG START ---
+// Henter elementer
+const popupShare = document.getElementById('popupShare');
+const closeBtnPopup = document.getElementById('closePopup'); // Omdøbt variablen
+
+function openPopup() {
+    popupShare.classList.add('active');
+}
+
+function closePopupFunc() { // Omdøbt funktionen
+    popupShare.classList.remove('active'); // Ændret "popup" til "popupShare"
+}
+
+// Luk popup når man klikker på X
+closeBtnPopup.addEventListener('click', closePopupFunc);
+
+// Luk popup når man klikker udenfor boksen
+popupShare.addEventListener('click', function(e) {
+    if (e.target === popupShare) {
+        closePopupFunc();
+    }
+});
