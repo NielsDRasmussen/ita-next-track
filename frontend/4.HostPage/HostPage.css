@@ -224,5 +224,12 @@ color: black;
 border-radius: 16px;
 text-align: center;
 
-z-index: 10000;
+z-index: 800;
+}
+
+label {                          /* Alle label elementer */
+    display: block;              /* Vises som blok (fylder hele bredden) */
+    text-align: left;            /* Tekst venstrejusteret */
+    font-weight: bold;           /* Fed skrift */
+    margin-bottom: 10px;         /* 10px luft under label */
 }
