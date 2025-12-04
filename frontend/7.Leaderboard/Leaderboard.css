@@ -124,6 +124,7 @@ h1 {
     justify-content: space-between; /* Fordeler knapperne med space imellem*/
     gap: 10px; /* Lille mellemrum mellem knapperne */
     margin-top: 30px;
+    margin-left: 323px;
 }
 
 /* Styling af de tre knapper inde i boksen */
@@ -190,4 +191,18 @@ h1 {
 
 .popup-box p {
     color: #000000;
+}
+
+/* --- POPUP IKONER --- */
+
+.facebook, .twitter, .messenger, .discord, .instagram {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.more {
+    width: 50px;
+    height: 50px;
+    margin-left: 130px;
 }
