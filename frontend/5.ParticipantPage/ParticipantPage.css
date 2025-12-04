@@ -1,51 +1,64 @@
 body {
-    background-color: #ffffff;
-}
-
-
-.JamJam {
-    font-size: 60px;
-    text-align: center;
+    background-image: url(Background-modern.png);
+    background-size: cover;
+    background-repeat: no-repeat;
     font-family: 'Lobster Two', cursive;
 }
 
+
+
+.JamJam {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Lobster Two', cursive;
+    color: #0c0c16;
+    text-shadow: 
+        3px 3px 0px #c9e8ff,
+        6px 6px 0px #b8baff,
+        8px 8px 0px #6666ff, /* offsetX, offsetY, blur-radius color*/
+        0px 0px 50px #c9e8ff;
+}
+
 .leaveJamButton button {
-    width: 100px;         /* Gør knappen lige høj og bred */
-    height: 50px;
+    width: 125px;         /* Gør knappen lige høj og bred */
+    height: 75px;
     border-radius: 10%;  /* Gør den rund */
     border: solid;        /* Fjern kant (valgfrit) */
     cursor: pointer;     /* Vis klik-hånd */
     background-color: rgb(255, 0, 0);
     color: rgb(0, 0, 0);
     position: absolute;
-    top: 175px;
-    right: 160px;
+    top: 290px;
+    right: 175px;
     font-size: 15px;
     font-weight: bold;
+    font-family:'Lobster Two', cursive;
 }
 
 .participantsButton button {
-    width: 100px;
-    height: 50px;
+    width: 125px;
+    height: 75px;
     border-radius: 10%;
     border: solid;
     cursor: pointer;
     background-color: #4CAF50;
     color: rgb(255, 255, 255);
     position: absolute;
-    top: 175px;
-    right: 270px; 
+    top: 290px;
+    right: 310px; 
     font-size: 15px;
     font-weight: bold;
+    font-family:'Lobster Two', cursive;
 }
+
 
 .participantsButton button::before {
     content: "👥";    /* Brug Unicode-ikon */
     font-size: 20px; /* Gør ikonet passende */
 }
 
-.QueueTable {         
-    border: 1px solid black;
+.participantCode {
+    font-size: 25px;
 }
 
 .MusicPlayer {
@@ -54,8 +67,8 @@ body {
     border: 1px solid black;
     border-radius: 15px;
     margin: 40px auto;
-    background: rgb(255, 255, 255);
-    margin-top: 200px;
+    background: #6666ff;
+    margin-top: 120px;
     display: flex;
     justify-content: space-between; /* Fordeler elementerne vandret */
     align-items: center;            /* Centrer dem vertikalt */
@@ -64,7 +77,7 @@ body {
 
 .SongProgress {
     width: 60%;
-    background-color: #ddd;
+    background-color: #b8baff;
     border-radius: 35px;
     margin: 5px auto;
 }
@@ -82,14 +95,14 @@ body {
     margin-bottom: 2%;
     height: 55px;
     width: 85px;
-    background-color: rgb(56, 149, 62);
+    background-color: #b8baff;
     border-radius: 35px;
     margin-left: 40px;
     cursor: pointer; 
 }
 
 .playPauseBtn:hover {
-    background-color: rgb(58, 111, 72);
+    background-color: #b8baff;
 }
 
 .VolumeSlider {
@@ -126,7 +139,7 @@ body {
     border-radius: 50px;
     border: none;
     background: #333;
-    color: white;
+    color: rgb(232, 13, 13);
     cursor: pointer;
 }
 
@@ -138,6 +151,7 @@ body {
     border-collapse: collapse; 
     border-spacing: 10px;
     border: 2px solid black;
+    margin-left: 25%;
 }
 
 #QueueTable th,
@@ -148,11 +162,11 @@ body {
 }
 
 #QueueTable td {
-    background: #45a049;
+    background: #6666ff;
 }
 
 #QueueTable th {
-    background: #ffffff;
+    background: #b8baff;
 }
 
 .leave {

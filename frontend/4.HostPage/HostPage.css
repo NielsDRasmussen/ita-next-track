@@ -1,41 +1,51 @@
 body {
-    background-color: #be63c7;
+    background-image: url(Background-modern.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .JamJam {
-    font-size: 60px;
     text-align: center;
+    font-size: 40px;
     font-family: 'Lobster Two', cursive;
+    color: #0c0c16;
+    text-shadow: 
+        3px 3px 0px #c9e8ff,
+        6px 6px 0px #b8baff,
+        8px 8px 0px #6666ff, /* offsetX, offsetY, blur-radius color*/
+        0px 0px 50px #c9e8ff;
 }
 
 .endJamButton button {
-    width: 100px;         /* Gør knappen lige høj og bred */
-    height: 50px;
+    width: 125px;         /* Gør knappen lige høj og bred */
+    height: 75px;
     border-radius: 10%;  /* Gør den rund */
     border: solid;        /* Fjern kant (valgfrit) */
     cursor: pointer;     /* Vis klik-hånd */
     background-color: rgb(255, 0, 0);
     color: rgb(0, 0, 0);
     position: absolute;
-    top: 100px;
-    right: 120px;
+    top: 290px;
+    right: 175px;
     font-size: 15px;
     font-weight: bold;
+    font-family:'Lobster Two', cursive;
 }
 
 .participantsButton button {
-    width: 100px;
-    height: 50px;
+    width: 125px;
+    height: 75px;
     border-radius: 10%;
     border: solid;
     cursor: pointer;
     background-color: #4CAF50;
     color: rgb(255, 255, 255);
     position: absolute;
-    top: 100px;
-    right: 240px; 
+    top: 290px;
+    right: 310px; 
     font-size: 15px;
     font-weight: bold;
+    font-family:'Lobster Two', cursive;
 }
 
 .participantsButton button::before {
@@ -43,13 +53,120 @@ body {
     font-size: 20px; /* Gør ikonet passende */
 }
 
-.QueueTable td, .QueueTable th {
-    background-color: #fff;
-    border: 2px solid #444;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    padding: 8px;
+
+.QueueTable {         
+    border: 1px solid black;
 }
+
+.MusicPlayer {
+    width: 75%;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 40px auto;
+    background: #6666ff;
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between; /* Fordeler elementerne vandret */
+    align-items: center;            /* Centrer dem vertikalt */
+    padding: 10px 10px;             /* Indvendig luft */
+}
+
+.SongProgress {
+    width: 60%;
+    background-color: #b8baff;
+    border-radius: 35px;
+    margin: 5px auto;
+}
+
+.SongProgressBar {
+    width: 1%;
+    height: 20px;
+    background-color: #000000;
+    border-radius: 100px;
+}
+
+.playPauseBtn {
+    display: block; /* Gør at margin virker*/
+    margin: 10px auto;
+    margin-bottom: 2%;
+    height: 55px;
+    width: 85px;
+    background-color: #b8baff;
+    border-radius: 35px;
+    margin-left: 40px;
+    cursor: pointer; 
+}
+
+.playPauseBtn:hover {
+    background-color: #b8baff;
+}
+
+.VolumeSlider {
+    display: flex;         /* Gør at align-items virker */
+    flex-direction: column; /* Placer slider og tekst under hinanden */
+    align-items: center;    /* Centrer dem */
+    gap: 5px;               /* Lidt luft */
+    margin-top: 10px;
+}
+
+.request-song-btn {
+    position: fixed;
+    bottom: 20px;      /* afstand fra bund */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    background-color: #4CAF50; /* grøn – kan ændres */
+    color: white;
+    border: none;
+    border-radius: 30px; /* afrundet rektangel */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 9999;      /* ligger OVER alt andet */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.request-song-btn:hover {
+    background-color: #45a049;
+}
+/* Runde knapper øverst til højre */
+.round-btn {
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: none;
+    background: #333;
+    color: rgb(232, 13, 13);
+    cursor: pointer;
+}
+
+.round-btn:hover {
+    background: #555;
+}
+
+#QueueTable table {
+    border-collapse: collapse; 
+    border-spacing: 10px;
+    border: 2px solid black;
+    margin-left: 25%;
+}
+
+#QueueTable th,
+#QueueTable td {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #000000;
+}
+
+#QueueTable td {
+    background: #6666ff;
+}
+
+#QueueTable th {
+    background: #b8baff;
+}
+
+
 
 
 .request-song-btn {

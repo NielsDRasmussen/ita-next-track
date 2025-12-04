@@ -30,12 +30,22 @@
     </div>
 
     <!-- Music Player -->
-    <div class="VolumeSlider">
-        <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
-        <p>Volume: <span id="Volume"></span></p>
+    <div class="MusicPlayer">
+    <!-- SongTracker -->
+        <div class="SongProgress">
+             <div class="SongProgressBar" role="progressbar"></div>
+        </div>
+    
+     <!-- Playbutton -->
+        <button class="playPauseBtn" onclick="move()">▶</button>
+
+    <!-- Volume -->
+        <div class="VolumeSlider">
+            <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
+            <p>Volume: <span id="Volume"></span></p>
+        </div>
     </div>
 
-    <!-- Queue -->
     <div id="QueueTable">
         <table>
             <tr>
@@ -50,6 +60,7 @@
             </tr>
         </table>
     </div>
+
 
 
     <button id="AddBtn">Add Song <i class="fa fa-music"></i></button>
