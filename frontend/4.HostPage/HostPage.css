@@ -45,7 +45,6 @@ body {
     right: 310px; 
     font-size: 15px;
     font-weight: bold;
-    font-family:'Lobster Two', cursive;
 }
 
 .participantsButton button::before {
@@ -341,12 +340,5 @@ color: black;
 border-radius: 16px;
 text-align: center;
 
-z-index: 800;
-}
-
-label {                          /* Alle label elementer */
-    display: block;              /* Vises som blok (fylder hele bredden) */
-    text-align: left;            /* Tekst venstrejusteret */
-    font-weight: bold;           /* Fed skrift */
-    margin-bottom: 10px;         /* 10px luft under label */
+z-index: 10000;
 }
