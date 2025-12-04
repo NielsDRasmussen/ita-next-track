@@ -80,6 +80,37 @@ window.onclick = function(event) {
   }
 }
 
+let searchInput = document.getElementById("SrchSong");
+let dropdown = document.getElementById("SongDropdown");
+
+searchInput.addEventListener("input", async () => {
+    let query = searchInput.value.trim();
+
+    if (query.length === 0) {
+        dropdown.innerHTML = "";
+        dropdown.style.display = "none";
+        return;
+    }
+
+    let res = await fetch(`/api/songs?search=${encodeURIComponent(query)}`);
+    let songs = await res.json();
+
+    dropdown.innerHTML = "";
+    dropdown.style.display = "block";
+
+    songs.forEach(song => {
+        let div = document.createElement("div");
+        div.classList.add("dropdown-item");
+        div.textContent = `${song.title} – ${song.artist}`;
+
+        div.onclick = () => {
+            searchInput.value = song.title;
+            dropdown.style.display = "none";
+        };
+
+        dropdown.appendChild(div);
+    });
+});
 
 // Her starter koden for popup for de andre deltagere
 // Get the modal

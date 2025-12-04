@@ -19,7 +19,10 @@ server.post('/api/jams', onCreateJam);
 server.get('/api/jams/:code', onGetJam);
 server.get('/api/jams/:code/participants', onGetParticipants);
 server.post('/api/jams/:code/participants', onAddParticipant);
+server.use('/api/songs', OnSearchSongs);
 server.listen(port, onServerReady);
+
+
 
 function onEachRequest(request, response, next) {
     console.log(new Date(), request.method, request.url);
@@ -119,6 +122,17 @@ async function onAddParticipant(request, response) {
     
     response.json({ success: true });
 }
+// Søgefunktionalitet for sange
+async function OnSearchSongs(request, response) {
+    const search = request.query.search?.toLowerCase() || "";
+    const filtered = tracks
+        .filter(song =>
+            song.title.toLowerCase().includes(search) ||
+            song.artist.toLowerCase().includes(search)
+        )
+        .slice(0, 20); // max 20 resultater
+    response.json(filtered);
+};
 
 function onServerReady() {
     console.log('Webserver running on port', port);

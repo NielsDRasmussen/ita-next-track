@@ -70,17 +70,22 @@
 
 
 
-    <button id="AddBtn">Add Song <i class="fa fa-music"></i></button>
+<button id="AddBtn">Add Song <i class="fa fa-music"></i></button>
 
-    <div id="NewSong" class="NewSongModal">
-        <div class="SongModal">
-            <span class="Exit">&times;</span>
-            <label for="SrchSong">Searchbar</label> <!--for="name" betyder, at labelen hører sammen med input-feltet med id="name"-->
-            <input id="SrchSong" type="text" placeholder="Search Song"> <!--klikker man på teksten Your Name, aktiverer det tekstfeltet-->
-            <p>Add Song</p>
-                <button id="Confirm-Btn">Confirm</button>
-        </div>
+<div id="NewSong" class="NewSongModal">
+    <div class="SongModal">
+        <span class="Exit">&times;</span>
+
+        <label for="SrchSong">Searchbar</label>
+        <input id="SrchSong" type="text" placeholder="Search Song">
+
+        <!-- ⭐ Dropdown container (NY) -->
+        <div id="SongDropdown" class="SongDropdown"></div>
+
+        <p>Add Song</p>
+        <button id="Confirm-Btn">Confirm</button>
     </div>
+</div>
     
 
     
