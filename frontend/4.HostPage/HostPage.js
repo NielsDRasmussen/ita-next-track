@@ -43,9 +43,6 @@ async function loadParticipants() {
     }
 }
 
-
-// ← HER FORTSÆTTER DIN EKSISTERENDE KODE
-
 //-----------------------------------------------------
 
 //Til leaderboard siden
