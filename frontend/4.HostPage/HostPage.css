@@ -187,7 +187,7 @@ body {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    z-index: 9999;      /* ligger OVER alt andet */
+    z-index: 600;      /* ligger OVER alt andet */
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
@@ -218,7 +218,7 @@ body {
 .RequestModal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 9999; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -235,6 +235,7 @@ body {
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+  z-index: 10000;
 }
 
 /* The Close Button */
@@ -347,7 +348,7 @@ color: black;
 border-radius: 16px;
 text-align: center;
 
-z-index: 10000;
+z-index: 600;
 }
 
 #Confirm-Btn {
