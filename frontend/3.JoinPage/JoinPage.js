@@ -28,6 +28,9 @@ async function joinJam() {
     
     // Tilføj deltager til jam'et
     const response = await fetch(`/api/jams/${code}/participants`, {
+            if () {
+                
+            },
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name })
