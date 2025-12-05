@@ -52,11 +52,7 @@ document.querySelector('.round-btn.end').addEventListener('click', () => {
 
 // Get the modal
 let SongModal = document.getElementById("NewSong");
-
-// Get the button that opens the modal
 let AddBtn = document.getElementById("AddBtn");
-
-// Get the <span> element that closes the modal
 let NewSpan = document.getElementsByClassName("Exit")[0];
 
 
@@ -77,8 +73,19 @@ window.onclick = function(event) {
   }
 }
 
+// Her starter koden for popup for de andre deltagere
+let modal = document.getElementById("RequestPopup");
+let btn = document.getElementById("Confirm-Btn");
+let LikeBtn = document.getElementsByClassName("like")[0];
+let TrashBtn = document.getElementsByClassName("trash")[0];
+let timeLeft = 30;
+let countdownInterval;
 let searchInput = document.getElementById("SrchSong");
 let dropdown = document.getElementById("SongDropdown");
+let Selection = document.getElementById("SongSelection");
+const timerDisplay = document.getElementById("timer");
+
+btn.disabled = true; // Deaktiver knappen som standard
 
 searchInput.addEventListener("input", async () => {
     let query = searchInput.value.trim();
@@ -86,6 +93,7 @@ searchInput.addEventListener("input", async () => {
     if (query.length === 0) {
         dropdown.innerHTML = "";
         dropdown.style.display = "none";
+        btn.disabled = true; // Deaktiver knappen hvis input er tomt
         return;
     }
 
@@ -103,36 +111,21 @@ searchInput.addEventListener("input", async () => {
         div.onclick = () => {
             searchInput.value = song.title;
             dropdown.style.display = "none";
+            btn.disabled = false; // Aktiver knappen når en sang er valgt
+            btn.classList.add("active-btn"); // Tilføj en klasse for visuel feedback
         };
 
         dropdown.appendChild(div);
         
+      });
     });
-});
+    
+    
 
-// Her starter koden for popup for de andre deltagere
-// Get the modal
-let modal = document.getElementById("RequestPopup");
-
-// Get the button that opens the modal
-let btn = document.getElementById("Confirm-Btn");
-
-// Get the like button
-let LikeBtn = document.getElementsByClassName("like")[0];
-
-// Get the trash button
-let TrashBtn = document.getElementsByClassName("trash")[0];
-
-// Timer-setup
-let timeLeft = 30;
-let countdownInterval;
-const timerDisplay = document.getElementById("timer");
-
-// Åbn modal + start timer
-btn.onclick = function() {
-    SongModal.style.display = "none";
-    modal.style.display = "block";
-
+    btn.onclick = function() {
+        SongModal.style.display = "none";
+        modal.style.display = "block";
+    
     // Reset timer
     timeLeft = 30;
     timerDisplay.innerText = timeLeft;
