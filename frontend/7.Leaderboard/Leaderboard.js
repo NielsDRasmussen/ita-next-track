@@ -30,7 +30,6 @@ window.addEventListener('load', function() {
 });
 
 // --- POPUP MENU LUKKE OG START ---
-// Henter elementer
 const popupShare = document.getElementById('popupShare'); // Browseren leder i hele dokumentet efter to elementer -> Hele popup-overlay'et og luk-knappen ("x")
 const closeBtnPopup = document.getElementById('closePopup'); 
 
