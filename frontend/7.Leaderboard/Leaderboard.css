@@ -206,3 +206,7 @@ h1 {
     height: 50px;
     margin-left: 130px;
 }
+
+.facebook, .twitter, .messenger, .discord, .instagram, .more:hover {
+    cursor: pointer;
+}
