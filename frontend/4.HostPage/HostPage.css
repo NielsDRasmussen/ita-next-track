@@ -32,26 +32,39 @@ body {
     font-family:'Lobster Two', cursive;
 }
 
-.participantsButton button {
-    width: 125px;
-    height: 75px;
-    border-radius: 10%;
-    border: solid;
-    cursor: pointer;
-    background-color: #b8baff;
-    color: #6666ff;
-    position: absolute;
-    top: 10px;
-    right: 140px; 
-    font-size: 15px;
-    font-weight: bold;
-    font-family:'Lobster Two', cursive;
+.participantsList {
+  display: none; /* Skjult som standard */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4); /* Sort med opacity */
 }
 
-.participantsButton button::before {
-    content: "👥";    /* Brug Unicode-ikon */
-    font-size: 20px; /* Gør ikonet passende */
+.colorModal {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
 }
+
+.Close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.Close:hover,
+.Close:focus {
+  color: black;
+}
+
 
 .participantCode {
     font-size: 30px;

@@ -11,36 +11,12 @@ window.addEventListener('load', async () => {
     await loadParticipants();
 });
 
-// Participants knap - toggle dropdown
-document.getElementById('participantsBtn').addEventListener('click', async () => {
-    const dropdown = document.getElementById('participantsList');
-    
-    if (dropdown.style.display === 'none') {
-        await loadParticipants(); // Refresh data
-        dropdown.style.display = 'block';
-    } else {
-        dropdown.style.display = 'none';
-    }
-});
 
 // Hent deltagere fra server
 async function loadParticipants() {
     const jamCode = localStorage.getItem('jamCode');
     const response = await fetch(`/api/jams/${jamCode}/participants`);
     const participants = await response.json();
-    
-    const dropdown = document.getElementById('participantsList');
-    dropdown.innerHTML = ''; // Ryd dropdown
-    
-    if (participants.length === 0) {
-        dropdown.innerHTML = '<option>Ingen deltagere endnu</option>';
-    } else {
-        participants.forEach(p => {
-            const option = document.createElement('option');
-            option.textContent = p.name;
-            dropdown.appendChild(option);
-        });
-    }
 }
 
 //-----------------------------------------------------
@@ -49,6 +25,43 @@ async function loadParticipants() {
 document.querySelector('.round-btn.end').addEventListener('click', () => {
     window.location.href = '/7.Leaderboard/Leaderboard.html';
 });
+
+
+//--------------------------------------
+
+let participantsModal = document.getElementById("participantsModal");
+
+// Get the button that opens the modal
+let openBtn = document.getElementById("participantsButton");
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("Close")[0];
+
+// When the user clicks the button, open the modal 
+openBtn.onclick = function() {
+  participantsModal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  participantsModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == participantsModal) {
+    participantsModal.style.display = "none";
+  }
+}
+
+
+
+
+
+
+
+
+
 
 // Get the modal
 let SongModal = document.getElementById("NewSong");
@@ -167,3 +180,8 @@ output.textContent = slider.value;
 slider.oninput = function() {
   output.textContent = this.value;
 }
+
+
+
+
+
