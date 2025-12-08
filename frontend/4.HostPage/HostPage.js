@@ -28,7 +28,7 @@ async function loadParticipants() {
     });
 }
 // Opdater deltagere hvert 0,5 sekund
-setInterval(loadParticipants, 500);
+//setInterval(loadParticipants, 500);
 
 
 
