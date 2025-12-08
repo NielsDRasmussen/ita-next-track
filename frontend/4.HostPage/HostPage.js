@@ -17,7 +17,21 @@ async function loadParticipants() {
     const jamCode = localStorage.getItem('jamCode');
     const response = await fetch(`/api/jams/${jamCode}/participants`);
     const participants = await response.json();
+     
+    const tableBody = document.getElementById("participantsTableBody");
+    tableBody.innerHTML = "";
+
+    participants.forEach(p => {
+        const row = document.createElement("tr");
+        row.innerHTML = `<td>${p.name}</td>`;
+        tableBody.appendChild(row);
+    });
 }
+// Opdater deltagere hvert 0,5 sekund
+setInterval(loadParticipants, 500);
+
+
+
 
 //-----------------------------------------------------
 
