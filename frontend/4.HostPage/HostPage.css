@@ -90,18 +90,23 @@ body {
     padding: 10px 10px;             /* Indvendig luft */
 }
 
-.SongProgress {
-    width: 60%;
-    background-color: #b8baff;
-    border-radius: 35px;
-    margin: 5px auto;
+#SongProgress {
+    -webkit-appearance: none;
+    width: 75%;
+    height: 15px;
+    border-radius: 12px;
+    margin: 10px 0;
+    background: #b8baff;
 }
 
-.SongProgressBar {
-    width: 1%;
-    height: 20px;
-    background-color: #000000;
-    border-radius: 100px;
+#SongProgress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #b8baff;
+    width: 20px;
+    height: 25px;
+    border-radius: 12px;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 2 8px 8px rgba(255, 255, 255, 0.22)
 }
 
 .playPauseBtn {

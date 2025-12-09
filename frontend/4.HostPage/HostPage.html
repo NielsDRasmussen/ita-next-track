@@ -54,13 +54,11 @@
 
     <!-- Music Player -->
     <div class="MusicPlayer">
-    <!-- SongTracker -->
-        <div class="SongProgress">
-             <div class="SongProgressBar" role="progressbar"></div>
+             <input value="0" type="range" min="0" max="100" class="slider" id="SongProgress" disabled>
         </div>
     
      <!-- Playbutton -->
-        <button class="playPauseBtn" onclick="move()">▶</button>
+        <button class="playPauseBtn" onclick="playPause()">▶</button>
 
     <!-- Volume -->
         <div class="VolumeSlider">
