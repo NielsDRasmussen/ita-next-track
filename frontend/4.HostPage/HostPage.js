@@ -248,5 +248,6 @@ function loadTrack(trackId) {
 // Start en sang når siden loader
 // ------------------------------
 window.onload = function () {
-    loadTrack(1);   // hent track med id = 1
+    const randomId = Math.floor(Math.random() * 201) + 1; // tilfældigt tal mellem 1 og 10
+    loadTrack(randomId);
 };
