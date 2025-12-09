@@ -404,10 +404,12 @@ body {
 }
 
 #songInfo {
+  text-align: center;   /* centrér tekst */
+  width: 100%;          /* fylder hele linjen */
   display: flex;
-  flex-direction: column; /* placerer elementerne lodret */
-  align-items: flex-start; /* venstrejusteret */
-  gap: 4px; /* lidt afstand mellem titel og artist */
+  flex-direction: column;
+  align-items: center;  /* centrér elementerne */
+  gap: 4px;
 }
 
 #songTitle {
@@ -420,4 +422,40 @@ body {
   font-size: 14px; /* lidt mindre end titel */
   color: #ccf3c3; /* valgfri farve, lidt grå for kontrast */
 }
+
+.progressContainer {
+  position: relative;  /* nødvendig for absolut placering af timeDisplay */
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;      /* centrerer den */
+  background-color: #ddd;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#myBar {
+  width: 0%;
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+#timeDisplay {
+  position: absolute;         /* inde i progressbaren */
+  top: 50%;                   /* midt på højden */
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);/* centrer vertikalt */
+  display: flex;
+  justify-content: space-between; /* venstre/højre */
+  padding: 0 10px;               /* lidt afstand fra kanterne */
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;                   /* evt. ændres til hvid */
+  pointer-events: none;          /* så man stadig kan klikke på progressbaren */
+  box-sizing: border-box; /* gør padding inklusiv i width */
+}
+
 

@@ -45,7 +45,7 @@
     </div>
 
     <div class="endJamButton">
-      <button class="round-btn end">Leave Jam</button>
+      <button class="round-btn end">End Jam</button>
     </div>
 
 <div id="songInfo">
@@ -53,29 +53,14 @@
   <span id="songArtist">Artist kommer her</span>
 </div>
 
-    <div
-      id="myProgress"
-      style="
-        width: 100%;
-        background-color: #ddd;
-        height: 20px;
-        border-radius: 5px;
-      "
-    >
-      <div
-        id="myBar"
-        style="width: 0%; height: 100%; background-color: #4caf50"
-      ></div>
-    </div>
+<div id="myProgress" class="progressContainer">
+  <div id="myBar"></div>
+  <div id="timeDisplay">
+    <span id="currentTime">0:00</span>
+    <span id="totalTime">0:00</span>
+  </div>
+</div>
 
-    <!-- Tid display -->
-    <div
-      id="timeDisplay"
-      style="display: flex; justify-content: space-between; width: 100%"
-    >
-      <span id="currentTime">0:00</span>
-      <span id="totalTime">0:00</span>
-    </div>
 
     <!-- Playbutton -->
     <button class="playPauseBtn" onclick="playPause()">▶</button>
