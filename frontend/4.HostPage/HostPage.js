@@ -195,10 +195,10 @@ slider.oninput = function() {
   output.textContent = this.value;
 }
 
-let progress = document.getElementById("SongProgress")
-let playbtn = document.getElementById("playPauseBtn")
-let trackid = 
+//let progress = document.getElementById("SongProgress")
+//let playbtn = document.getElementById("playPauseBtn")
+//let trackid = 
 
-function playPause() {
-    if(playPauseBtn.classlist.contains())
-}
+//function playPause() {
+  //  if(playPauseBtn.classlist.contains())
+    //}
