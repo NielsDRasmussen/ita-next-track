@@ -195,10 +195,58 @@ slider.oninput = function() {
   output.textContent = this.value;
 }
 
-//let progress = document.getElementById("SongProgress")
-//let playbtn = document.getElementById("playPauseBtn")
-//let trackid = 
+// ------------------------------
+// Progress bar (tid-baseret)
+// ------------------------------
+let isPlaying = false;
 
-//function playPause() {
-  //  if(playPauseBtn.classlist.contains())
-    //}
+function move(duration) {   // duration = millisekunder
+    if (!isPlaying) {
+        isPlaying = true;
+
+        let elem = document.getElementById("myBar");
+        elem.style.width = "0%"; // reset progress bar
+
+        let currentTime = 0;
+        let step = 10;      // opdatering hver 10 ms
+        let id = setInterval(frame, step);
+
+        function frame() {
+            if (currentTime >= duration) {
+                clearInterval(id);
+                isPlaying = false;
+                elem.style.width = "100%";
+            } else {
+                currentTime += step;
+                let percent = (currentTime / duration) * 100;
+                elem.style.width = percent + "%";
+            }
+        }
+    }
+}
+
+// ------------------------------
+// Hent ét track fra backend
+// ------------------------------
+function loadTrack(trackId) {
+    fetch(`/api/tracks/${trackId}`)
+        .then(res => res.json())
+        .then(track => {
+            console.log("Track hentet:", track);
+
+            // Opdater UI
+            document.getElementById("songTitle").textContent = track.title;
+            document.getElementById("songArtist").textContent = track.artist;
+
+            // Start progress-baren
+            move(track.duration);
+        })
+        .catch(err => console.error("Fejl:", err));
+}
+
+// ------------------------------
+// Start en sang når siden loader
+// ------------------------------
+window.onload = function () {
+    loadTrack(1);   // hent track med id = 1
+};

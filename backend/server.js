@@ -19,6 +19,7 @@ server.post('/api/jams', onCreateJam);
 server.get('/api/jams/:code', onGetJam);
 server.get('/api/jams/:code/participants', onGetParticipants);
 server.post('/api/jams/:code/participants', onAddParticipant);
+server.get('/api/tracks/:id', onGetTrackById);
 server.get('/api/songs', OnSearchSongs);
 server.listen(port, onServerReady);
 
@@ -123,6 +124,27 @@ async function onAddParticipant(request, response) {
     response.json({ success: true });
 }
 
+// HENT ÉN TRACK EFTER ID
+async function onGetTrackById(request, response) {
+    const trackId = request.params.id;
+
+    try {
+        const result = await db.query(`
+            SELECT track_id, title, artist, duration
+            FROM tracks
+            WHERE track_id = $1
+        `, [trackId]);
+
+        if (result.rows.length === 0) {
+            return response.status(404).json({ error: "Track ikke fundet" });
+        }
+
+        response.json(result.rows[0]);  // sender én sang til frontend
+    } catch (error) {
+        console.error(error);
+        response.status(500).json({ error: "Databasefejl" });
+    }
+}
 
 
 // Søgefunktionalitet for sange
