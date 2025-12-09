@@ -405,10 +405,19 @@ body {
 
 #songInfo {
   display: flex;
-  gap: 10px;            /* afstand mellem title og artist */
-  font-family: Arial, sans-serif;
-  font-size: 30px;
-  color: #ffffff;
-  margin-left: 5px;    /* lidt afstand fra venstre kant */
-  margin-bottom: 25px;   /* lidt afstand til progressbaren */
+  flex-direction: column; /* placerer elementerne lodret */
+  align-items: flex-start; /* venstrejusteret */
+  gap: 4px; /* lidt afstand mellem titel og artist */
 }
+
+#songTitle {
+  font-weight: bold; /* gør titel fed */
+  font-size: 16px; /* juster størrelsen efter behov */
+  color: #ccf3c3;
+}
+
+#songArtist {
+  font-size: 14px; /* lidt mindre end titel */
+  color: #ccf3c3; /* valgfri farve, lidt grå for kontrast */
+}
+
