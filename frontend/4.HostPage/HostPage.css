@@ -423,10 +423,11 @@ body {
   color: #ccf3c3; /* valgfri farve, lidt grå for kontrast */
 }
 
-#myProgress {
+.progressContainer {
+  position: relative;  /* nødvendig for absolut placering af timeDisplay */
   width: 100%;
-  max-width: 80%;   /* ← gør den kortere */
-  margin: 0 auto;     /* ← centrerer den */
+  max-width: 80%;
+  margin: 0 auto;      /* centrerer den */
   background-color: #ddd;
   height: 20px;
   border-radius: 10px;
@@ -442,7 +443,19 @@ body {
 }
 
 #timeDisplay {
-  display: flex;
-  justify-content: space-between;
+  position: absolute;         /* inde i progressbaren */
+  top: 50%;                   /* midt på højden */
+  left: 0;
   width: 100%;
+  transform: translateY(-50%);/* centrer vertikalt */
+  display: flex;
+  justify-content: space-between; /* venstre/højre */
+  padding: 0 10px;               /* lidt afstand fra kanterne */
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;                   /* evt. ændres til hvid */
+  pointer-events: none;          /* så man stadig kan klikke på progressbaren */
+  box-sizing: border-box; /* gør padding inklusiv i width */
 }
+
+
