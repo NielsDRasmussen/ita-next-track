@@ -122,6 +122,9 @@ async function onAddParticipant(request, response) {
     
     response.json({ success: true });
 }
+
+
+
 // Søgefunktionalitet for sange
 async function OnSearchSongs(request, response) {
     const search = request.query.search?.toLowerCase() || "";
