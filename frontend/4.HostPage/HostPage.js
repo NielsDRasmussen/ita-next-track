@@ -213,12 +213,65 @@ function formatTime(seconds) {
   return `${mins}:${secs.toString().padStart(2, "0")}`;
 }
 
-// Hjælpefunktion til mm:ss
-function formatTime(seconds) {
-  const mins = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60);
-  return `${mins}:${secs.toString().padStart(2, "0")}`;
+// ------------------------------
+// Play/pause-knap
+// ------------------------------
+let progressInterval;   // gemmer interval ID
+let currentProgress = 0; // husker nuværende tid i ms
+let currentDuration = 0; // husker varighed i ms
+
+function playPause() {
+  const btn = document.querySelector(".playPauseBtn");
+  const elem = document.getElementById("myBar");
+  const currentTimeEl = document.getElementById("currentTime");
+
+  if (isPlaying) {
+    // Pause
+    clearInterval(progressInterval);
+    isPlaying = false;
+    btn.textContent = "▶"; // ændr ikon
+  } else {
+    // Play / fortsæt
+    isPlaying = true;
+    btn.textContent = "II"; // ændr ikon
+
+    const step = 100; // opdater hver 100ms
+    progressInterval = setInterval(() => {
+      if (currentProgress >= currentDuration) {
+        clearInterval(progressInterval);
+        isPlaying = false;
+        btn.textContent = "▶";
+        elem.style.width = "100%";
+        currentTimeEl.textContent = formatTime(currentDuration / 1000);
+      } else {
+        currentProgress += step;
+        let percent = (currentProgress / currentDuration) * 100;
+        elem.style.width = percent + "%";
+        currentTimeEl.textContent = formatTime(currentProgress / 1000);
+      }
+    }, step);
+  }
 }
+
+// Opdater move-funktionen til at gemme varighed og nulstille progress
+function move(duration) {
+  const elem = document.getElementById("myBar");
+  const currentTimeEl = document.getElementById("currentTime");
+  const totalTimeEl = document.getElementById("totalTime");
+
+  clearInterval(progressInterval); // stop evt. eksisterende
+  isPlaying = false;
+  currentProgress = 0;
+  currentDuration = duration;
+
+  elem.style.width = "0%";
+  currentTimeEl.textContent = "0:00";
+  totalTimeEl.textContent = formatTime(duration / 1000);
+  
+  // Start automatisk
+  playPause();
+}
+
 
 // ------------------------------
 // Hent ét track fra backend
@@ -247,14 +300,4 @@ window.onload = function () {
   loadTrack(randomId);
 };
 
-//Vote systemet
-async function vote(songId, vote) {
-  const response = await fetch("/api/votes", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ songId, vote }),
-  });
 
-  const data = await response.json();
-  console.log(data);
-}
