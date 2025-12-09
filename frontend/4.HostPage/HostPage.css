@@ -362,3 +362,24 @@ body {
   border-radius: 8px;
   cursor: pointer;
 }
+
+#participantsButton {
+  width: 125px; /* samme som End Jam */
+  height: 75px; /* samme som End Jam */
+  border-radius: 10%; /* samme som End Jam */
+  border: solid; 
+  cursor: pointer;
+  background-color: #6666ff; /* samme baggrund */
+  color: #b8baff; /* samme tekstfarve */
+  position: absolute;
+  top: 10px;      /* samme højde som End Jam */
+  right: 145px;   /* flytter den til venstre for End Jam */
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Lobster Two", cursive;
+}
+
+#participantsButton:hover {
+  background-color: #5555ee; /* lidt mørkere ved hover */
+}
+
