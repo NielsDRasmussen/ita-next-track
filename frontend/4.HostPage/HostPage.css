@@ -403,3 +403,12 @@ body {
   background-color: #5555ee; /* samme hover-effekt som knapper */
 }
 
+#songInfo {
+  display: flex;
+  gap: 10px;            /* afstand mellem title og artist */
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  color: #ffffff;
+  margin-left: 5px;    /* lidt afstand fra venstre kant */
+  margin-bottom: 25px;   /* lidt afstand til progressbaren */
+}
