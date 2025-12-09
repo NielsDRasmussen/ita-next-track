@@ -1,35 +1,32 @@
 body {
-    background-image: url(Background-modern.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-image: url(Background-modern.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .JamJam {
-    text-align: center;
-    font-size: 40px;
-    font-family: 'Lobster Two', cursive;
-    color: #0c0c16;
-    text-shadow: 
-        3px 3px 0px #c9e8ff,
-        6px 6px 0px #b8baff,
-        8px 8px 0px #6666ff, /* offsetX, offsetY, blur-radius color*/
-        0px 0px 50px #c9e8ff;
+  text-align: center;
+  font-size: 40px;
+  font-family: "Lobster Two", cursive;
+  color: #0c0c16;
+  text-shadow: 3px 3px 0px #c9e8ff, 6px 6px 0px #b8baff, 8px 8px 0px #6666ff,
+    /* offsetX, offsetY, blur-radius color*/ 0px 0px 50px #c9e8ff;
 }
 
 .endJamButton button {
-    width: 125px;         /* Gør knappen lige høj og bred */
-    height: 75px;
-    border-radius: 10%;  /* Gør den rund */
-    border: solid;        /* Fjern kant (valgfrit) */
-    cursor: pointer;     /* Vis klik-hånd */
-    background-color: #6666ff;
-    color: #b8baff;
-    position: absolute;
-    top: 10px;
-    right: 5px;
-    font-size: 15px;
-    font-weight: bold;
-    font-family:'Lobster Two', cursive;
+  width: 125px; /* Gør knappen lige høj og bred */
+  height: 75px;
+  border-radius: 10%; /* Gør den rund */
+  border: solid; /* Fjern kant (valgfrit) */
+  cursor: pointer; /* Vis klik-hånd */
+  background-color: #6666ff;
+  color: #b8baff;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Lobster Two", cursive;
 }
 
 .participantsList {
@@ -40,7 +37,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.4); /* Sort med opacity */
+  background-color: rgba(0, 0, 0, 0.4); /* Sort med opacity */
 }
 
 .colorModal {
@@ -65,167 +62,157 @@ body {
   color: black;
 }
 
-
 .participantCode {
-    font-size: 30px;
-    font-style:'Lobster Two', cursive;
-    color: #ffffff;
+  font-size: 30px;
+  font-style: "Lobster Two", cursive;
+  color: #ffffff;
 }
 
-.QueueTable {         
-    border: 1px solid black;
+.QueueTable {
+  border: 1px solid black;
 }
 
 .MusicPlayer {
-    width: 75%;
-    height: 100px;
-    border: 1px solid black;
-    border-radius: 15px;
-    margin: 40px auto;
-    background: #6666ff;
-    margin-top: 120px;
-    display: flex;
-    justify-content: space-between; /* Fordeler elementerne vandret */
-    align-items: center;            /* Centrer dem vertikalt */
-    padding: 10px 10px;             /* Indvendig luft */
+  width: 75%;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 40px auto;
+  background: #6666ff;
+  margin-top: 120px;
+  display: flex;
+  justify-content: space-between; /* Fordeler elementerne vandret */
+  align-items: center; /* Centrer dem vertikalt */
+  padding: 10px 10px; /* Indvendig luft */
 }
 
-.SongProgress {
-    width: 60%;
-    background-color: #b8baff;
-    border-radius: 35px;
-    margin: 5px auto;
+#SongProgress {
+  appearance: none;
+  width: 75%;
+  height: 15px;
+  border-radius: 12px;
+  margin: 10px 0;
+  background: #b8baff;
 }
 
-.SongProgressBar {
-    width: 1%;
-    height: 20px;
-    background-color: #000000;
-    border-radius: 100px;
+#SongProgress::-webkit-slider-thumb {
+  appearance: none;
+  background: #b8baff;
+  width: 20px;
+  height: 25px;
+  border-radius: 12px;
+  border: 2px solid rgb(255, 255, 255);
+  box-shadow: 2 8px 8px rgba(255, 255, 255, 0.22);
 }
 
 .playPauseBtn {
-    display: block; /* Gør at margin virker*/
-    margin: 10px auto;
-    margin-bottom: 2%;
-    height: 55px;
-    width: 85px;
-    background-color: #b8baff;
-    border-radius: 35px;
-    margin-left: 40px;
-    cursor: pointer; 
+  display: block; /* Gør at margin auto virker */
+  margin: 2% auto; /* Top/bund margin 2%, auto centrerer horisontalt */
+  height: 55px;
+  width: 85px;
+  background-color: #b8baff;
+  border-radius: 35px;
+  cursor: pointer;
 }
 
 .playPauseBtn:hover {
-    background-color: #b8baff;
-}
-
-.VolumeSlider {
-    display: flex;         /* Gør at align-items virker */
-    flex-direction: column; /* Placer slider og tekst under hinanden */
-    align-items: center;    /* Centrer dem */
-    gap: 5px;               /* Lidt luft */
-    margin-top: 10px;
+  background-color: #b8baff;
 }
 
 .request-song-btn {
-    position: fixed;
-    bottom: 20px;      /* afstand fra bund */
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 15px 30px;
-    background-color: #4CAF50; /* grøn – kan ændres */
-    color: white;
-    border: none;
-    border-radius: 30px; /* afrundet rektangel */
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 9999;      /* ligger OVER alt andet */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  position: fixed;
+  bottom: 20px; /* afstand fra bund */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  background-color: #4caf50; /* grøn – kan ændres */
+  color: white;
+  border: none;
+  border-radius: 30px; /* afrundet rektangel */
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 9999; /* ligger OVER alt andet */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .request-song-btn:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 /* Runde knapper øverst til højre */
 .round-btn {
-    padding: 10px 15px;
-    border-radius: 50px;
-    border: none;
-    background: #333;
-    color: rgb(232, 13, 13);
-    cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 50px;
+  border: none;
+  background: #333;
+  color: rgb(232, 13, 13);
+  cursor: pointer;
 }
 
 .round-btn:hover {
-    background: #555;
+  background: #555;
 }
 
 #QueueTable table {
-    border-collapse: collapse; 
-    border-spacing: 10px;
-    border: 2px solid black;
-    margin-left: 25%;
+  border-collapse: collapse;
+  border-spacing: 10px;
+  border: 2px solid black;
+  margin-left: 25%;
 }
 
 #QueueTable th,
 #QueueTable td {
-    padding: 10px;
-    width: 200px;
-    border: 1px solid #000000;
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #000000;
 }
 
 #QueueTable td {
-    background: #6666ff;
+  background: #6666ff;
 }
 
 #QueueTable th {
-    background: #b8baff;
+  background: #b8baff;
 }
 
-
-
-
 .request-song-btn {
-    position: fixed;
-    bottom: 20px;      /* afstand fra bund */
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 15px 30px;
-    background-color: #4CAF50; /* grøn – kan ændres */
-    color: rgb(255, 255, 255);
-    border: none;
-    border-radius: 30px; /* afrundet rektangel */
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 600;      /* ligger OVER alt andet */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  position: fixed;
+  bottom: 20px; /* afstand fra bund */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  background-color: #4caf50; /* grøn – kan ændres */
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 30px; /* afrundet rektangel */
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 600; /* ligger OVER alt andet */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .request-song-btn:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 /* Runde knapper øverst til højre */
 .round-btn {
-    padding: 10px 15px;
-    border-radius: 50px;
-    border: none;
-    background: #333;
-    color: white;
-    cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 50px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
 }
 
 .round-btn:hover {
-    background: #555;
+  background: #555;
 }
 
 .end {
-    background: #b80000;
+  background: #b80000;
 }
-
 
 /* The Modal (background) */
 .RequestModal {
@@ -237,8 +224,8 @@ body {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
@@ -267,108 +254,170 @@ body {
 }
 /* ----- Request Popup Modal ----- */
 .RequestModal {
-    display: none; 
-    position: fixed;
-    z-index: 1000; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5); /* mørk overlay */
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* mørk overlay */
 }
 
 /* Modal indhold */
 .modal-content {
-    position: relative; /* vigtig for timeren */
-    background-color: white;
-    margin: 15% auto; /* centrer modal på skærmen */
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px; /* ændr hvis du vil have bredere modal */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative; /* vigtig for timeren */
+  background-color: white;
+  margin: 15% auto; /* centrer modal på skærmen */
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px; /* ændr hvis du vil have bredere modal */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Timer i øverste højre hjørne */
 .timer {
-    position: absolute; /* placeres inde i modal */
-    top: 10px;
-    right: 10px;
-    font-size: 22px;
-    font-weight: bold;
-    background: rgba(0,0,0,0.7);
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 10px;
-    display: none; /* vises først når modal åbnes */
-    z-index: 9999;
+  position: absolute; /* placeres inde i modal */
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  display: none; /* vises først når modal åbnes */
+  z-index: 9999;
 }
 
 /* Like og Trash knapper */
-.like, .trash {
-    font-size: 18px;
-    margin: 10px 5px 0 0;
-    cursor: pointer;
-    background: none;
-    border: none;
+.like,
+.trash {
+  font-size: 18px;
+  margin: 10px 5px 0 0;
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .like i {
-    color: red;
+  color: red;
 }
 
 .trash i {
-    color: #555;
+  color: #555;
 }
 
 /* ----- Add Song Modal ----- */
 .NewSongModal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    font-family: 'Lobster Two', cursive;
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: "Lobster Two", cursive;
 }
 
 .SongModal {
-    position: relative;
-    background-color: #9292fe;
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+  background-color: #9292fe;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .Exit {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 #AddBtn {
-position: fixed;
-bottom: 20px;
-right: 50%;
-padding: 14px 28px;
-background-color: #6666ff;
-color: black;
-border-radius: 16px;
-text-align: center;
-
-z-index: 600;
+  position: fixed;
+  bottom: 20px;
+  left: 50%; /* flytter venstre kant til midten */
+  transform: translateX(
+    -50%
+  ); /* trækker knappen tilbage halvdelen af sin bredde */
+  padding: 14px 28px;
+  background-color: #6666ff;
+  color: black;
+  border-radius: 16px;
+  text-align: center;
+  z-index: 600;
 }
 
 #Confirm-Btn {
-    padding: 10px 20px;
-    background-color: #5858ff;
-    color: black;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+  padding: 10px 20px;
+  background-color: #5858ff;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
+
+#participantsButton {
+  width: 125px; /* samme som End Jam */
+  height: 75px; /* samme som End Jam */
+  border-radius: 10%; /* samme som End Jam */
+  border: solid; 
+  cursor: pointer;
+  background-color: #6666ff; /* samme baggrund */
+  color: #b8baff; /* samme tekstfarve */
+  position: absolute;
+  top: 10px;      /* samme højde som End Jam */
+  right: 145px;   /* flytter den til venstre for End Jam */
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Lobster Two", cursive;
+}
+
+#participantsButton:hover {
+  background-color: #5555ee; /* lidt mørkere ved hover */
+}
+
+
+#codeDisplay {
+  position: absolute;
+  top: 10px;      /* samme højde som End Jam og Participants */
+  left: 10px;     /* afstand fra venstre kant */
+  padding: 15px 20px;
+  background-color: #6666ff; /* samme baggrund som knapperne */
+  color: #b8baff;           /* samme tekstfarve */
+  font-family: "Lobster Two", cursive;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10%;        /* afrundet kant som knapperne */
+  border: solid;
+  cursor: default;
+}
+
+#codeDisplay:hover {
+  background-color: #5555ee; /* samme hover-effekt som knapper */
+}
+
+#songInfo {
+  display: flex;
+  flex-direction: column; /* placerer elementerne lodret */
+  align-items: flex-start; /* venstrejusteret */
+  gap: 4px; /* lidt afstand mellem titel og artist */
+}
+
+#songTitle {
+  font-weight: bold; /* gør titel fed */
+  font-size: 16px; /* juster størrelsen efter behov */
+  color: #ccf3c3;
+}
+
+#songArtist {
+  font-size: 14px; /* lidt mindre end titel */
+  color: #ccf3c3; /* valgfri farve, lidt grå for kontrast */
+}
+

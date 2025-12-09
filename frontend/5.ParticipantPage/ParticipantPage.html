@@ -1,119 +1,126 @@
 <!DOCTYPE html>
 <html lang="da">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JamJam</title>
-    <link rel="stylesheet" href="ParticipantPage.css">
+    <link rel="stylesheet" href="ParticipantPage.css" />
     <!-- Link til ikoner-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
 
-    
-</head>
-
-<body>
-
+  <body>
     <div class="JamJam">
-        <h1>JamJam</h1>
+      <h1>JamJam</h1>
     </div>
-
 
     <div class="participantCode">
-        <p id='codeDisplay'>Code: ...</p>
+      <p id="codeDisplay">Code: ...</p>
     </div>
 
-   
     <!-- Trigger/Open The Modal -->
-<button id="participantsButton">Participants</button>
+    <button id="participantsButton">Participants</button>
 
-<!-- The Modal -->
-<div id="participantsModal" class="participantsList">
-
-  <!-- Modal content -->
-  <div class="colorModal">
-    <span class="Close">&times;</span>
+    <!-- The Modal -->
+    <div id="participantsModal" class="participantsList">
+      <!-- Modal content -->
+      <div class="colorModal">
+        <span class="Close">&times;</span>
         <div id="QueueTable">
-            <h2>Participants</h2>
-        <table>
+          <h2>Participants</h2>
+          <table>
             <tr>
-                <th>Name</th>
-            <tr>
-                <tbody id="participantsTableBody">
-                </tbody>
-        </table>
-    </div>
-  </div>
+              <th>Name</th>
+            </tr>
 
-</div>
+            <tr>
+              <tbody id="participantsTableBody"></tbody>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
 
     <div class="endJamButton">
-        <button class="round-btn end">End Jam</button>
+      <button class="round-btn end">Leave Jam</button>
     </div>
 
+<div id="songInfo">
+  <span id="songTitle">Titel kommer her</span>
+  <span id="songArtist">Artist kommer her</span>
+</div>
 
-
-    <!-- Music Player -->
-    <div class="MusicPlayer">
-    <!-- SongTracker -->
-        <div class="SongProgress">
-             <div class="SongProgressBar" role="progressbar"></div>
-        </div>
-    
-     <!-- Playbutton -->
-        <button class="playPauseBtn" onclick="move()">▶</button>
-
-    <!-- Volume -->
-        <div class="VolumeSlider">
-            <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
-            <p>Volume: <span id="Volume"></span></p>
-        </div>
+    <div
+      id="myProgress"
+      style="
+        width: 100%;
+        background-color: #ddd;
+        height: 20px;
+        border-radius: 5px;
+      "
+    >
+      <div
+        id="myBar"
+        style="width: 0%; height: 100%; background-color: #4caf50"
+      ></div>
     </div>
+
+    <!-- Tid display -->
+    <div
+      id="timeDisplay"
+      style="display: flex; justify-content: space-between; width: 100%"
+    >
+      <span id="currentTime">0:00</span>
+      <span id="totalTime">0:00</span>
+    </div>
+
+    <!-- Playbutton -->
+    <button class="playPauseBtn" onclick="playPause()">▶</button>
 
     <div id="QueueTable">
-        <table>
-            <tr>
-                <th>Artist</th>
-                <th>Song</th>
-                <th>Time</th>
-            </tr>
-            <tr>
-                <td>Justin Bieber</td>
-                <td>Peaches</td>
-                <td>3:18</td>
-            </tr>
-        </table>
+      <table>
+        <tr>
+          <th>Artist</th>
+          <th>Song</th>
+          <th>Time</th>
+        </tr>
+        <tr>
+          <td>Justin Bieber</td>
+          <td>Peaches</td>
+          <td>3:18</td>
+        </tr>
+      </table>
     </div>
 
+    <button id="AddBtn">Add Song <i class="fa fa-music"></i></button>
 
-
-<button id="AddBtn">Add Song <i class="fa fa-music"></i></button>
-
-<div id="NewSong" class="NewSongModal">
-    <div class="SongModal">
+    <div id="NewSong" class="NewSongModal">
+      <div class="SongModal">
         <span class="Exit">&times;</span>
 
         <label for="SrchSong">Searchbar</label>
-        <input id="SrchSong" type="text" placeholder="Search Song">
+        <input id="SrchSong" type="text" placeholder="Search Song" />
 
         <!-- Dropdown container (NY) -->
         <div id="SongDropdown" class="SongDropdown"></div>
         <div id="SongSelection" class="SongSelection"></div>
         <p>Add Song</p>
         <button id="Confirm-Btn">Confirm</button>
+      </div>
     </div>
-</div>
-    
 
-    
     <div id="RequestPopup" class="RequestModal">
-        <div class="modal-content">
-            <div id="timer" class="timer">30</div>
-            <P>Song request</P>
-            <button class="trash"><i class="fa fa-trash"></i></button>
-            <button class="like"><i class="fa fa-heart"></i></button>
-
-        </div>
+      <div class="modal-content">
+        <div id="timer" class="timer">30</div>
+        <p>Song request</p>
+        <button class="trash"><i class="fa fa-trash"></i></button>
+        <button class="like"><i class="fa fa-heart"></i></button>
+      </div>
     </div>
-    <script src="ParticipantPage.js"></script> <!-- INDSÆTTER RequestPopup.html via JS -->
-</body>
+    <script src="ParticipantPage.js"></script>
+    <!-- INDSÆTTER RequestPopup.html via JS -->
+  </body>
 </html>
