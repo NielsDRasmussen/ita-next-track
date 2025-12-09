@@ -404,10 +404,12 @@ body {
 }
 
 #songInfo {
+  text-align: center;   /* centrér tekst */
+  width: 100%;          /* fylder hele linjen */
   display: flex;
-  flex-direction: column; /* placerer elementerne lodret */
-  align-items: flex-start; /* venstrejusteret */
-  gap: 4px; /* lidt afstand mellem titel og artist */
+  flex-direction: column;
+  align-items: center;  /* centrér elementerne */
+  gap: 4px;
 }
 
 #songTitle {
@@ -421,3 +423,26 @@ body {
   color: #ccf3c3; /* valgfri farve, lidt grå for kontrast */
 }
 
+#myProgress {
+  width: 100%;
+  max-width: 80%;   /* ← gør den kortere */
+  margin: 0 auto;     /* ← centrerer den */
+  background-color: #ddd;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#myBar {
+  width: 0%;
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+#timeDisplay {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

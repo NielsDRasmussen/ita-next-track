@@ -24,8 +24,9 @@ async function loadParticipants() {
     tableBody.appendChild(row);
   });
 }
-// Opdater deltagere hvert 0,5 sekund
-//setInterval(loadParticipants, 500);
+
+//Opdater deltagere hvert 3. sekund
+setInterval(loadParticipants, 3000);
 
 //-----------------------------------------------------
 
