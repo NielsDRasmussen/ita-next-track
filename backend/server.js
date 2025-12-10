@@ -156,19 +156,25 @@ async function onGetTrackById(request, response) {
 
 //Queue funktion
 async function onGetQueue(request, response) {
-  const partyCode = request.params.partyCode;
-  // Brug currentTracks (samme map som shuffle) — default 0 hvis ikke sat
-  const currentIndex = currentTracks.get(partyCode) ?? 0;
-
-  // Hent de næste 5 tracks (wrap rundt)
+  const jamCode = request.params.jamCode;
   const queue = [];
-  for (let i = 1; i <= 5; i++) {
-    const idx = (currentIndex + i) % tracks.length;
-    queue.push(tracks[idx]);
+  let lastTrackId = null; // gemmer den forrige track_id
+
+  for (let i = 0; i < 5; i++) {
+    let track;
+    do {
+      const randomIndex = Math.floor(Math.random() * tracks.length);
+      track = tracks[randomIndex];
+      // Hvis det er samme sang som sidst, vælg igen
+    } while (track.track_id === lastTrackId);
+
+    queue.push(track);
+    lastTrackId = track.track_id; // opdater sidste track
   }
 
   response.json(queue);
 };
+
 
 // Søgefunktionalitet for sange
 async function onSearchSongs(request, response) {
