@@ -95,11 +95,13 @@ let searchInput = document.getElementById("SrchSong");
 let dropdown = document.getElementById("SongDropdown");
 let Selection = document.getElementById("SongSelection");
 const timerDisplay = document.getElementById("timer");
+let selectedSong = null;
 
 btn.disabled = true; // Deaktiver knappen som standard
 
 searchInput.addEventListener("input", async () => {
   let query = searchInput.value.trim();
+
 
   if (query.length === 0) {
     dropdown.innerHTML = "";
@@ -121,6 +123,7 @@ searchInput.addEventListener("input", async () => {
 
     div.onclick = () => {
       searchInput.value = song.title;
+      selectedSong = song;
       dropdown.style.display = "none";
       btn.disabled = false; // Aktiver knappen når en sang er valgt
       btn.classList.add("active-btn"); // Tilføj en klasse for visuel feedback
@@ -131,6 +134,8 @@ searchInput.addEventListener("input", async () => {
 });
 
 btn.onclick = function () {
+  const jamCode = localStorage.getItem("jamCode");
+  fetch (`/api/jams/${jamCode}/votes/${selectedSong.track_id}`, {method:"POST"})
   SongModal.style.display = "none";
   modal.style.display = "block";
 
@@ -293,21 +298,11 @@ function loadTrack(trackId) {
     .catch((err) => console.error("Fejl:", err));
 }
 
-// ------------------------------
-// Start en sang når siden loader
-// ------------------------------
-window.onload = function () {
-  const randomId = Math.floor(Math.random() * 201) + 1; // tilfældigt tal mellem 1 og 10
-  loadTrack(randomId);
-};
-
-
 //Queue funktion
 async function loadQueue() {
   const jamCode = localStorage.getItem("jamCode");
   const res = await fetch(`/api/party/${jamCode}/queue`);
   const queue = await res.json();
-
   const tableBody = document.getElementById("queueTableBody");
   tableBody.innerHTML = "";
 
@@ -320,6 +315,7 @@ async function loadQueue() {
     `;
     tableBody.appendChild(row);
   });
+  loadTrack(queue[0].track_id);
 }
 
 // Kald denne når siden loader og evt. med interval

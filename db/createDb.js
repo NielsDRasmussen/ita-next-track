@@ -6,6 +6,7 @@ console.log("Recreating database...");
 const db = await connect();
 
 console.log("Dropping tables...");
+await db.query("drop table if exists votes");
 await db.query("drop table if exists tracks");
 await db.query("drop table if exists participants");
 await db.query("drop table if exists jams");
@@ -35,6 +36,15 @@ await db.query(`
         id serial primary key,
         jam_id integer not null references jams on delete cascade, 
         name text not null
+    )
+`);
+
+await db.query(`
+    create table votes (
+        jam_id integer references jams,
+        track_id bigint references tracks,
+        likes integer not null,
+        trashes integer not null
     )
 `);
 

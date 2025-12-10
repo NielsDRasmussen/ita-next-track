@@ -34,6 +34,7 @@ async function joinJam() {
         // Gem code så vi kan bruge den på participant page
         localStorage.setItem('jamCode', code);
         
+        
         // Gå til participant page
         window.location.href = '/5.ParticipantPage/ParticipantPage.html';
     } else {

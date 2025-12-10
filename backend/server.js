@@ -23,6 +23,7 @@ server.post("/api/jams/:code/participants", onAddParticipant);
 server.get("/api/tracks/:id", onGetTrackById)
 server.get("/api/party/:partyCode/queue", onGetQueue) //Queue funktion
 server.get("/api/songs", onSearchSongs);
+server.post("/api/jams/:code/votes/:trackId", onPostVote);
 server.listen(port, onServerReady);
 
 
@@ -187,6 +188,19 @@ async function onSearchSongs(request, response) {
     )
     .slice(0, 20); // max 20 resultater
   response.json(filtered);
+}
+
+async function onPostVote(request, response) {
+  const jamCode = request.params.code;
+  const trackId = request.params.trackId;
+  //console.log (jamCode, trackId) Dette skal ind i DB 
+  //response.json(null)
+  const dbResult = await db.query(`
+    INSERT INTO votes (jam_id, track_id)
+    VALUES ($1, $2)
+    `,[jamCode, trackId]
+  );
+  response.json({succes: true})
 }
 
 function onServerReady() {
