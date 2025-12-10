@@ -459,3 +459,47 @@ body {
 }
 
 
+/* Queue funktion*/
+
+#QueueTableContainer {
+  width: 80%;
+  margin: 16px auto;
+  max-width: 700px;
+  background: rgba(255,255,255,0.02);
+  padding: 6px;
+  border-radius: 8px;
+}
+
+#QueueTableContainer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#QueueTableContainer th, #QueueTableContainer td {
+  padding: 8px;
+  border: 1px solid rgba(0,0,0,0.6);
+  text-align: left;
+}
+
+#QueueTableContainer th {
+  background: #b8baff;
+}
+
+#QueueTableContainer td {
+  background: #6666ff;
+  color: #ccf3c3;
+}
+
+#QueueTableContainer tbody tr:hover {
+  background: #5555ff;
+}
+
+#nextUpTitle {
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-size: 28px;   /* gør den større */
+  font-weight: 700;  /* evt. mere fed */
+}
+
+

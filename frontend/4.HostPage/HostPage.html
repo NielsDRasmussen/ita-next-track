@@ -65,20 +65,22 @@
     <!-- Playbutton -->
     <button class="playPauseBtn" onclick="playPause()">▶</button>
 
-    <div id="QueueTable">
-      <table>
-        <tr>
-          <th>Artist</th>
-          <th>Song</th>
-          <th>Time</th>
-        </tr>
-        <tr>
-          <td>Justin Bieber</td>
-          <td>Peaches</td>
-          <td>3:18</td>
-        </tr>
-      </table>
-    </div>
+<!--Queue funktion-->
+<div id="QueueTableContainer">
+  <h3 id="nextUpTitle">Next Up</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Artist</th>
+        <th>Song</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody id="queueTableBody">
+      <!-- JS fylder her -->
+    </tbody>
+  </table>
+</div>
 
     <button id="AddBtn">Add Song <i class="fa fa-music"></i></button>
 

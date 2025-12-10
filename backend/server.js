@@ -21,6 +21,7 @@ server.get("/api/jams/:code", onGetJam);
 server.get("/api/jams/:code/participants", onGetParticipants);
 server.post("/api/jams/:code/participants", onAddParticipant);
 server.get("/api/tracks/:id", onGetTrackById)
+server.get("/api/party/:partyCode/queue", onGetQueue) //Queue funktion
 server.get("/api/songs", onSearchSongs);
 server.listen(port, onServerReady);
 
@@ -151,6 +152,23 @@ async function onGetTrackById(request, response) {
         response.status(500).json({ error: "Databasefejl" });
     }
 }
+
+
+//Queue funktion
+async function onGetQueue(request, response) {
+  const partyCode = request.params.partyCode;
+  // Brug currentTracks (samme map som shuffle) — default 0 hvis ikke sat
+  const currentIndex = currentTracks.get(partyCode) ?? 0;
+
+  // Hent de næste 5 tracks (wrap rundt)
+  const queue = [];
+  for (let i = 1; i <= 5; i++) {
+    const idx = (currentIndex + i) % tracks.length;
+    queue.push(tracks[idx]);
+  }
+
+  response.json(queue);
+};
 
 // Søgefunktionalitet for sange
 async function onSearchSongs(request, response) {

@@ -302,3 +302,65 @@ window.onload = function () {
 };
 
 
+//Queue funktion
+// --- Queue: hent og vis næste 5 sange ---
+async function loadQueue() {
+  try {
+    const jamCode = localStorage.getItem("jamCode") || ""; // samme som andre calls
+    if (!jamCode) return;
+
+    const res = await fetch(`/api/party/${encodeURIComponent(jamCode)}/queue`);
+    if (!res.ok) return;
+
+    const queue = await res.json();
+
+    const tbody = document.getElementById("queueTableBody");
+    if (!tbody) return;
+    tbody.innerHTML = "";
+
+    queue.forEach((track) => {
+      // Durations kan være i sekunder eller millisekunder afhængig af DB.
+      // Hvis duration ser stor (> 1000) tolker vi som ms, ellers sekunder.
+      let seconds;
+      if (typeof track.duration === "number") {
+        seconds = track.duration > 1000 ? Math.round(track.duration / 1000) : track.duration;
+      } else {
+        // fallback parse
+        const n = Number(track.duration);
+        seconds = isNaN(n) ? 0 : (n > 1000 ? Math.round(n / 1000) : n);
+      }
+
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${escapeHtml(track.artist)}</td>
+        <td>${escapeHtml(track.title)}</td>
+        <td>${formatSeconds(seconds)}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  } catch (err) {
+    console.error("loadQueue error:", err);
+  }
+}
+
+// Helper: format sekunder til mm:ss
+function formatSeconds(sec) {
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  return `${m}:${String(s).padStart(2, "0")}`;
+}
+
+// Enkel HTML-escape for sikker indsættelse i table
+function escapeHtml(str) {
+  if (!str) return "";
+  return String(str)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+// Start queue-opdatering: initial load + interval
+loadQueue();
+setInterval(loadQueue, 5000); // opdater hvert 5. sekund
