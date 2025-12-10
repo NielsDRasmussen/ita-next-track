@@ -175,6 +175,11 @@ body {
   background: #b8baff;
 }
 
+#queueTableBody td {
+  color: #ccf3c3; /* sæt her den farve du vil have */
+  font-weight: bold; /* valgfrit: gør teksten fed */
+}
+
 .request-song-btn {
   position: fixed;
   bottom: 20px; /* afstand fra bund */
@@ -498,8 +503,6 @@ body {
   text-align: center;
   width: 100%;
   display: block;
-  font-size: 28px;   /* gør den større */
-  font-weight: 700;  /* evt. mere fed */
 }
 
 
