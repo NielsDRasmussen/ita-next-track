@@ -193,15 +193,29 @@ async function onSearchSongs(request, response) {
 async function onPostVote(request, response) {
   const jamCode = request.params.code;
   const trackId = request.params.trackId;
-  //console.log (jamCode, trackId) Dette skal ind i DB 
-  //response.json(null)
-  const dbResult = await db.query(`
-    INSERT INTO votes (jam_id, track_id)
-    VALUES ($1, $2)
-    `,[jamCode, trackId]
+
+  // Find jam_id ud fra jamCode
+  const jamResult = await db.query(
+    `SELECT id FROM jams WHERE jam_code = $1`,
+    [jamCode]
   );
-  response.json({succes: true})
+
+  if (jamResult.rows.length === 0) {
+    return response.status(404).json({ error: "Jam not found" });
+  }
+
+  const jamId = jamResult.rows[0].id;
+
+  // Indsæt vote med likes=1 og trashes=0
+  await db.query(
+    `INSERT INTO votes (jam_id, track_id, likes, trashes)
+     VALUES ($1, $2, 1, 0)`,
+    [jamId, trackId]
+  );
+
+  response.json({ success: true });
 }
+
 
 function onServerReady() {
   console.log("Webserver running on port", port);

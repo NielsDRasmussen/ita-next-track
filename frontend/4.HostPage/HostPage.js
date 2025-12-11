@@ -133,30 +133,50 @@ searchInput.addEventListener("input", async () => {
   });
 });
 
-btn.onclick = function () {
+btn.onclick = async function () {
+  if (!selectedSong) {
+    alert("Vælg venligst en sang først!");
+    return;
+  }
+
   const jamCode = localStorage.getItem("jamCode");
-  fetch (`/api/jams/${jamCode}/votes/${selectedSong.track_id}`, {method:"POST"})
-  SongModal.style.display = "none";
-  modal.style.display = "block";
 
-  // Reset timer
-  timeLeft = 30;
-  timerDisplay.innerText = timeLeft;
-  timerDisplay.style.display = "block";
+  try {
+    const res = await fetch(`/api/jams/${jamCode}/votes/${selectedSong.track_id}`, {
+      method: "POST",
+    });
 
-  // Start countdown
-  countdownInterval = setInterval(() => {
-    timeLeft--;
-    timerDisplay.innerText = timeLeft;
-
-    if (timeLeft <= 0) {
-      // luk modal automatisk når timer er færdig
-      modal.style.display = "none";
-      timerDisplay.style.display = "none";
-      clearInterval(countdownInterval);
+    if (!res.ok) {
+      throw new Error("Kunne ikke sende vote");
     }
-  }, 1000);
+
+    // Luk modaler
+    SongModal.style.display = "none";
+    modal.style.display = "block";
+
+    // Reset timer
+    timeLeft = 30;
+    timerDisplay.innerText = timeLeft;
+    timerDisplay.style.display = "block";
+
+    // Start countdown
+    countdownInterval = setInterval(() => {
+      timeLeft--;
+      timerDisplay.innerText = timeLeft;
+
+      if (timeLeft <= 0) {
+        modal.style.display = "none";
+        timerDisplay.style.display = "none";
+        clearInterval(countdownInterval);
+      }
+    }, 1000);
+
+  } catch (err) {
+    console.error("Fejl ved vote:", err);
+    alert("Der opstod en fejl ved afstemning. Prøv igen.");
+  }
 };
+
 
 // Like button lukker modal Og stopper/resetter timer
 LikeBtn.onclick = function () {
