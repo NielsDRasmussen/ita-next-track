@@ -272,6 +272,7 @@ function playPause() {
         btn.textContent = "▶";
         elem.style.width = "100%";
         currentTimeEl.textContent = formatTime(currentDuration / 1000);
+        skipToNextSong(); 
       } else {
         currentProgress += step;
         let percent = (currentProgress / currentDuration) * 100;
@@ -365,3 +366,5 @@ function skipToNextSong() {
 
 // Forbind skip-knap (tilføj denne når siden loader)
 document.querySelector(".skipBtn").addEventListener("click", skipToNextSong);
+
+
