@@ -246,6 +246,9 @@ let progressInterval;   // gemmer interval ID
 let currentProgress = 0; // husker nuværende tid i ms
 let currentDuration = 0; // husker varighed i ms
 
+let currentTrackIndex = 0;
+let currentQueue = [];
+
 function playPause() {
   const btn = document.querySelector(".playPauseBtn");
   const elem = document.getElementById("myBar");
@@ -322,11 +325,11 @@ function loadTrack(trackId) {
 async function loadQueue() {
   const jamCode = localStorage.getItem("jamCode");
   const res = await fetch(`/api/party/${jamCode}/queue`);
-  const queue = await res.json();
+  currentQueue = await res.json(); // ← DENNE LINJE ER NY
   const tableBody = document.getElementById("queueTableBody");
   tableBody.innerHTML = "";
 
-  queue.forEach(track => {
+  currentQueue.forEach(track => {
     const row = document.createElement("tr");
     row.innerHTML = `
       <td>${track.artist}</td>
@@ -335,8 +338,30 @@ async function loadQueue() {
     `;
     tableBody.appendChild(row);
   });
-  loadTrack(queue[0].track_id);
+  
+  currentTrackIndex = 0; // ← DENNE LINJE ER NY
+  loadTrack(currentQueue[0].track_id);
 }
 
 // Kald denne når siden loader og evt. med interval
 window.addEventListener("load", loadQueue);
+
+
+// Skip funktion
+function skipToNextSong() {
+  currentTrackIndex++;
+  
+  if (currentTrackIndex >= currentQueue.length) {
+    currentTrackIndex = 0; // Start forfra
+  }
+  
+  // Stop nuværende afspilning
+  clearInterval(progressInterval);
+  isPlaying = false;
+  
+  // Load næste track
+  loadTrack(currentQueue[currentTrackIndex].track_id);
+}
+
+// Forbind skip-knap (tilføj denne når siden loader)
+document.querySelector(".skipBtn").addEventListener("click", skipToNextSong);

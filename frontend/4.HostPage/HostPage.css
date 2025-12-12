@@ -105,7 +105,7 @@ body {
   box-shadow: 2 8px 8px rgba(255, 255, 255, 0.22);
 }
 
-.playPauseBtn {
+.playPauseBtn, .skipBtn {
   display: block; /* Gør at margin auto virker */
   margin: 2% auto; /* Top/bund margin 2%, auto centrerer horisontalt */
   height: 55px;
