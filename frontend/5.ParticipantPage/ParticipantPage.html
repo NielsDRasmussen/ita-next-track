@@ -64,21 +64,24 @@
 
     <!-- Playbutton -->
     <button class="playPauseBtn" onclick="playPause()">▶</button>
+    <button class="skipBtn">⏭</button>
 
-    <div id="QueueTable">
-      <table>
-        <tr>
-          <th>Artist</th>
-          <th>Song</th>
-          <th>Time</th>
-        </tr>
-        <tr>
-          <td>Justin Bieber</td>
-          <td>Peaches</td>
-          <td>3:18</td>
-        </tr>
-      </table>
-    </div>
+
+<!--Queue funktion-->
+<div id="QueueTable">
+  <h3 style="text-align: center;">Next Tracks</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Artist</th>
+        <th>Song</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody id="queueTableBody"></tbody>
+  </table>
+</div>
+
 
     <button id="AddBtn">Add Song <i class="fa fa-music"></i></button>
 

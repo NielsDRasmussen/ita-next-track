@@ -105,7 +105,7 @@ body {
   box-shadow: 2 8px 8px rgba(255, 255, 255, 0.22);
 }
 
-.playPauseBtn {
+.playPauseBtn, .skipBtn {
   display: block; /* Gør at margin auto virker */
   margin: 2% auto; /* Top/bund margin 2%, auto centrerer horisontalt */
   height: 55px;
@@ -173,6 +173,11 @@ body {
 
 #QueueTable th {
   background: #b8baff;
+}
+
+#queueTableBody td {
+  color: #ccf3c3; /* sæt her den farve du vil have */
+  font-weight: bold; /* valgfrit: gør teksten fed */
 }
 
 .request-song-btn {
@@ -456,6 +461,50 @@ body {
   color: #000;                   /* evt. ændres til hvid */
   pointer-events: none;          /* så man stadig kan klikke på progressbaren */
   box-sizing: border-box; /* gør padding inklusiv i width */
+}
+
+
+/* Queue funktion*/
+#QueueTable {
+  display: none;
+}
+#QueueTableContainer {
+  width: 80%;
+  margin: 16px auto;
+  max-width: 700px;
+  background: rgba(255,255,255,0.02);
+  padding: 6px;
+  border-radius: 8px;
+}
+
+#QueueTableContainer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#QueueTableContainer th, #QueueTableContainer td {
+  padding: 8px;
+  border: 1px solid rgba(0,0,0,0.6);
+  text-align: left;
+}
+
+#QueueTableContainer th {
+  background: #b8baff;
+}
+
+#QueueTableContainer td {
+  background: #6666ff;
+  color: #ccf3c3;
+}
+
+#QueueTableContainer tbody tr:hover {
+  background: #5555ff;
+}
+
+#nextUpTitle {
+  text-align: center;
+  width: 100%;
+  display: block;
 }
 
 

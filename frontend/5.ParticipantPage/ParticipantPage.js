@@ -24,8 +24,9 @@ async function loadParticipants() {
     tableBody.appendChild(row);
   });
 }
-// Opdater deltagere hvert 0,5 sekund
-//setInterval(loadParticipants, 500);
+
+//Opdater deltagere hvert 3. sekund
+setInterval(loadParticipants, 3000);
 
 //-----------------------------------------------------
 
@@ -94,11 +95,13 @@ let searchInput = document.getElementById("SrchSong");
 let dropdown = document.getElementById("SongDropdown");
 let Selection = document.getElementById("SongSelection");
 const timerDisplay = document.getElementById("timer");
+let selectedSong = null;
 
 btn.disabled = true; // Deaktiver knappen som standard
 
 searchInput.addEventListener("input", async () => {
   let query = searchInput.value.trim();
+
 
   if (query.length === 0) {
     dropdown.innerHTML = "";
@@ -120,6 +123,7 @@ searchInput.addEventListener("input", async () => {
 
     div.onclick = () => {
       searchInput.value = song.title;
+      selectedSong = song;
       dropdown.style.display = "none";
       btn.disabled = false; // Aktiver knappen når en sang er valgt
       btn.classList.add("active-btn"); // Tilføj en klasse for visuel feedback
@@ -129,28 +133,50 @@ searchInput.addEventListener("input", async () => {
   });
 });
 
-btn.onclick = function () {
-  SongModal.style.display = "none";
-  modal.style.display = "block";
+btn.onclick = async function () {
+  if (!selectedSong) {
+    alert("Vælg venligst en sang først!");
+    return;
+  }
 
-  // Reset timer
-  timeLeft = 30;
-  timerDisplay.innerText = timeLeft;
-  timerDisplay.style.display = "block";
+  const jamCode = localStorage.getItem("jamCode");
 
-  // Start countdown
-  countdownInterval = setInterval(() => {
-    timeLeft--;
-    timerDisplay.innerText = timeLeft;
+  try {
+    const res = await fetch(`/api/jams/${jamCode}/votes/${selectedSong.track_id}`, {
+      method: "POST",
+    });
 
-    if (timeLeft <= 0) {
-      // luk modal automatisk når timer er færdig
-      modal.style.display = "none";
-      timerDisplay.style.display = "none";
-      clearInterval(countdownInterval);
+    if (!res.ok) {
+      throw new Error("Kunne ikke sende vote");
     }
-  }, 1000);
+
+    // Luk modaler
+    SongModal.style.display = "none";
+    modal.style.display = "block";
+
+    // Reset timer
+    timeLeft = 30;
+    timerDisplay.innerText = timeLeft;
+    timerDisplay.style.display = "block";
+
+    // Start countdown
+    countdownInterval = setInterval(() => {
+      timeLeft--;
+      timerDisplay.innerText = timeLeft;
+
+      if (timeLeft <= 0) {
+        modal.style.display = "none";
+        timerDisplay.style.display = "none";
+        clearInterval(countdownInterval);
+      }
+    }, 1000);
+
+  } catch (err) {
+    console.error("Fejl ved vote:", err);
+    alert("Der opstod en fejl ved afstemning. Prøv igen.");
+  }
 };
+
 
 // Like button lukker modal Og stopper/resetter timer
 LikeBtn.onclick = function () {
@@ -220,6 +246,9 @@ let progressInterval;   // gemmer interval ID
 let currentProgress = 0; // husker nuværende tid i ms
 let currentDuration = 0; // husker varighed i ms
 
+let currentTrackIndex = 0;
+let currentQueue = [];
+
 function playPause() {
   const btn = document.querySelector(".playPauseBtn");
   const elem = document.getElementById("myBar");
@@ -243,6 +272,7 @@ function playPause() {
         btn.textContent = "▶";
         elem.style.width = "100%";
         currentTimeEl.textContent = formatTime(currentDuration / 1000);
+        skipToNextSong(); 
       } else {
         currentProgress += step;
         let percent = (currentProgress / currentDuration) * 100;
@@ -292,12 +322,49 @@ function loadTrack(trackId) {
     .catch((err) => console.error("Fejl:", err));
 }
 
-// ------------------------------
-// Start en sang når siden loader
-// ------------------------------
-window.onload = function () {
-  const randomId = Math.floor(Math.random() * 201) + 1; // tilfældigt tal mellem 1 og 10
-  loadTrack(randomId);
-};
+//Queue funktion
+async function loadQueue() {
+  const jamCode = localStorage.getItem("jamCode");
+  const res = await fetch(`/api/party/${jamCode}/queue`);
+  currentQueue = await res.json(); // ← DENNE LINJE ER NY
+  const tableBody = document.getElementById("queueTableBody");
+  tableBody.innerHTML = "";
+
+  currentQueue.forEach(track => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${track.artist}</td>
+      <td>${track.title}</td>
+      <td>${formatTime(track.duration / 1000)}</td>
+    `;
+    tableBody.appendChild(row);
+  });
+  
+  currentTrackIndex = 0; // ← DENNE LINJE ER NY
+  loadTrack(currentQueue[0].track_id);
+}
+
+// Kald denne når siden loader og evt. med interval
+window.addEventListener("load", loadQueue);
+
+
+// Skip funktion
+function skipToNextSong() {
+  currentTrackIndex++;
+  
+  if (currentTrackIndex >= currentQueue.length) {
+    currentTrackIndex = 0; // Start forfra
+  }
+  
+  // Stop nuværende afspilning
+  clearInterval(progressInterval);
+  isPlaying = false;
+  
+  // Load næste track
+  loadTrack(currentQueue[currentTrackIndex].track_id);
+}
+
+// Forbind skip-knap (tilføj denne når siden loader)
+document.querySelector(".skipBtn").addEventListener("click", skipToNextSong);
 
 
