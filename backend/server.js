@@ -161,7 +161,7 @@ async function onGetQueue(request, response) {
   const queue = [];
   let lastTrackId = null; // gemmer den forrige track_id
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 10; i++) {
     let track;
     do {
       const randomIndex = Math.floor(Math.random() * tracks.length);

@@ -465,7 +465,9 @@ body {
 
 
 /* Queue funktion*/
-
+#QueueTable {
+  display: none;
+}
 #QueueTableContainer {
   width: 80%;
   margin: 16px auto;
