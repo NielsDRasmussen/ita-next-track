@@ -20,8 +20,6 @@ async function createJam() {
         body: JSON.stringify({ name, code })
     });
     
-    const data = await response.json();
-    
     // Tilføj host som deltager LIGE EFTER
     await fetch(`/api/jams/${code}/participants`, {
         method: 'POST',
@@ -29,8 +27,8 @@ async function createJam() {
         body: JSON.stringify({ name })
     });
     
-    // Gem code
-    localStorage.setItem('jamCode', code);
+    // Gem code selv hvis man refresher siden
+    localStorage.setItem('jamCode', code); 
     
     // Gå til HOST page
     window.location.href = '/4.HostPage/HostPage.html';

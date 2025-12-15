@@ -60,6 +60,9 @@ window.onclick = function (event) {
   if (event.target == participantsModal) {
     participantsModal.style.display = "none";
   }
+    if (event.target == SongModal) {
+    SongModal.style.display = "none";
+  }
 };
 
 // Get the modal
@@ -75,13 +78,6 @@ AddBtn.onclick = function () {
 // When the user clicks on <span> (x), close the modal
 NewSpan.onclick = function () {
   SongModal.style.display = "none";
-};
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target === modal) {
-    SongModal.style.display = "none";
-  }
 };
 
 // Her starter koden for popup for de andre deltagere
@@ -268,9 +264,6 @@ function playPause() {
     progressInterval = setInterval(() => {
       if (currentProgress >= currentDuration) {
         clearInterval(progressInterval);
-        isPlaying = false;
-        btn.textContent = "▶";
-        elem.style.width = "100%";
         currentTimeEl.textContent = formatTime(currentDuration / 1000);
         skipToNextSong(); 
       } else {
