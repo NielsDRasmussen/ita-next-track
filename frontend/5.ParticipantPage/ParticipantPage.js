@@ -249,7 +249,7 @@ function playPause() {
   } else {
     // Play / fortsæt
     isPlaying = true;
-    btn.textContent = "II"; // ændr ikon
+    btn.textContent = "❚❚"; // ændr ikon
 
     const step = 100; // opdater hver 100ms
     progressInterval = setInterval(() => {

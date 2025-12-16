@@ -7,13 +7,15 @@ body {
 h1 {
     position: absolute;
     top: 40px;
-    left: 508px;
+    left: 50%;
+    transform: translateX(-50%);
+
     border-style: solid;
     border-radius: 40px;
     padding: 10px;
     background: linear-gradient(rgba(255, 255, 255, 0.16));
     color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.265);;
+    border-color: rgba(255, 255, 255, 0.265);
 }
 
 /* ====== Top bar buttons ====== */
