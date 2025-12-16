@@ -62,49 +62,6 @@ body {
   color: black;
 }
 
-.participantCode {
-  font-size: 30px;
-  font-style: "Lobster Two", cursive;
-  color: #ffffff;
-}
-
-.QueueTable {
-  border: 1px solid black;
-}
-
-.MusicPlayer {
-  width: 75%;
-  height: 100px;
-  border: 1px solid black;
-  border-radius: 15px;
-  margin: 40px auto;
-  background: #6666ff;
-  margin-top: 120px;
-  display: flex;
-  justify-content: space-between; /* Fordeler elementerne vandret */
-  align-items: center; /* Centrer dem vertikalt */
-  padding: 10px 10px; /* Indvendig luft */
-}
-
-#SongProgress {
-  appearance: none;
-  width: 75%;
-  height: 15px;
-  border-radius: 12px;
-  margin: 10px 0;
-  background: #b8baff;
-}
-
-#SongProgress::-webkit-slider-thumb {
-  appearance: none;
-  background: #b8baff;
-  width: 20px;
-  height: 25px;
-  border-radius: 12px;
-  border: 2px solid rgb(255, 255, 255);
-  box-shadow: 2 8px 8px rgba(255, 255, 255, 0.22);
-}
-
 .playPauseBtn, .skipBtn {
   display: block; /* Gør at margin auto virker */
   margin: 2% auto; /* Top/bund margin 2%, auto centrerer horisontalt */
@@ -119,145 +76,7 @@ body {
   background-color: #b8baff;
 }
 
-.request-song-btn {
-  position: fixed;
-  bottom: 20px; /* afstand fra bund */
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 15px 30px;
-  background-color: #4caf50; /* grøn – kan ændres */
-  color: white;
-  border: none;
-  border-radius: 30px; /* afrundet rektangel */
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 9999; /* ligger OVER alt andet */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.request-song-btn:hover {
-  background-color: #45a049;
-}
-/* Runde knapper øverst til højre */
-.round-btn {
-  padding: 10px 15px;
-  border-radius: 50px;
-  border: none;
-  background: #333;
-  color: rgb(232, 13, 13);
-  cursor: pointer;
-}
-
-.round-btn:hover {
-  background: #555;
-}
-
-#QueueTable table {
-  border-collapse: collapse;
-  border-spacing: 10px;
-  border: 2px solid black;
-  margin-left: 25%;
-}
-
-#QueueTable th,
-#QueueTable td {
-  padding: 10px;
-  width: 200px;
-  border: 1px solid #000000;
-}
-
-#QueueTable td {
-  background: #6666ff;
-}
-
-#QueueTable th {
-  background: #b8baff;
-}
-
-#queueTableBody td {
-  color: #ccf3c3; /* sæt her den farve du vil have */
-  font-weight: bold; /* valgfrit: gør teksten fed */
-}
-
-.request-song-btn {
-  position: fixed;
-  bottom: 20px; /* afstand fra bund */
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 15px 30px;
-  background-color: #4caf50; /* grøn – kan ændres */
-  color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 30px; /* afrundet rektangel */
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 600; /* ligger OVER alt andet */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.request-song-btn:hover {
-  background-color: #45a049;
-}
-
-/* Runde knapper øverst til højre */
-.round-btn {
-  padding: 10px 15px;
-  border-radius: 50px;
-  border: none;
-  background: #333;
-  color: white;
-  cursor: pointer;
-}
-
-.round-btn:hover {
-  background: #555;
-}
-
-.end {
-  background: #b80000;
-}
-
-/* The Modal (background) */
-.RequestModal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 9999; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-  z-index: 10000;
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-/* ----- Request Popup Modal ----- */
+/*Song Request*/
 .RequestModal {
   display: none;
   position: fixed;
@@ -404,10 +223,7 @@ body {
   cursor: default;
 }
 
-#codeDisplay:hover {
-  background-color: #5555ee; /* samme hover-effekt som knapper */
-}
-
+/*Samlet information om artist og title*/
 #songInfo {
   text-align: center;   /* centrér tekst */
   width: 100%;          /* fylder hele linjen */
@@ -428,6 +244,7 @@ body {
   color: #ccf3c3; /* valgfri farve, lidt grå for kontrast */
 }
 
+/*Selve baren*/
 .progressContainer {
   position: relative;  /* nødvendig for absolut placering af timeDisplay */
   width: 100%;
@@ -439,6 +256,7 @@ body {
   overflow: hidden;
 }
 
+/*Indholdet inde i baren*/
 #myBar {
   width: 0%;
   height: 100%;
@@ -468,43 +286,6 @@ body {
 #QueueTable {
   display: none;
 }
-#QueueTableContainer {
-  width: 80%;
-  margin: 16px auto;
-  max-width: 700px;
-  background: rgba(255,255,255,0.02);
-  padding: 6px;
-  border-radius: 8px;
-}
 
-#QueueTableContainer table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-#QueueTableContainer th, #QueueTableContainer td {
-  padding: 8px;
-  border: 1px solid rgba(0,0,0,0.6);
-  text-align: left;
-}
-
-#QueueTableContainer th {
-  background: #b8baff;
-}
-
-#QueueTableContainer td {
-  background: #6666ff;
-  color: #ccf3c3;
-}
-
-#QueueTableContainer tbody tr:hover {
-  background: #5555ff;
-}
-
-#nextUpTitle {
-  text-align: center;
-  width: 100%;
-  display: block;
-}
 
 
