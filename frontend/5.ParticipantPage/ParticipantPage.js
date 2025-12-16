@@ -30,7 +30,7 @@ setInterval(loadParticipants, 3000);
 
 //Til leaderboard siden
 document.querySelector(".round-btn.end").addEventListener("click", () => {
-  window.location.href = "/1.FrontPage.html/FrontPage.html";
+  window.location.href = "/1.FrontPage/FrontPage.html";
 });
 
 let participantsModal = document.getElementById("participantsModal");
