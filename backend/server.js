@@ -21,7 +21,7 @@ server.get("/api/jams/:code", onGetJam);
 server.get("/api/jams/:code/participants", onGetParticipants);
 server.post("/api/jams/:code/participants", onAddParticipant);
 server.get("/api/tracks/:id", onGetTrackById)
-server.get("/api/party/:partyCode/queue", onGetQueue) //Queue funktion
+server.get("/api/party/:partyCode/queue", onGetQueue) 
 server.get("/api/songs", onSearchSongs);
 server.post("/api/jams/:code/votes/:trackId", onPostVote);
 server.listen(port, onServerReady);
@@ -180,13 +180,12 @@ async function onGetQueue(request, response) {
 // Søgefunktionalitet for sange
 async function onSearchSongs(request, response) {
   const search = request.query.search?.toLowerCase() || "";
-  const filtered = tracks
-    .filter(
+  const filtered = tracks.filter(
       (song) =>
         song.title.toLowerCase().includes(search) ||
         song.artist.toLowerCase().includes(search)
     )
-    .slice(0, 20); // max 20 resultater
+    .slice(0, 20); // max 20 resultater i søgefeltet
   response.json(filtered);
 }
 
