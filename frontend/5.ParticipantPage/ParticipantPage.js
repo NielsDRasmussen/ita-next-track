@@ -28,34 +28,30 @@ async function loadParticipants() {
 //Opdater deltagere hvert 3. sekund
 setInterval(loadParticipants, 3000);
 
-//-----------------------------------------------------
-
 //Til leaderboard siden
 document.querySelector(".round-btn.end").addEventListener("click", () => {
-  window.location.href = "/1.FrontPage/FrontPage.html";
+  window.location.href = "/1.FrontPage.html/FrontPage.html";
 });
-
-//--------------------------------------
 
 let participantsModal = document.getElementById("participantsModal");
 
-// Get the button that opens the modal
+// Knappen der åbner participant modal
 let openBtn = document.getElementById("participantsButton");
 
-// Get the <span> element that closes the modal
+// Få <span> elementen der lukker modal 
 let span = document.getElementsByClassName("Close")[0];
 
-// When the user clicks the button, open the modal
+// Når brugeren klikker på knappen, åbner modal 
 openBtn.onclick = function () {
   participantsModal.style.display = "block";
 };
 
-// When the user clicks on <span> (x), close the modal
+// Når brugeren klikker på <span> (x), luk modal
 span.onclick = function () {
   participantsModal.style.display = "none";
 };
 
-// When the user clicks anywhere outside of the modal, close it
+// Når brugeren klikker udenfor modal, luk modal 
 window.onclick = function (event) {
   if (event.target == participantsModal) {
     participantsModal.style.display = "none";
@@ -65,17 +61,17 @@ window.onclick = function (event) {
   }
 };
 
-// Get the modal
+
 let SongModal = document.getElementById("NewSong");
 let AddBtn = document.getElementById("AddBtn");
 let NewSpan = document.getElementsByClassName("Exit")[0];
 
-// When the user clicks on the confirm button, open the modal
+// Når brugeren klikker på confirm knappen, åben modal 
 AddBtn.onclick = function () {
   SongModal.style.display = "block";
 };
 
-// When the user clicks on <span> (x), close the modal
+// Når brugeren klikker på <span> (x), luk modal
 NewSpan.onclick = function () {
   SongModal.style.display = "none";
 };
@@ -92,8 +88,6 @@ let dropdown = document.getElementById("SongDropdown");
 let Selection = document.getElementById("SongSelection");
 const timerDisplay = document.getElementById("timer");
 let selectedSong = null;
-
-btn.disabled = true; // Deaktiver knappen som standard
 
 searchInput.addEventListener("input", async () => {
   let query = searchInput.value.trim();
@@ -122,7 +116,7 @@ searchInput.addEventListener("input", async () => {
       selectedSong = song;
       dropdown.style.display = "none";
       btn.disabled = false; // Aktiver knappen når en sang er valgt
-      btn.classList.add("active-btn"); // Tilføj en klasse for visuel feedback
+      btn.classList.add("active-btn"); 
     };
 
     dropdown.appendChild(div);
@@ -174,23 +168,22 @@ btn.onclick = async function () {
 };
 
 
-// Like button lukker modal Og stopper/resetter timer
+// Like button lukker modal og stopper/resetter timer
 LikeBtn.onclick = function () {
   modal.style.display = "none";
   timerDisplay.style.display = "none";
   clearInterval(countdownInterval);
 };
 
-// Trash button lukker modal Og stopper/resetter timer)
+// Trash button lukker modal og stopper/resetter timer
 TrashBtn.onclick = function () {
   modal.style.display = "none";
   timerDisplay.style.display = "none";
   clearInterval(countdownInterval);
 };
 
-// ------------------------------
-// Progress bar (tid-baseret)
-// ------------------------------
+
+// Progress bar 
 let isPlaying = false;
 
 function move(duration) {
@@ -221,23 +214,22 @@ function move(duration) {
         let percent = (currentTime / duration) * 100;
         elem.style.width = percent + "%";
 
-        // opdater tid i mm:ss
+        // opdater tid i ms
         currentTimeEl.textContent = formatTime(currentTime / 1000);
       }
     }
   }
 }
 
-// Hjælpefunktion til mm:ss
+// Hjælpefunktion til ms
 function formatTime(seconds) {
   const mins = Math.floor(seconds / 60);
   const secs = Math.floor(seconds % 60);
   return `${mins}:${secs.toString().padStart(2, "0")}`;
 }
 
-// ------------------------------
+
 // Play/pause-knap
-// ------------------------------
 let progressInterval;   // gemmer interval ID
 let currentProgress = 0; // husker nuværende tid i ms
 let currentDuration = 0; // husker varighed i ms
@@ -251,7 +243,6 @@ function playPause() {
   const currentTimeEl = document.getElementById("currentTime");
 
   if (isPlaying) {
-    // Pause
     clearInterval(progressInterval);
     isPlaying = false;
     btn.textContent = "▶"; // ændr ikon
@@ -282,7 +273,7 @@ function move(duration) {
   const currentTimeEl = document.getElementById("currentTime");
   const totalTimeEl = document.getElementById("totalTime");
 
-  clearInterval(progressInterval); // stop evt. eksisterende
+  clearInterval(progressInterval); 
   isPlaying = false;
   currentProgress = 0;
   currentDuration = duration;
@@ -291,21 +282,19 @@ function move(duration) {
   currentTimeEl.textContent = "0:00";
   totalTimeEl.textContent = formatTime(duration / 1000);
   
-  // Start automatisk
   playPause();
 }
 
 
-// ------------------------------
-// Hent ét track fra backend
-// ------------------------------
+
+// Hent track fra backend der skal afspilles
 function loadTrack(trackId) {
   fetch(`/api/tracks/${trackId}`)
     .then((res) => res.json())
     .then((track) => {
       console.log("Track hentet:", track);
 
-      // Opdater UI
+      // Opdater brugergrænsefladen
       document.getElementById("songTitle").textContent = track.title;
       document.getElementById("songArtist").textContent = track.artist;
 
@@ -319,7 +308,7 @@ function loadTrack(trackId) {
 async function loadQueue() {
   const jamCode = localStorage.getItem("jamCode");
   const res = await fetch(`/api/party/${jamCode}/queue`);
-  currentQueue = await res.json(); // ← DENNE LINJE ER NY
+  currentQueue = await res.json(); 
   const tableBody = document.getElementById("queueTableBody");
   tableBody.innerHTML = "";
 
@@ -333,11 +322,10 @@ async function loadQueue() {
     tableBody.appendChild(row);
   });
   
-  currentTrackIndex = 0; // ← DENNE LINJE ER NY
+  currentTrackIndex = 0; 
   loadTrack(currentQueue[0].track_id);
 }
 
-// Kald denne når siden loader og evt. med interval
 window.addEventListener("load", loadQueue);
 
 
@@ -357,7 +345,7 @@ function skipToNextSong() {
   loadTrack(currentQueue[currentTrackIndex].track_id);
 }
 
-// Forbind skip-knap (tilføj denne når siden loader)
+// Forbind skip-knap 
 document.querySelector(".skipBtn").addEventListener("click", skipToNextSong);
 
 

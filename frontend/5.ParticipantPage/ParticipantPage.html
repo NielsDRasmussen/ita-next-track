@@ -4,12 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JamJam</title>
-    <link rel="stylesheet" href="ParticipantPage.css" />
-    <!-- Link til ikoner-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="ParticipantPage.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
   </head>
 
   <body>
@@ -21,12 +17,10 @@
       <p id="codeDisplay">Code: ...</p>
     </div>
 
-    <!-- Trigger/Open The Modal -->
     <button id="participantsButton">Participants</button>
 
-    <!-- The Modal -->
+    <!-- Participant Modal -->
     <div id="participantsModal" class="participantsList">
-      <!-- Modal content -->
       <div class="colorModal">
         <span class="Close">&times;</span>
         <div class="nameTable">
@@ -62,12 +56,10 @@
 </div>
 
 
-    <!-- Playbutton -->
     <button class="playPauseBtn" onclick="playPause()">▶</button>
     <button class="skipBtn">⏭</button>
 
 
-<!--Queue funktion-->
 <div id="QueueTable">
   <h3 style="text-align: center;">Next Tracks</h3>
   <table>
@@ -92,7 +84,7 @@
         <label for="SrchSong">Searchbar</label><br>
         <input id="SrchSong" type="text" placeholder="Search Song" />
 
-        <!-- Dropdown container (NY) -->
+        <!-- Dropdown container -->
         <div id="SongDropdown" class="SongDropdown"></div>
         <div id="SongSelection" class="SongSelection"></div>
         <button id="Confirm-Btn">Confirm</button>
@@ -108,6 +100,5 @@
       </div>
     </div>
     <script src="ParticipantPage.js"></script>
-    <!-- INDSÆTTER RequestPopup.html via JS -->
   </body>
 </html>

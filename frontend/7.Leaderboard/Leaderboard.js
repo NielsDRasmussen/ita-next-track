@@ -17,7 +17,7 @@ document.getElementById('home-btn').addEventListener('click', () => {
 window.addEventListener('load', function() {
     const confettiLayer = document.querySelector('.confetti-layer');
     
-    // Fjern confetti efter 3 sekunder (juster til din GIF's længde)
+    // Fjern confetti efter 3 sekunder 
     setTimeout(function() {
         confettiLayer.style.opacity = '0';
         confettiLayer.style.transition = 'opacity 1s';
@@ -45,8 +45,8 @@ function closePopupFunc() {
 closeBtnPopup.addEventListener('click', closePopupFunc);
 
 // Luk popup når man klikker udenfor boksen
-popupShare.addEventListener('click', function(e) {
-    if (e.target === popupShare) {
+popupShare.addEventListener('click', function(event) {
+    if (event.target === popupShare) {
         closePopupFunc();
     }
 }); // Dette gør at hvis du klikker uden for boksen -> Luk og hvis du klikker inde i boksen -> Luk ikke

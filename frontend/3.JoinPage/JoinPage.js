@@ -1,21 +1,8 @@
-//Tilbage til forsiden
 document.querySelector('.close-btn').addEventListener('click', () => {
     window.location.href = '/1.FrontPage/FrontPage.html';
 });
 
-
-
-
-
-//Start jam knap 
-document.getElementById('startBtn').addEventListener('click', joinJam);  // ← ÆNDRET
-
-
-//Tilbage til forsiden
-document.querySelector('.close-btn').addEventListener('click', () => {
-    window.location.href = '/1.FrontPage/FrontPage.html';
-});
-
+document.getElementById('startBtn').addEventListener('click', joinJam);  
 
 async function joinJam() {
     const name = document.getElementById('name').value;

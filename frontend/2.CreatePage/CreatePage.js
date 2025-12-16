@@ -1,4 +1,4 @@
-//Start jam knap - kald createJam i stedet!
+
 document.getElementById('startBtn').addEventListener('click', createJam);
 
 
@@ -6,8 +6,6 @@ document.getElementById('startBtn').addEventListener('click', createJam);
 document.querySelector('.close-btn').addEventListener('click', () => {
     window.location.href = '/1.FrontPage/FrontPage.html';
 });
-
-
 
 async function createJam() {
     const name = document.getElementById('name').value;

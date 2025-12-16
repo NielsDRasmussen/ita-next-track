@@ -1,4 +1,4 @@
-/* --- BACKGROUND, TEXT AND CONFETTI LAYERS --- */
+/* ---Baggrund med tekst og konfetti--- */
 body {
     background-image: url("blue.png");
     background-size: cover;
@@ -65,7 +65,7 @@ h1 {
     position: relative;
 }
 .first {
-    background-color: #6666ff; /* Guld */
+    background-color: #6666ff; 
     order: 2;
     margin-top: 50px;
     border-width: 3px;
@@ -74,7 +74,7 @@ h1 {
 }
 
 .second {
-    background-color: #6666ff; /* Sølv */
+    background-color: #6666ff; 
     order: 1;
     margin-left: 25.5%;
     margin-top: 100px;
@@ -85,7 +85,7 @@ h1 {
 
 
 .third {
-    background-color: #6666ff; /* Bronze */
+    background-color: #6666ff; 
     order: 3;
     margin-top: 150px;
     border-width: 3px;
@@ -114,30 +114,30 @@ h1 {
 
 /* --- "Start nyt Jam" KNAPPER KODE --- */
 .buttons-box {
-    background-color:#6666ff; /* Lys grå baggrund */
-    border: 2px solid #b8baff; /* Grå kant rundt om hele boksen */
-    border-radius: 15px; /* Runde hjørner på den store boks */
-    padding: 15px; /* Luft inde i den store boks */
-    margin: 50px auto; /* Plads over/under og centrerer boksen */
-    max-width: 600px; /* Maksimal bredde på boksen */
-    display: flex; /* Placerer knapperne ved siden af hinanden */
-    justify-content: space-between; /* Fordeler knapperne med space imellem*/
-    gap: 10px; /* Lille mellemrum mellem knapperne */
+    background-color:#6666ff; 
+    border: 2px solid #b8baff; 
+    border-radius: 15px; 
+    padding: 15px; 
+    margin: 50px auto; 
+    max-width: 600px; 
+    display: flex; 
+    justify-content: space-between; 
+    gap: 10px; 
     margin-top: 30px;
     margin-left: 323px;
 }
 
 /* Styling af de tre knapper inde i boksen */
 .buttons-box button {
-    background-color: #c9e8ff; /* Hvid baggrund */
-    border: 2px solid #b8baff; /* Mørk grå kant */
-    padding: 15px 25px; /* Luft inde i knappen */
-    font-size: 1em; /* Normal tekststørrelse */
-    border-radius: 10px; /* Runde hjørner */
-    cursor: pointer; /* Hånd-ikon når man hover */
-    color: black; /* Sort tekst */
-    font-weight: 500; /* Lidt fed skrift */
-    flex: 1; /* Alle knapper får samme bredde */
+    background-color: #c9e8ff; 
+    border: 2px solid #b8baff; 
+    padding: 15px 25px; 
+    font-size: 16px; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    color: black; 
+    font-weight: 500; 
+    flex: 1; 
 }
 
 /* --- POPUP MENU TIL SHARE KNAP --- */

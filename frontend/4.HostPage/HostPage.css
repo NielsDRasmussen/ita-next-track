@@ -9,16 +9,19 @@ body {
   font-size: 40px;
   font-family: "Lobster Two", cursive;
   color: #0c0c16;
-  text-shadow: 3px 3px 0px #c9e8ff, 6px 6px 0px #b8baff, 8px 8px 0px #6666ff,
-    /* offsetX, offsetY, blur-radius color*/ 0px 0px 50px #c9e8ff;
+  text-shadow: 
+  3px 3px 0px #c9e8ff, 
+  6px 6px 0px #b8baff, 
+  8px 8px 0px #6666ff,/* offsetX, offsetY, blur-radius color*/ 
+  0px 0px 50px #c9e8ff;
 }
 
 .endJamButton button {
   width: 125px; /* Gør knappen lige høj og bred */
   height: 75px;
   border-radius: 10%; /* Gør den rund */
-  border: solid; /* Fjern kant (valgfrit) */
-  cursor: pointer; /* Vis klik-hånd */
+  border: solid; 
+  cursor: pointer; 
   background-color: #6666ff;
   color: #b8baff;
   position: absolute;
@@ -30,14 +33,14 @@ body {
 }
 
 .participantsList {
-  display: none; /* Skjult som standard */
+  display: none; 
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Sort med opacity */
+  background-color: rgba(0, 0, 0, 0.4); 
 }
 
 .colorModal {
@@ -85,17 +88,17 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* mørk overlay */
+  background-color: rgba(0, 0, 0, 0.5); 
 }
 
 /* Modal indhold */
 .modal-content {
-  position: relative; /* vigtig for timeren */
+  position: relative; 
   background-color: white;
   margin: 15% auto; /* centrer modal på skærmen */
   padding: 20px;
   border-radius: 10px;
-  width: 300px; /* ændr hvis du vil have bredere modal */
+  width: 300px; 
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -132,7 +135,7 @@ body {
   color: #555;
 }
 
-/* ----- Add Song Modal ----- */
+/*Add Song Modal*/
 .NewSongModal {
   display: none;
   position: fixed;
@@ -166,10 +169,8 @@ body {
 #AddBtn {
   position: fixed;
   bottom: 20px;
-  left: 50%; /* flytter venstre kant til midten */
-  transform: translateX(
-    -50%
-  ); /* trækker knappen tilbage halvdelen af sin bredde */
+  left: 50%; 
+  transform: translateX(-50%); 
   padding: 14px 28px;
   background-color: #6666ff;
   color: black;
@@ -188,60 +189,60 @@ body {
 }
 
 #participantsButton {
-  width: 125px; /* samme som End Jam */
-  height: 75px; /* samme som End Jam */
-  border-radius: 10%; /* samme som End Jam */
+  width: 125px; 
+  height: 75px; 
+  border-radius: 10%; 
   border: solid; 
   cursor: pointer;
-  background-color: #6666ff; /* samme baggrund */
-  color: #b8baff; /* samme tekstfarve */
+  background-color: #6666ff; 
+  color: #b8baff; 
   position: absolute;
-  top: 10px;      /* samme højde som End Jam */
-  right: 145px;   /* flytter den til venstre for End Jam */
+  top: 10px;      
+  right: 145px;   
   font-size: 15px;
   font-weight: bold;
   font-family: "Lobster Two", cursive;
 }
 
 #participantsButton:hover {
-  background-color: #5555ee; /* lidt mørkere ved hover */
+  background-color: #5555ee; 
 }
 
 
 #codeDisplay {
   position: absolute;
-  top: 10px;      /* samme højde som End Jam og Participants */
-  left: 10px;     /* afstand fra venstre kant */
+  top: 10px;      
+  left: 10px;     
   padding: 15px 20px;
-  background-color: #6666ff; /* samme baggrund som knapperne */
-  color: #b8baff;           /* samme tekstfarve */
+  background-color: #6666ff; 
+  color: #b8baff;           
   font-family: "Lobster Two", cursive;
   font-size: 18px;
   font-weight: bold;
-  border-radius: 10%;        /* afrundet kant som knapperne */
+  border-radius: 10%;        
   border: solid;
   cursor: default;
 }
 
 /*Samlet information om artist og title*/
 #songInfo {
-  text-align: center;   /* centrér tekst */
-  width: 100%;          /* fylder hele linjen */
+  text-align: center;   
+  width: 100%;          
   display: flex;
   flex-direction: column;
-  align-items: center;  /* centrér elementerne */
+  align-items: center;  
   gap: 4px;
 }
 
 #songTitle {
-  font-weight: bold; /* gør titel fed */
-  font-size: 16px; /* juster størrelsen efter behov */
+  font-weight: bold; 
+  font-size: 16px; 
   color: #ccf3c3;
 }
 
 #songArtist {
-  font-size: 14px; /* lidt mindre end titel */
-  color: #ccf3c3; /* valgfri farve, lidt grå for kontrast */
+  font-size: 14px; 
+  color: #ccf3c3; 
 }
 
 /*Selve baren*/
@@ -249,7 +250,7 @@ body {
   position: relative;  /* nødvendig for absolut placering af timeDisplay */
   width: 100%;
   max-width: 80%;
-  margin: 0 auto;      /* centrerer den */
+  margin: 0 auto;      
   background-color: #ddd;
   height: 20px;
   border-radius: 10px;
@@ -266,19 +267,18 @@ body {
 }
 
 #timeDisplay {
-  position: absolute;         /* inde i progressbaren */
-  top: 50%;                   /* midt på højden */
+  position: absolute;         
+  top: 50%;                   
   left: 0;
   width: 100%;
-  transform: translateY(-50%);/* centrer vertikalt */
+  transform: translateY(-50%); /* centrer vertikalt */
   display: flex;
-  justify-content: space-between; /* venstre/højre */
-  padding: 0 10px;               /* lidt afstand fra kanterne */
+  justify-content: space-between; 
+  padding: 0 10px;               
   font-size: 12px;
   font-weight: bold;
-  color: #000;                   /* evt. ændres til hvid */
-  pointer-events: none;          /* så man stadig kan klikke på progressbaren */
-  box-sizing: border-box; /* gør padding inklusiv i width */
+  color: #000;                   
+  box-sizing: border-box; 
 }
 
 
