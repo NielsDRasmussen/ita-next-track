@@ -9,17 +9,47 @@
   </head>
 
   <body>
-    <div class="JamJam">
-      <h1>JamJam</h1>
+    <div class="top-bar">
+      <div class="participantCode">
+        <p id="codeDisplay">Code: ...</p>
+      </div>
+
+      <div class="right">
+        <button id="participantsButton">Participants</button> <!-- Trigger/Open The Modal -->
+        <div class="endJamButton">
+          <button class="round-btn end">End Jam</button>
+        </div>
+      </div>
     </div>
 
-    <div class="participantCode">
-      <p id="codeDisplay">Code: ...</p>
+    <h1>♫ Now Playing ♫</h1>
+    
+    <div class="vinyl">
+        <div class="song-info">
+            <p class="song" id="songTitle">Song</p>
+            <p class="artist" id="songArtist">Artist</p>
+        </div>
     </div>
 
-    <button id="participantsButton">Participants</button>
+    <div class="player-container">
+      <div id="myProgress" class="progressContainer">
+        <div id="myBar"></div>
+        <div id="timeDisplay">
+          <span id="currentTime">0:00</span>
+          <span id="totalTime">0:00</span>
+        </div>
+    </div>
 
-    <!-- Participant Modal -->
+        <div class="controls">
+            <button class="playPauseBtn" onclick="playPause()">▶</button>
+            <button class="skipBtn">⏭</button>
+        </div>
+
+        <div class="slider-container">
+            <div class="slider"></div>
+        </div>
+    </div>
+    <!-- The Modal -->
     <div id="participantsModal" class="participantsList">
       <div class="colorModal">
         <span class="Close">&times;</span>
@@ -38,26 +68,6 @@
       </div>
     </div>
 
-    <div class="endJamButton">
-      <button class="round-btn end">End Jam</button>
-    </div>
-
-<div id="songInfo">
-  <span id="songTitle">Titel kommer her</span>
-  <span id="songArtist">Artist kommer her</span>
-</div>
-
-<div id="myProgress" class="progressContainer">
-  <div id="myBar"></div>
-  <div id="timeDisplay">
-    <span id="currentTime">0:00</span>
-    <span id="totalTime">0:00</span>
-  </div>
-</div>
-
-
-    <button class="playPauseBtn" onclick="playPause()">▶</button>
-    <button class="skipBtn">⏭</button>
 
 
 <div id="QueueTable">
