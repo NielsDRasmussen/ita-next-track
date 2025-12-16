@@ -44,7 +44,7 @@ async function onGetCurrentTrackAtParty(request, response) {
 
 async function onCreateJam(request, response) {
   const body = request.body;
-  const createdBy = body.name; // ← ÆNDRET: dit felt hedder created_by
+  const createdBy = body.name; 
   const code = body.code;
 
   const result = await db.query(`
@@ -52,7 +52,7 @@ async function onCreateJam(request, response) {
         VALUES ($1, $2)
         RETURNING id, jam_code
     `,[code, createdBy]
-  ); // ← ÆNDRET: jam_code i stedet for code
+  ); 
 
   const jamId = result.rows[0].id;
   const jamCode = result.rows[0].jam_code;
@@ -67,7 +67,7 @@ async function onGetJam(request, response) {
     FROM jams
     WHERE jam_code = $1
     `,[code]
-  ); // ← ÆNDRET: jam_code
+  ); 
 
   if (result.rows.length === 0) {
     response.status(404).json({ error: "Jam not found" });
@@ -80,11 +80,11 @@ async function onGetJam(request, response) {
 async function onGetParticipants(request, response) {
   const code = request.params.code;
 
-  // Først find jam_id fra code
+  
   const jamResult = await db.query(`
     SELECT id FROM jams WHERE jam_code = $1
     `, [code]
-  ); // ← ÆNDRET: jam_code
+  ); 
 
   if (jamResult.rows.length === 0) {
     response.json([]);
@@ -93,7 +93,7 @@ async function onGetParticipants(request, response) {
 
   const jamId = jamResult.rows[0].id;
 
-  // Hent deltagere
+  
   const result = await db.query(`
         SELECT id, name
         FROM participants
@@ -110,11 +110,11 @@ async function onAddParticipant(request, response) {
   const code = request.params.code;
   const participantName = request.body.name;
 
-  // Find jam_id fra code
+  
   const jamResult = await db.query(`
     SELECT id FROM jams WHERE jam_code = $1
     `,[code]
-  ); // ← ÆNDRET: jam_code
+  ); 
 
   if (jamResult.rows.length === 0) {
     response.status(404).json({ error: "Jam not found" });
@@ -123,7 +123,7 @@ async function onAddParticipant(request, response) {
 
   const jamId = jamResult.rows[0].id;
 
-  // Tilføj deltager
+  
   await db.query(`
     INSERT INTO participants (jam_id, name)
     VALUES ($1, $2)
@@ -132,7 +132,8 @@ async function onAddParticipant(request, response) {
 
   response.json({ success: true });
 }
-// HENT ÉN TRACK EFTER ID
+
+
 async function onGetTrackById(request, response) {
     const trackId = request.params.id;
 
@@ -147,7 +148,7 @@ async function onGetTrackById(request, response) {
             return response.status(404).json({ error: "Track ikke fundet" });
         }
 
-        response.json(result.rows[0]);  // sender én sang til frontend
+        response.json(result.rows[0]);  
     } catch (error) {
         console.error(error);
         response.status(500).json({ error: "Databasefejl" });
@@ -155,11 +156,11 @@ async function onGetTrackById(request, response) {
 }
 
 
-//Queue funktion
+
 async function onGetQueue(request, response) {
   const jamCode = request.params.jamCode;
   const queue = [];
-  let lastTrackId = null; // gemmer den forrige track_id
+  let lastTrackId = null; 
 
   for (let i = 0; i < 10; i++) {
     let track;
@@ -170,7 +171,7 @@ async function onGetQueue(request, response) {
     } while (track.track_id === lastTrackId);
 
     queue.push(track);
-    lastTrackId = track.track_id; // opdater sidste track
+    lastTrackId = track.track_id; 
   }
 
   response.json(queue);
@@ -193,7 +194,7 @@ async function onPostVote(request, response) {
   const jamCode = request.params.code;
   const trackId = request.params.trackId;
 
-  // Find jam_id ud fra jamCode
+  
   const jamResult = await db.query(
     `SELECT id FROM jams WHERE jam_code = $1`,
     [jamCode]
